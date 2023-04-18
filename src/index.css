@@ -15,3 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.header_banner_img {
+  background: url(../public/assets/images/banner_header.jpg);
+}
