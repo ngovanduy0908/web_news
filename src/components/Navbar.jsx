@@ -1,4 +1,5 @@
 import React from "react";
+
 import { IoHome, IoSearch } from "react-icons/io5";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
@@ -440,9 +441,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-      </div>
-    </div>
-  );
-};
+
+
 
 export default Navbar;

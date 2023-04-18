@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.footer {
+  background: #d5d5d5
+    url(https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-footer.png)
+    center center no-repeat;
+  background-size: contain;
+}
+
 body {
   margin: 0;
+
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +21,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 
 .menu-conner-left {
   background: url(/public/assets/images/menu-left-blue.png);
@@ -34,4 +43,8 @@ code {
   width: 12px;
   background-repeat: no-repeat;
   background-size: auto;
+
+.header_banner_img {
+  background: url(../public/assets/images/banner_header.jpg);
+
 }
