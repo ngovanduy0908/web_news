@@ -15,6 +15,9 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #eeeeee
+    url(https://doanhnhanthanhhoahanoi.com/themes/egov/images/bgtrongdong_1.png)
+    top center no-repeat;
 }
 
 code {
@@ -47,4 +50,13 @@ code {
 .header_banner_img {
   background: url(../public/assets/images/banner_header.jpg);
 
+}
+
+.slick-next {
+  right: 9px !important;
+}
+
+.slick-prev {
+  left: 9px !important;
+  z-index: 9;
 }
