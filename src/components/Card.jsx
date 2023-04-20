@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +12,105 @@ import {
 } from "react-icons/io";
 
 import RightBar from "./list/RightBar";
+
+const titleArr = [
+  {
+    title: "Thông tin tuyên truyền",
+    border: true,
+  },
+  {
+    title: "Thông tin kinh tễ - xã hội",
+    border: true,
+  },
+  {
+    title: "tin doanh nhân",
+    border: false,
+  },
+];
+
+const contentArr = [
+  [
+    {
+      title: "Đại hội Hội Doanh nhân Thanh Hóa tại Hà Nội",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 2",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 3",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 4",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 5",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 6",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+  ],
+  [
+    {
+      title: "tile 7",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 8",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+  ],
+  [
+    {
+      title: "tile 9",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 10",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+
+      date: "19/04/2023",
+      time: "08:52",
+    },
+    {
+      title: "tile 11",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      date: "19/04/2023",
+      time: "08:52",
+    },
+  ],
+];
+
 const Card = () => {
   const sliderRef = useRef(null);
   const next = () => {
@@ -21,42 +120,38 @@ const Card = () => {
   const previous = () => {
     sliderRef.current?.slickPrev();
   };
+  const [isActive, setIsActive] = useState(0);
+  const [content, setContent] = useState(contentArr[0]);
   return (
     <>
       <div className="grid grid-cols-4 gap-2 p-6 bg-white rounded-xl">
         <div className="col-span-3 border-t-[1px] border-t-solid border-t-gray-400 mt-[25px]">
           <div className="bgr_card">
             <ul className="flex items-center text-[17px]">
-              <li className="  uppercase inline-block px-[8px] border-r-[1px] border-r-solid border-r-gray-400">
-                <h2>
-                  <a
-                    href=""
-                    className="text-[#a5a5a5] block my-[5px] leading-[22px]"
-                  >
-                    Thông tin tuyên truyền
-                  </a>
-                </h2>
-              </li>
-              <li className="  uppercase inline-block px-[8px] border-r-[1px] border-r-solid border-r-gray-400">
-                <h2>
-                  <a
-                    href=""
-                    className="text-[#a5a5a5] block my-[5px] leading-[22px]"
-                  >
-                    Thông tin kinh tễ - xã hội
-                  </a>
-                </h2>
-              </li>
-              <li className=" uppercase inline-block px-[8px]">
-                <h2>
-                  <a
-                    href=""
-                    className="text-[#a5a5a5] block my-[5px] leading-[22px]"
-                  >
-                    tin doanh nhân
-                  </a>
-                </h2>
-              </li>
+              {titleArr.map((item, idx) => (
+                <li
+                  className={`${
+                    item.border
+                      ? "uppercase inline-block px-[8px] border-r-[1px] border-r-solid border-r-gray-400"
+                      : "uppercase inline-block px-[8px]"
+                  } cursor-pointer`}
+                  key={idx}
+                  onClick={() => {
+                    setIsActive(idx);
+                    setContent(contentArr[idx]);
+                  }}
+                >
+                  <h2>
+                    <span
+                      className={`${
+                        isActive === idx ? "text-[#000]" : "text-[#a5a5a5]"
+                      } block my-[5px] leading-[22px]"`}
+                    >
+                      {item.title}
+                    </span>
+                  </h2>
+                </li>
+              ))}
               <li className="inline-block">
                 <div className="flex items-center">
                   <span
@@ -86,7 +181,48 @@ const Card = () => {
                 ref={sliderRef}
                 button={false}
               >
-                <div className="p-2">
+                {content.map((item, idx) => (
+                  <div className="p-2" key={idx}>
+                    <a
+                      href="#"
+                      class="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >
+                      <div>
+                        <img
+                          class="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                          src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
+                          alt=""
+                        />
+                        <div className="flex items-center text-[#999999]">
+                          <span>
+                            <WiTime9 />
+                          </span>
+                          {item.date}
+                        </div>
+                        <div className="inline-block text-[#999999]">
+                          {item.time}
+                        </div>
+                      </div>
+                      <div class=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
+                        <h3 class="mb-2 text-[16px] font-bold text-[#494949]">
+                          {item.title}
+                        </h3>
+                        <p class="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
+                          {item.des}
+                        </p>
+                        <span>
+                          <a
+                            href=""
+                            className=" bg-[#10bcff] text-[12px] text-white p-1"
+                          >
+                            Chi tiết
+                          </a>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+                {/* <div className="p-2">
                   <a
                     href="#"
                     class="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
@@ -284,7 +420,7 @@ const Card = () => {
                       </span>
                     </div>
                   </a>
-                </div>
+                </div> */}
               </Slider>
             </div>
           </div>
