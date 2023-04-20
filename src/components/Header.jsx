@@ -4,7 +4,7 @@ import { BiRss } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div className="w-[1080px] m-auto relative">
+    <div className="w-[1080px] m-auto relative drop-shadow-new">
       <div className="w-full h-[30px] bg-[#1f9cf8]">
         <ul className="flex float-right text-[#fff] text-[12px] justify-center items-center pt-[7px] mx-[10px]">
           <li className="inline-block px-[5px] border-r-[1px] border-r-[#fff] relative">

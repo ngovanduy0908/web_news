@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 
 import SliderPage from "../components/Slider";
+import Card from "../components/Card";
 const slides = [
   {
     id: 1,
@@ -18,9 +19,9 @@ const slides = [
 ];
 const HomePage = () => {
   return (
-    <div className="w-[1080px] m-auto">
+    <div className="w-[1080px] m-auto drop-shadow-new">
       <SliderPage slides={slides} />
-      <div className="bg-white grid grid-cols-5 relative top-[-5px] gap-4 p-8">
+      <div className="rounded-b-xl bg-white grid grid-cols-5 relative top-[-5px] gap-4 px-[14px] py-8">
         <div className="col-span-2">
           <div className="bg-gray-200 w-[110%]">
             <img
@@ -46,22 +47,73 @@ const HomePage = () => {
             </span>
           </div>
         </div>
-        <div className="col-span-2 pl-14">
-          <div className="flex items-center bg-sky-500 text-white p-2">
+        <div className="col-span-2 pl-14 pr-8">
+          <div className="flex items-center bg-sky-500 text-white p-2 mb-3">
             <AiFillStar />
             <h3 className="font-bold ml-2">TIN NỔI BẬT</h3>
           </div>
+          <ul>
+            <li className="h-[85px] border-b-[1px] border-solid border-[#dadada] last:border-none mb-3">
+              <a
+                href=""
+                title="HTBC tham gia Hội nghị Xúc tiến và Kết nối đầu tư, kinh doanh"
+                className="flex justify-between text-[14px] "
+              >
+                HTBC tham gia Hội nghị Xúc tiến và Kết nối đầu tư, kinh doanh
+                <img
+                  className="ml-[20px]"
+                  src="https://doanhnhanthanhhoahanoi.com/assets/news/2022_11/screenshot-2022-11-24-145502.png"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li className="h-[85px] border-b-[1px] border-solid border-[#dadada] mb-3">
+              <a
+                href=""
+                title="HTBC tham gia Hội nghị Xúc tiến và Kết nối đầu tư, kinh doanh"
+                className="flex justify-between text-[14px] "
+              >
+                Doanh nhân Hội viên HTBC ủng hộ Quỹ Vì Người Nghèo Thành phố
+                <img
+                  className="ml-[20px]"
+                  src="https://doanhnhanthanhhoahanoi.com/assets/news/2022_11/screenshot-2022-11-24-145502.png"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li className="h-[85px]">
+              <a
+                href=""
+                title="HTBC tham gia Hội nghị Xúc tiến và Kết nối đầu tư, kinh doanh"
+                className="flex justify-between text-[14px] "
+              >
+                Doanh nhân Thanh Hóa - những người “truyền lửa” cho thế hệ trẻ
+                <img
+                  className="ml-[20px]"
+                  src="https://doanhnhanthanhhoahanoi.com/assets/news/2022_11/screenshot-2022-11-24-145502.png"
+                  alt=""
+                />
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="col-span-1">
-          <div>
+          <div className="flex items-center mb-4">
             <img
               src="https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-tittle-map.png"
               alt=""
             />
-            <h3 className="font-bold ml-2">TIN NỔI BẬT</h3>
+            <h3 className="font-bold ml-2">BẢN ĐỒ HÀNH CHÍNH</h3>
+          </div>
+          <div>
+            <img
+              src="https://doanhnhanthanhhoahanoi.com/uploads/banners/bandohc.jpg"
+              alt=""
+            />
           </div>
         </div>
       </div>
+      <Card />
     </div>
   );
 };

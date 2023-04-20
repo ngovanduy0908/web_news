@@ -198,12 +198,14 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <a
-              href="#"
+            <button
               className="w-8 h-8 rounded-full flex items-center bg-sky-500 text-white justify-center"
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
             >
               <BiUpArrow className="font-bold text-lg" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

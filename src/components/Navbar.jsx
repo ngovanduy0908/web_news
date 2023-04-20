@@ -3,7 +3,10 @@ import React from "react";
 import { IoHome, IoSearch } from "react-icons/io5";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import Introduction from "../page/Introduction";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
   useEffect(() => {
@@ -19,19 +22,27 @@ const Navbar = () => {
   }, [inputRef]);
   return (
     <div className="w-[1080px] m-auto">
-      <div className="  relative bg-[#0083eb] flex items-center justify-between">
+      <div className="  relative bg-[#0083eb] flex items-center justify-between z-10">
         <div className="menu-conner-left drop-shadow-xl"></div>
         <div className="menu-conner-right drop-shadow-xl"></div>
-        <ul className="flex items-center text-[#fff] uppercase text-[12px] font-bold">
+        <ul className="flex items-center  text-[#fff] uppercase text-[12px] font-bold">
           <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[14px] flex items-center">
+            <a
+              href="#"
+              className="h-[44px] px-[14px] flex items-center"
+              onClick={() => navigate("/")}
+            >
               <span>
                 <IoHome />
               </span>
             </a>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+            <a
+              onClick={() => navigate("/introduction")}
+              className="h-[44px] px-[10px] flex items-center cursor-pointer"
+              target="_blank"
+            >
               <span>Giới thiệu</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
@@ -43,6 +54,7 @@ const Navbar = () => {
                 <a
                   href=""
                   className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                  onClick={() => navigate("/introduction")}
                 >
                   Giới thiệu chung
                 </a>{" "}
@@ -52,6 +64,7 @@ const Navbar = () => {
                 <a
                   href=""
                   className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                  onClick={() => navigate("/regulations")}
                 >
                   điều lệ hoạt động
                 </a>{" "}
@@ -61,6 +74,7 @@ const Navbar = () => {
                 <a
                   href=""
                   className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                  onClick={() => navigate("/exCommittee")}
                 >
                   ban chấp hành
                 </a>{" "}
@@ -70,6 +84,7 @@ const Navbar = () => {
                 <a
                   href=""
                   className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                  onClick={() => navigate("/solution")}
                 >
                   giải pháp cho doanh nghiệp
                 </a>{" "}
@@ -77,7 +92,11 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+            <a
+              href="#"
+              className="h-[44px] px-[10px] flex items-center"
+              onClick={() => navigate("/incorporation")}
+            >
               <span>Cơ cấu tổ chức</span>
             </a>
           </li>
@@ -441,7 +460,9 @@ const Navbar = () => {
             </div>
           )}
         </div>
-
-
+      </div>
+    </div>
+  );
+};
 
 export default Navbar;

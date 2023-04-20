@@ -24,7 +24,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+h1 h2 h3 {
+  font-family: "Roboto Condensed";
+}
 
 .menu-conner-left {
   background: url(/public/assets/images/menu-left-blue.png);
@@ -46,10 +48,9 @@ code {
   width: 12px;
   background-repeat: no-repeat;
   background-size: auto;
-
+}
 .header_banner_img {
   background: url(../public/assets/images/banner_header.jpg);
-
 }
 
 .slick-next {
@@ -59,4 +60,14 @@ code {
 .slick-prev {
   left: 9px !important;
   z-index: 9;
+}
+
+.bgr_card {
+  margin: 20px 0;
+  line-height: 32px;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 40px;
+  background: url(https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-national-emblem.png);
+  background-repeat: no-repeat;
 }

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 const SliderPage = ({ slides }) => {
   return (
     <div>
-      <Slider autoplaySpeed={4000}>
+      <Slider autoplay={true} autoplaySpeed={3000}>
         {slides.map((slide) => (
           <div key={slide.id}>
             <img src={slide.img} alt={slide.caption} />
