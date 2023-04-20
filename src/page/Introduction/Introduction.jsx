@@ -6,9 +6,12 @@ import RightBar from "../../components/list/RightBar";
 import MenuIntroduction from "./MenuIntroduction";
 
 import Login from "../../Users/Login";
+import Breadcrumbs from "../../components/Breadcrumb";
 const Introduction = () => {
   return (
     <div className="bg-white p-7">
+      <Breadcrumbs title={"Giới Thiệu"} subtitle={"Điều Kiện Tham Gia"} />
+
       <div className="grid grid-cols-4 gap-3">
         <div className="px-3 py-4 col-span-3">
           <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import HomePage from "./page";
+
 import Introduction from "./page/Introduction/Introduction";
 import Regulations from "./page/Introduction/Regulations";
 import ExCommittee from "./page/Introduction/ExCommittee";

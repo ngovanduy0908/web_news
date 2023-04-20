@@ -1,4 +1,7 @@
 import React from "react";
+
+import Breadcrumbs from "../components/Breadcrumb";
+
 import { AiFillStar } from "react-icons/ai";
 
 import SliderPage from "../components/Slider";
