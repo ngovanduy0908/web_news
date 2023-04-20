@@ -3,7 +3,7 @@ import { AiFillHome, AiFillCaretRight } from "react-icons/ai";
 import "./breadcum.css";
 const Breadcrumbs = ({ title, subtitle, link, sublink }) => {
   return (
-    <div className=" inline-flex items-center gap-3 bg-[#ededef] text-[#515050] pl-4 pr-6 py-1  cursor-pointer relative">
+    <div className=" inline-flex items-center gap-3 bg-[#ededef] text-[#515050] pl-4 pr-6 py-2  cursor-pointer relative">
       <div>
         <AiFillHome className="w-3 h-3 hover:text-[#000]" />
       </div>
@@ -22,7 +22,7 @@ const Breadcrumbs = ({ title, subtitle, link, sublink }) => {
 
       <img
         src="https://doanhnhanthanhhoahanoi.com/themes/egov/images/breadcrumb.png"
-        className="absolute top-0 right-[-15px] h-[30px]"
+        className="absolute top-0 right-[-19px] h-[38px]"
       />
     </div>
   );
