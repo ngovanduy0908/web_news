@@ -4,7 +4,7 @@ import { IoHome, IoSearch } from "react-icons/io5";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import Introduction from "../page/Introduction";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -424,7 +424,10 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+            <a
+              onClick={() => navigate("/search")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Tìm Kiếm</span>
             </a>
           </li>
