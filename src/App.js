@@ -8,6 +8,9 @@ import ExCommittee from "./page/Introduction/ExCommittee";
 import Solution from "./page/Introduction/Solution";
 import Office from "./page/Incorporation/items/Office";
 import Incorporation from "./page/Incorporation/Incorporation";
+
+import LoginPage from "./page/login/LoginPage";
+
 import Oganize from "./page/Incorporation/items/Oganize";
 import DetailUser from "./page/Incorporation/items/DetailUser";
 import SearchPage from "./page/search";
@@ -24,6 +27,9 @@ function App() {
           <Route path="/exCommittee" element={<ExCommittee />} />
           <Route path="/solution" element={<Solution />} />
           <Route path="/incorporation" element={<Incorporation />} />
+
+          <Route path="/user/login" element={<LoginPage />} />
+
           <Route path="/oganize" element={<Oganize />} />
           <Route path="/detailUser" element={<DetailUser />} />
           <Route path="/office" element={<Office />} />
