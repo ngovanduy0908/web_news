@@ -1,10 +1,78 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { IoHome, IoSearch } from "react-icons/io5";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import NavbarArr from "./NavbarArr";
+
+const contentArr = [
+  [
+    {
+      href: "/people",
+    },
+    [
+      {
+        title: "Quyền lợi tham gia",
+        slug: "quyen-loi-tham-gia",
+      },
+      {
+        title: "Quyền lợi hội viên",
+        slug: "quyen-loi-hoi-voi",
+      },
+      {
+        title: "Hướng dẫn đăng ký",
+        slug: "huong-dan-dang-ky",
+      },
+      {
+        title: "Hội phí",
+        slug: "hoi-phi",
+      },
+    ],
+  ],
+  [
+    { href: "/news" },
+
+    [
+      {
+        title: "Tin hoạt động",
+        slug: "quyen-loi-tham-gia",
+      },
+      {
+        title: "chỉ đạo điều",
+        slug: "quyen-loi-hoi-voi",
+      },
+      {
+        title: "thông tin tuyên",
+        slug: "huong-dan-dang-ky",
+      },
+      {
+        title: "thông tin kinh",
+        slug: "hoi-phi",
+      },
+      {
+        title: "tin hội viên",
+        slug: "quyen-loi-tham-gia",
+      },
+      {
+        title: "tin doanh nhân",
+        slug: "quyen-loi-hoi-voi",
+      },
+      {
+        title: "tin xứ thanh",
+        slug: "huong-dan-dang-ky",
+      },
+      {
+        title: "tin kinh tế",
+        slug: "hoi-phi",
+      },
+      {
+        title: "tin pháp luật",
+        slug: "hoi-phi",
+      },
+    ],
+  ],
+];
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -104,32 +172,7 @@ const Navbar = () => {
                 <AiFillCaretDown />
               </span>
             </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block">
-                {" "}
-                <div className=" cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  Điều kiện tham gia
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className=" cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  quyền lợi hội viên
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  hướng dẫn đăng kí
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  hội phí
-                </div>{" "}
-              </li>
-            </ul>
+            <NavbarArr arr={contentArr[0]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div href="#" className="h-[44px] px-[10px] flex items-center">
@@ -138,7 +181,9 @@ const Navbar = () => {
                 <AiFillCaretDown />
               </span>
             </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            <NavbarArr arr={contentArr[1]} />
+
+            {/* <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
                 <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
@@ -193,7 +238,7 @@ const Navbar = () => {
                   tin pháp luật
                 </div>{" "}
               </li>
-            </ul>
+            </ul> */}
           </li>
           <li className="cursor-pointediv block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div href="#" className="h-[44px] px-[10px] flex items-center">
