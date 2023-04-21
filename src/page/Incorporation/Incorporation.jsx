@@ -1,9 +1,49 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 import RightBar from "../../components/list/RightBar";
+import Breadcrumbs from "../../components/Breadcrumb";
+
+const menuOffice = [
+  {
+    id: 1,
+    title: "Văn phòng",
+    href: "/office",
+  },
+  {
+    id: 2,
+    title: "Ban tổ chức",
+    href: "/office",
+  },
+  {
+    id: 3,
+    title: "Ban tuyên giáo",
+    href: "/office",
+  },
+  {
+    id: 4,
+    title: "Ban Dân vận",
+    href: "/office",
+  },
+  {
+    id: 5,
+    title: "Ủy ban kiểm tra",
+    href: "/office",
+  },
+  {
+    id: 6,
+    title: "Ban nội chính",
+    href: "/office",
+  },
+];
 const Incorporation = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const ulRef = useRef(null);
+  const handleClick = (item) => {
+    navigate(item.href, { state: { item } });
+  };
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ulRef.current && !ulRef.current.contains(event.target)) {
@@ -16,12 +56,19 @@ const Incorporation = () => {
     };
   }, [ulRef]);
   return (
-    <div>
-      <div className="bg-white pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
+    <div className="bg-white pt-6">
+      <Breadcrumbs title={"Cơ Cấu tổ chức"} />
+      <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
         <div className="px-5 pt-4  col-span-3 ">
           <div className="flex items-center justify-between">
-            <h2 className="text-[#0707CE] font-bold hover:opacity-70 hover:underline">
-              <a href="">Ban Tổ Chức</a>
+            <h2 className=" cursor-pointer text-[#0707CE] font-bold hover:opacity-70 hover:underline">
+              <div
+                onClick={() =>
+                  handleClick({ id: 7, title: "Ban tổ chức", href: "/oganize" })
+                }
+              >
+                Ban Tổ Chức
+              </div>
             </h2>
             <div className=" relative  ">
               <button
@@ -35,32 +82,16 @@ const Incorporation = () => {
               {open && (
                 <ul
                   ref={ulRef}
-                  className="w-[150px] bg-white z-20 drop-shadow-new text-sm py-3 border-[1px] border-solid border-[#ababab] rounded-xl absolute left-0"
+                  className=" cursor-pointer w-[150px] bg-white z-20 drop-shadow-new text-sm py-3 border-[1px] border-solid border-[#ababab] rounded-xl absolute left-0"
                 >
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Văn phòng</a>{" "}
-                  </li>
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Ban tổ chức</a>{" "}
-                  </li>
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Ban Tuyên giáo</a>{" "}
-                  </li>
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Ban Dân vận</a>{" "}
-                  </li>
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Ủy ban kiểm tra</a>{" "}
-                  </li>
-                  <li className="py-1 px-6 hover:bg-gray-100">
-                    {" "}
-                    <a href="">Ban nội chính</a>{" "}
-                  </li>
+                  {menuOffice.map((item) => (
+                    <li className="py-1 px-6 hover:bg-gray-100" key={item.id}>
+                      {" "}
+                      <div onClick={() => handleClick(item)}>
+                        {item.title}
+                      </div>{" "}
+                    </li>
+                  ))}
                 </ul>
               )}
             </div>
