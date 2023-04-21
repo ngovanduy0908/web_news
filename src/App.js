@@ -11,6 +11,7 @@ import Incorporation from "./page/Incorporation/Incorporation";
 import Oganize from "./page/Incorporation/items/Oganize";
 import DetailUser from "./page/Incorporation/items/DetailUser";
 import SearchPage from "./page/search";
+import People from "./page/People";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/oganize" element={<Oganize />} />
           <Route path="/detailUser" element={<DetailUser />} />
           <Route path="/office" element={<Office />} />
+          <Route path="/people" element={<People />} />
+
           <Route path="/search" element={<SearchPage />} />
         </Routes>
       </Layout>

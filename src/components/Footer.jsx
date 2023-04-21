@@ -15,29 +15,29 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-700 dark:text-gray-400 font-medium">
                 <li class="mb-1">
-                  <a href="#" class=" hover:underline">
+                  <div href="#" class=" hover:underline">
                     Sở Giáo Dục và Đào Tạo
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Sở khoa học và công nghệ
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Sở NN&PT Nông thôn
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Sở công thương
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Sở tài chính
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -47,29 +47,29 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-700 dark:text-gray-400 font-medium">
                 <li class="mb-1">
-                  <a href="#" class=" hover:underline">
+                  <div href="#" class=" hover:underline">
                     Bộ Nông Nghiệp
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Bộ Giáo Dục
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Bộ Tài Chính
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Bộ Giao thông vận tải
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Bộ Y tế
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -79,29 +79,29 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-700 dark:text-gray-400 font-medium">
                 <li class="mb-1">
-                  <a href="#" class=" hover:underline">
+                  <div href="#" class=" hover:underline">
                     Liên hiệp các hội KHKT
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     LH Các tổ chức hữu nghị
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Ngân hàng chính sách xã hội
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Đoàn thanh niên Việt Nam
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Hội tin học Việt Nam
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -112,29 +112,29 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-700 dark:text-gray-400 font-medium">
                 <li class="mb-1">
-                  <a href="#" class=" hover:underline">
+                  <div href="#" class=" hover:underline">
                     Đảng Cộng sản Việt Nam
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Cổng thông tin Chính Phủ
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Báo điện tử Chính phủ
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Thông tấn xã Việt Nam
-                  </a>
+                  </div>
                 </li>
                 <li class="mb-1">
-                  <a href="#" class="hover:underline">
+                  <div href="#" class="hover:underline">
                     Đài tiếng nói Việt Nam
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -151,7 +151,7 @@ const Footer = () => {
               <p>Điện thoại: 0982 885588</p>
               <p>Fax: 0982 885588</p>
               <p>
-                Email: <a href="#">hoidoanhnhanthanhhoa.hbta@gmail.com</a>
+                Email: <div href="#">hoidoanhnhanthanhhoa.hbta@gmail.com</div>
               </p>
             </div>
 
@@ -160,16 +160,16 @@ const Footer = () => {
                 © 2022&nbsp;- Bản quyền&nbsp;thuộc về Hội Doanh Nhân Thanh Hóa
                 tại Hà Nội.
                 <br />
-                <a href="">Điều khoản sử dụng</a>" | "
-                <a href="">Chính sách bảo mật (Quyền riêng tư)</a>
+                <div href="">Điều khoản sử dụng</div>" | "
+                <div href="">Chính sách bảo mật (Quyền riêng tư)</div>
               </div>
             </div>
 
             <div className="text-center">
               <p>
                 Powered by
-                <a href="">NukeViet eGovernment</a>. Designed by
-                <a href="">VINADES.,JSC</a>.
+                <div href="">NukeViet eGovernment</div>. Designed by
+                <div href="">VINADES.,JSC</div>.
               </p>
             </div>
           </div>
@@ -178,24 +178,24 @@ const Footer = () => {
       <div className="bg-gray-500 py-4">
         <div className="w-[1080px] m-auto flex  justify-between items-center">
           <div className="flex items-center">
-            <a
+            <div
               href="#"
               className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
             >
               <TbBrandStackshare className="font-bold text-lg" />
-            </a>
-            <a
+            </div>
+            <div
               href="#"
               className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
             >
               <BsLaptop className="font-bold text-lg" />
-            </a>
-            <a
+            </div>
+            <div
               href="#"
               className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
             >
-              <AiOutlineMobile className="font-bold text-lg" />
-            </a>
+              <diviOutlineMobile className="font-bold text-lg" />
+            </div>
           </div>
           <div>
             <button
