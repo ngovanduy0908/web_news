@@ -4,10 +4,13 @@ import Category from "../../components/list/Category";
 import RightBar from "../../components/list/RightBar";
 import Social from "./Social";
 import MenuIntroduction from "./MenuIntroduction";
+import Breadcrumbs from "../../components/Breadcrumb";
 const Regulations = () => {
   return (
-    <div className="bg-white p-7">
-      <div className="grid grid-cols-4 gap-3">
+    <div className="bg-white pt-6">
+      <Breadcrumbs title={"Giới Thiệu"} />
+
+      <div className="grid grid-cols-4 gap-3 p-7">
         <div className="px-3 py-4 col-span-3">
           <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">
             <h2 className="font-semibold text-[20px] mb-5">Giới thiệu chung</h2>

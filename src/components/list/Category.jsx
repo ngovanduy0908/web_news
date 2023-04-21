@@ -2,7 +2,7 @@ import React from "react";
 
 const Category = () => {
   return (
-    <div className="border-[1px] border-solid border-[#4f4f4f] rounded">
+    <div className="border-[1px] border-solid border-[#4f4f4f] rounded mb-3">
       <h2 className="px-3 py-2 bg-blue-500 text-white font-semibold text-lg uppercase">
         Danh mục
       </h2>

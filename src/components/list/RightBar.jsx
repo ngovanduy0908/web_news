@@ -6,7 +6,7 @@ import { IoMdFlash } from "react-icons/io";
 const RightBar = () => {
   return (
     <>
-      <div className="my-3">
+      <div className="mb-3">
         <a href="">
           <img
             src="https://doanhnhanthanhhoahanoi.com/uploads/banners/qc1.jpg"

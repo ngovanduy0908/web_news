@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { IoHome, IoSearch } from "react-icons/io5";
 import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import Introduction from "../page/Introduction";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -22,411 +23,326 @@ const Navbar = () => {
   }, [inputRef]);
   return (
     <div className="w-[1080px] m-auto">
-      <div className="  relative bg-[#0083eb] flex items-center justify-between z-10">
+      <div className="  relative bg-[#0083eb] flex items-center justify-between z-30">
         <div className="menu-conner-left drop-shadow-xl"></div>
         <div className="menu-conner-right drop-shadow-xl"></div>
         <ul className="flex items-center  text-[#fff] uppercase text-[12px] font-bold">
           <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a
-              href="#"
+            <div
               className="h-[44px] px-[14px] flex items-center"
               onClick={() => navigate("/")}
             >
               <span>
                 <IoHome />
               </span>
-            </a>
+            </div>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a
+            <div
               onClick={() => navigate("/introduction")}
               className="h-[44px] px-[10px] flex items-center cursor-pointer"
-              target="_blank"
             >
               <span>Giới thiệu</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                <div
+                  className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
                   onClick={() => navigate("/introduction")}
                 >
                   Giới thiệu chung
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                <div
+                  className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
                   onClick={() => navigate("/regulations")}
                 >
                   điều lệ hoạt động
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                <div
+                  className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
                   onClick={() => navigate("/exCommittee")}
                 >
                   ban chấp hành
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                <div
+                  className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
                   onClick={() => navigate("/solution")}
                 >
                   giải pháp cho doanh nghiệp
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a
-              href="#"
-              className="h-[44px] px-[10px] flex items-center"
+            <div
+              className="h-[44px] px-[10px] flex items-center cursor-pointer"
               onClick={() => navigate("/incorporation")}
             >
               <span>Cơ cấu tổ chức</span>
-            </a>
+            </div>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+            <div
+              href="#"
+              className="h-[44px] px-[10px] flex items-center cursor-pointer"
+            >
               <span>Hội Viên</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className=" cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   Điều kiện tham gia
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className=" cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   quyền lợi hội viên
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   hướng dẫn đăng kí
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   hội phí
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div href="#" className="h-[44px] px-[10px] flex items-center">
               <span>Tin Tức</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   Tin hoạt động
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   chỉ đạo điều hành
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   thông tin tuyên truyền
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   thông tin kinh tễ - xã hội
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   tin hội viên
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   tin doanh nhân
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   tin xứ thanh
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   tin kinh tế
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   tin pháp luật
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+          <li className="cursor-pointediv block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div href="#" className="h-[44px] px-[10px] flex items-center">
               <span>Giao Thương</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block ">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   doanh nghiệp liên kết
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   hợp tác đầu tư
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   xúc tiến thương mại
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px]  px-[10px] flex items-center">
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div className="h-[44px]  px-[10px] flex items-center">
               <span>Dự án</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   KHU VỰC TRUNG DU VÀ MIỀN NÚI PHÍA BẮC
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   KHU VỰC ĐỒNG BẰNG SÔNG HỒNG
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   KHU VỰC BẮC TRUNG BỘ
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   KHU VỰC DUYÊN HẢI MIỀN TRUNG
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px]  px-[10px] flex items-center">
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div href="#" className="h-[44px]  px-[10px] flex items-center">
               <span>Sự kiện</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   hội doanh nhân
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px]  px-[10px] flex items-center">
+            <div href="#" className="h-[44px]  px-[10px] flex items-center">
               <span>Thành Viên</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   Đăng nhập
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   đăng ký
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   khôi phục mật khẩu
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   thiết lập tài khoản
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   danh sách thành viên
-                </a>{" "}
+                </div>{" "}
               </li>
               <li>
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   thoát
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div className="h-[44px] px-[10px] flex items-center">
               <span>Liên hệ</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
-            </a>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[45px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+            </div>
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
               <li className="block">
                 {" "}
-                <a
-                  href=""
-                  className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
-                >
+                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
                   Ban biên tập Cổng thông tin điện tử Hội Doanh Nhân Thanh Hóa
                   Tại Hà Nội
-                </a>{" "}
+                </div>{" "}
               </li>
             </ul>
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <a href="#" className="h-[44px] px-[10px] flex items-center">
+            <div
+              onClick={() => navigate("/search")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Tìm Kiếm</span>
-            </a>
+            </div>
           </li>
         </ul>
         <div className=" relative">
