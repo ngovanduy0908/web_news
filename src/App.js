@@ -8,6 +8,7 @@ import ExCommittee from "./page/Introduction/ExCommittee";
 import Solution from "./page/Introduction/Solution";
 
 import Incorporation from "./page/Incorporation/Incorporation";
+import LoginPage from "./page/login/LoginPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/exCommittee" element={<ExCommittee />} />
           <Route path="/solution" element={<Solution />} />
           <Route path="/incorporation" element={<Incorporation />} />
+          <Route path="/user/login" element={<LoginPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
