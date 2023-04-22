@@ -13,19 +13,19 @@ const contentArr = [
     },
     [
       {
-        title: "Quyền lợi tham gia",
-        slug: "quyen-loi-tham-gia",
+        title: "Điều kiện tham gia",
+        slug: "dieu-kien-tham-gia",
       },
       {
-        title: "Quyền lợi hội viên",
-        slug: "quyen-loi-hoi-voi",
+        title: "Quyền lợi Hội Viên",
+        slug: "quyen-loi-hoi-vien",
       },
       {
         title: "Hướng dẫn đăng ký",
         slug: "huong-dan-dang-ky",
       },
       {
-        title: "Hội phí",
+        title: "Hội Phí",
         slug: "hoi-phi",
       },
     ],
@@ -36,39 +36,39 @@ const contentArr = [
     [
       {
         title: "Tin hoạt động",
-        slug: "quyen-loi-tham-gia",
+        slug: "tin-hoat-dong",
       },
       {
         title: "chỉ đạo điều",
-        slug: "quyen-loi-hoi-voi",
+        slug: "chi-dao-dieu",
       },
       {
         title: "thông tin tuyên",
-        slug: "huong-dan-dang-ky",
+        slug: "thong-tin-tuyen",
       },
       {
         title: "thông tin kinh",
-        slug: "hoi-phi",
+        slug: "thong-tin-kinh",
       },
       {
         title: "tin hội viên",
-        slug: "quyen-loi-tham-gia",
+        slug: "tin-hoi-viên",
       },
       {
         title: "tin doanh nhân",
-        slug: "quyen-loi-hoi-voi",
+        slug: "tin-doanh-nhan",
       },
       {
         title: "tin xứ thanh",
-        slug: "huong-dan-dang-ky",
+        slug: "tin-xu-thanh",
       },
       {
         title: "tin kinh tế",
-        slug: "hoi-phi",
+        slug: "tin-kinh-te",
       },
       {
         title: "tin pháp luật",
-        slug: "hoi-phi",
+        slug: "tin-phap-luat",
       },
     ],
   ],
