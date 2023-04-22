@@ -166,6 +166,7 @@ const Navbar = () => {
             <div
               href="#"
               className="h-[44px] px-[10px] flex items-center cursor-pointer"
+              onClick={() => navigate("/people")}
             >
               <span>Hội Viên</span>
               <span className="text-[12px] ml-[3px]">
