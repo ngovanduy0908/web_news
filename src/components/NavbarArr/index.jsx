@@ -6,7 +6,7 @@ const NavbarArr = ({ arr }) => {
   const href = arr[0].href;
 
   const handleClick = (item) => {
-    navigate(`${href}?slug=${item.slug}`, { state: { item } });
+    navigate(`${href}/${item.slug}`, { state: { item } });
   };
   return (
     <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">

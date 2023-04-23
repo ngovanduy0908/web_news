@@ -15,6 +15,7 @@ import Oganize from "./page/Incorporation/items/Oganize";
 import DetailUser from "./page/Incorporation/items/DetailUser";
 import SearchPage from "./page/search";
 import People from "./page/People";
+import PeopleDetail from "./page/People/PeopleDetail";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/detailUser" element={<DetailUser />} />
           <Route path="/office" element={<Office />} />
           <Route path="/people" element={<People />} />
+          <Route path="/people/:slug" element={<PeopleDetail />} />
 
           <Route path="/search" element={<SearchPage />} />
         </Routes>
