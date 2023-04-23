@@ -39,35 +39,35 @@ const contentArr = [
         slug: "tin-hoat-dong",
       },
       {
-        title: "chỉ đạo điều",
+        title: "Chỉ đạo điều",
         slug: "chi-dao-dieu",
       },
       {
-        title: "thông tin tuyên",
+        title: "Thông tin tuyên",
         slug: "thong-tin-tuyen",
       },
       {
-        title: "thông tin kinh",
+        title: "Thông tin kinh",
         slug: "thong-tin-kinh",
       },
       {
-        title: "tin hội viên",
+        title: "Tin hội viên",
         slug: "tin-hoi-viên",
       },
       {
-        title: "tin doanh nhân",
+        title: "Tin doanh nhân",
         slug: "tin-doanh-nhan",
       },
       {
-        title: "tin xứ thanh",
+        title: "Tin xứ thanh",
         slug: "tin-xu-thanh",
       },
       {
-        title: "tin kinh tế",
+        title: "Tin kinh tế",
         slug: "tin-kinh-te",
       },
       {
-        title: "tin pháp luật",
+        title: "Tin pháp luật",
         slug: "tin-phap-luat",
       },
     ],
@@ -176,7 +176,10 @@ const Navbar = () => {
             <NavbarArr arr={contentArr[0]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px] px-[10px] flex items-center">
+            <div
+              onClick={() => navigate("/news")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Tin Tức</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
