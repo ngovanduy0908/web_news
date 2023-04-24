@@ -8,8 +8,10 @@ import { MdKey } from "react-icons/md";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
@@ -37,6 +39,7 @@ const LoginPage = () => {
   };
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
+    window.scrollTo(0, 0);
   }, [user]);
 
   // console.log(user);
@@ -97,7 +100,10 @@ const LoginPage = () => {
                 </div>
 
                 <ul className="flex justify-center gap-3 mt-3 text-[13px]">
-                  <li className="flex items-center cursor-pointer">
+                  <li
+                    className="flex items-center cursor-pointer"
+                    onClick={() => navigate("/user/register")}
+                  >
                     <BsFillCaretRightFill />
                     <span>Đăng ký</span>
                   </li>
