@@ -13,19 +13,19 @@ const contentArr = [
     },
     [
       {
-        title: "Quyền lợi tham gia",
-        slug: "quyen-loi-tham-gia",
+        title: "Điều kiện tham gia",
+        slug: "dieu-kien-tham-gia",
       },
       {
-        title: "Quyền lợi hội viên",
-        slug: "quyen-loi-hoi-voi",
+        title: "Quyền lợi Hội Viên",
+        slug: "quyen-loi-hoi-vien",
       },
       {
         title: "Hướng dẫn đăng ký",
         slug: "huong-dan-dang-ky",
       },
       {
-        title: "Hội phí",
+        title: "Hội Phí",
         slug: "hoi-phi",
       },
     ],
@@ -36,39 +36,39 @@ const contentArr = [
     [
       {
         title: "Tin hoạt động",
-        slug: "quyen-loi-tham-gia",
+        slug: "tin-hoat-dong",
       },
       {
-        title: "chỉ đạo điều",
-        slug: "quyen-loi-hoi-voi",
+        title: "Chỉ đạo điều",
+        slug: "chi-dao-dieu",
       },
       {
-        title: "thông tin tuyên",
-        slug: "huong-dan-dang-ky",
+        title: "Thông tin tuyên",
+        slug: "thong-tin-tuyen",
       },
       {
-        title: "thông tin kinh",
-        slug: "hoi-phi",
+        title: "Thông tin kinh",
+        slug: "thong-tin-kinh",
       },
       {
-        title: "tin hội viên",
-        slug: "quyen-loi-tham-gia",
+        title: "Tin hội viên",
+        slug: "tin-hoi-viên",
       },
       {
-        title: "tin doanh nhân",
-        slug: "quyen-loi-hoi-voi",
+        title: "Tin doanh nhân",
+        slug: "tin-doanh-nhan",
       },
       {
-        title: "tin xứ thanh",
-        slug: "huong-dan-dang-ky",
+        title: "Tin xứ thanh",
+        slug: "tin-xu-thanh",
       },
       {
-        title: "tin kinh tế",
-        slug: "hoi-phi",
+        title: "Tin kinh tế",
+        slug: "tin-kinh-te",
       },
       {
-        title: "tin pháp luật",
-        slug: "hoi-phi",
+        title: "Tin pháp luật",
+        slug: "tin-phap-luat",
       },
     ],
   ],
@@ -206,7 +206,10 @@ const Navbar = () => {
             <NavbarArr arr={contentArr[0]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px] px-[10px] flex items-center">
+            <div
+              onClick={() => navigate("/news")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Tin Tức</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
