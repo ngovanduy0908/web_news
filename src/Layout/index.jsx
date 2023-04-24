@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <div className="h-[44px] bg-[#007fe4] absolute top-[174px] w-[calc((100%-1080px)/2)]"></div>
       <div className="h-[44px] bg-[#007fe4] absolute top-[174px] w-[calc((100%-1080px)/2)] right-0"></div>
       <Navbar />
-      <main className="w-[1080px] m-auto drop-shadow-new rounded-b-2xl overflow-hidden">
+      <main className="w-[1080px] m-auto drop-shadow-new rounded-b-2xl">
         {children}
       </main>
       <div className="w-[1080px] m-auto drop-shadow-new">

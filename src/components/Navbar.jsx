@@ -72,6 +72,50 @@ const contentArr = [
       },
     ],
   ],
+  [
+    {
+      href: "/trade",
+    },
+    [
+      {
+        title: "Doanh nghiệp liên kết",
+        slug: "doanh-nghiep-lien-ket",
+      },
+      {
+        title: "Hợp tác đầu tư",
+        slug: "hop-tac-dau-tu",
+      },
+      {
+        title: "Xúc tiến thương mại",
+        slug: "xuc-tien-thuong-mai",
+      },
+      ,
+    ],
+  ],
+  [
+    {
+      href: "/projects-page",
+    },
+    [
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+      {
+        title: "Khu vực Đồng bằng sông Hồng",
+        slug: "khu-vuc-dong-bang-song-hong",
+      },
+      {
+        title: "Khu vực Bắc Trung Bộ",
+        slug: "khu-vuc-bac-trung-bo",
+      },
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+      ,
+    ],
+  ],
 ];
 
 const Navbar = () => {
@@ -244,67 +288,29 @@ const Navbar = () => {
               </li>
             </ul> */}
           </li>
-          <li className="cursor-pointediv block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px] px-[10px] flex items-center">
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              onClick={() => navigate("/trade")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Giao Thương</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
             </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block ">
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  doanh nghiệp liên kết
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  hợp tác đầu tư
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  xúc tiến thương mại
-                </div>{" "}
-              </li>
-            </ul>
+            <NavbarArr arr={contentArr[2]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div className="h-[44px]  px-[10px] flex items-center">
+            <div
+              onClick={() => navigate("/projects-page")}
+              className="h-[44px]  px-[10px] flex items-center"
+            >
               <span>Dự án</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
             </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block">
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  KHU VỰC TRUNG DU VÀ MIỀN NÚI PHÍA BẮC
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  KHU VỰC ĐỒNG BẰNG SÔNG HỒNG
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  KHU VỰC BẮC TRUNG BỘ
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  KHU VỰC DUYÊN HẢI MIỀN TRUNG
-                </div>{" "}
-              </li>
-            </ul>
+            <NavbarArr arr={contentArr[3]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div href="#" className="h-[44px]  px-[10px] flex items-center">
@@ -369,7 +375,10 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div className="h-[44px] px-[10px] flex items-center">
+            <div
+              onClick={() => navigate("/contact-page")}
+              className="h-[44px] px-[10px] flex items-center"
+            >
               <span>Liên hệ</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
