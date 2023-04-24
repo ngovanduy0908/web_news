@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LayoutLoginPage from "../../Layout/LayoutLoginPage";
 import { useForm } from "react-hook-form";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { GrPowerReset } from "react-icons/gr";
 import Modal from "../../components/Modal/Modal";
+import { useNavigate } from "react-router-dom";
+import generateCaptcha from "../../uitls";
 const RegisterPage = () => {
   const {
     register,
@@ -13,26 +15,21 @@ const RegisterPage = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
   const password = watch("password");
+  const [captcha, setCaptcha] = useState(generateCaptcha);
 
   const onSubmit = (data) => console.log(watch(data));
   const [open, setOpen] = useState(false);
-  function generate() {
-    var uniquechar = "";
 
-    const randomchar =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const resetCaptcha = (data) => {
+    setCaptcha(generateCaptcha);
+    reset(data.checkCaptcha);
+  };
 
-    for (let i = 1; i < 7; i++) {
-      uniquechar += randomchar.charAt(Math.random() * randomchar.length);
-    }
-
-    return uniquechar;
-  }
   const resetFields = () => {
     reset();
   };
-  generate();
   return (
     <div>
       <LayoutLoginPage
@@ -48,7 +45,7 @@ const RegisterPage = () => {
               placeholder="Họ và tên đệm"
               className={`w-full outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-sm shadow-lg`}
             />
-            {/* errors will return when field validation fails  */}
+
             {errors.firstName && (
               <span className="text-sm text-red-500">
                 {errors.firstName.message}
@@ -288,27 +285,34 @@ const RegisterPage = () => {
             />
           </div>
 
-          <div className="mt-4 flex items-center justify-center gap-8">
-            <div>
-              <img
-                src="https://doanhnhanthanhhoahanoi.com/index.php?scaptcha=captcha&t=1682323339"
-                alt=""
-              />
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="flex items-center">
+              <div className="wrapper">
+                <h2 className="title">{captcha}</h2>
+              </div>
+              <button type="button" className="ml-3" onClick={resetCaptcha}>
+                <GrPowerReset />
+              </button>
             </div>
-            <div className="flex items-center justify-center gap-2 relative">
-              <GrPowerReset onClick={generate} />
-              <span>
-                <input
-                  type="text"
-                  placeholder="Mã bảo mật"
-                  className={`w-full outline-none h-full px-3 py-2 mt-2 my-[8px] text-[13px] border-[1px] border-[#ccc] rounded-sm shadow-lg`}
-                />
-              </span>
-              <span className=" text-red-600 text-[18px] absolute top-[50%] right-[30px] translate-y-[-30%]">
+            <div className="inline relative">
+              <input
+                type="text"
+                className=" rounded-xl text-sm"
+                {...register("checkCaptcha", {
+                  required: "Bạn chưa nhập mã",
+                })}
+                placeholder="Mã bảo mật"
+              />
+              <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
                 *
               </span>
             </div>
           </div>
+          {errors.checkCaptcha && (
+            <span className="text-sm text-red-500">
+              {errors.checkCaptcha.message}
+            </span>
+          )}
 
           <div className="text-center text-[13px] mt-3">
             <button
@@ -331,9 +335,12 @@ const RegisterPage = () => {
           </div>
 
           <ul className="flex justify-start gap-3 mt-3 text-[13px]">
-            <li className="flex items-center cursor-pointer">
+            <li
+              className="flex items-center cursor-pointer"
+              onClick={() => navigate("/user/login")}
+            >
               <BsFillCaretRightFill />
-              <span>Đăng ký</span>
+              <span>Đăng nhập</span>
             </li>
             <li className="flex items-center cursor-pointer">
               <BsFillCaretRightFill />
@@ -350,24 +357,34 @@ const RegisterPage = () => {
               Để trở thành thành viên, bạn phải cam kết đồng ý với các điều
               khoản dưới đây. Chúng tôi có thể thay đổi lại những điều khoản này
               vào bất cứ lúc nào và chúng tôi sẽ cố gắng thông báo đến bạn kịp
-              thời. Bạn cam kết không gửi bất cứ bài viết có nội dung lừa đảo,
-              thô tục, thiếu văn hoá; vu khống, khiêu khích, đe doạ người khác;
-              liên quan đến các vấn đề tình dục hay bất cứ nội dung nào vi phạm
-              luật pháp của quốc gia mà bạn đang sống, luật pháp của quốc gia
-              nơi đặt máy chủ của website này hay luật pháp quốc tế. Nếu vẫn cố
-              tình vi phạm, ngay lập tức bạn sẽ bị cấm tham gia vào website. Địa
-              chỉ IP của tất cả các bài viết đều được ghi nhận lại để bảo vệ các
-              điều khoản cam kết này trong trường hợp bạn không tuân thủ. Bạn
-              đồng ý rằng website có quyền gỡ bỏ, sửa, di chuyển hoặc khoá bất
-              kỳ bài viết nào trong website vào bất cứ lúc nào tuỳ theo nhu cầu
-              công việc. Đăng ký làm thành viên của chúng tôi, bạn cũng phải
-              đồng ý rằng, bất kỳ thông tin cá nhân nào mà bạn cung cấp đều được
-              lưu trữ trong cơ sở dữ liệu của hệ thống. Mặc dù những thông tin
-              này sẽ không được cung cấp cho bất kỳ người thứ ba nào khác mà
-              không được sự đồng ý của bạn, chúng tôi không chịu trách nhiệm về
-              việc những thông tin cá nhân này của bạn bị lộ ra bên ngoài từ
-              những kẻ phá hoại có ý đồ xấu tấn công vào cơ sở dữ liệu của hệ
-              thống.
+              thời.
+              <br />
+              <br />
+              <br />
+              Bạn cam kết không gửi bất cứ bài viết có nội dung lừa đảo, thô
+              tục, thiếu văn hoá; vu khống, khiêu khích, đe doạ người khác; liên
+              quan đến các vấn đề tình dục hay bất cứ nội dung nào vi phạm luật
+              pháp của quốc gia mà bạn đang sống, luật pháp của quốc gia nơi đặt
+              máy chủ của website này hay luật pháp quốc tế. Nếu vẫn cố tình vi
+              phạm, ngay lập tức bạn sẽ bị cấm tham gia vào website. Địa chỉ IP
+              của tất cả các bài viết đều được ghi nhận lại để bảo vệ các điều
+              khoản cam kết này trong trường hợp bạn không tuân thủ.
+              <br />
+              <br />
+              <br />
+              Bạn đồng ý rằng website có quyền gỡ bỏ, sửa, di chuyển hoặc khoá
+              bất kỳ bài viết nào trong website vào bất cứ lúc nào tuỳ theo nhu
+              cầu công việc.
+              <br />
+              <br />
+              <br />
+              Đăng ký làm thành viên của chúng tôi, bạn cũng phải đồng ý rằng,
+              bất kỳ thông tin cá nhân nào mà bạn cung cấp đều được lưu trữ
+              trong cơ sở dữ liệu của hệ thống. Mặc dù những thông tin này sẽ
+              không được cung cấp cho bất kỳ người thứ ba nào khác mà không được
+              sự đồng ý của bạn, chúng tôi không chịu trách nhiệm về việc những
+              thông tin cá nhân này của bạn bị lộ ra bên ngoài từ những kẻ phá
+              hoại có ý đồ xấu tấn công vào cơ sở dữ liệu của hệ thống.
             </p>
           </Modal>
         </form>
