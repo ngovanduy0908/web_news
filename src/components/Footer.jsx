@@ -194,7 +194,7 @@ const Footer = () => {
               href="#"
               className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
             >
-              <diviOutlineMobile className="font-bold text-lg" />
+              <AiOutlineMobile className="font-bold text-lg" />
             </div>
           </div>
           <div>

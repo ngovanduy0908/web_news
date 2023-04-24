@@ -16,9 +16,19 @@ import DetailUser from "./page/Incorporation/items/DetailUser";
 import SearchPage from "./page/search";
 import People from "./page/People";
 import PeopleDetail from "./page/People/PeopleDetail";
+
 import UserAuth from "./page/login";
 import RegisterPage from "./page/login/RegisterPage";
 import NotFound from "./page/NotFound";
+
+import NewsPage from "./page/News";
+import NewDetail from "./page/News/NewDetail";
+
+import TradePage from "./page/Trade";
+import DetailTrade from "./page/Trade/DetailTrade";
+import ProjectPage from "./page/ProjectsPage";
+import DetailProjectPage from "./page/ProjectsPage/DetailProjectPage";
+import ContactPage from "./page/Contact";
 
 function App() {
   return (
@@ -42,8 +52,22 @@ function App() {
           <Route path="/office" element={<Office />} />
           <Route path="/people" element={<People />} />
           <Route path="/people/:slug" element={<PeopleDetail />} />
+
           <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<NotFound />} />
+
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:slug" element={<NewDetail />} />
+
+          <Route path="/trade" element={<TradePage />} />
+          <Route path="/trade/:slug" element={<DetailTrade />} />
+
+          <Route path="/projects-page" element={<ProjectPage />} />
+          <Route path="/projects-page/:slug" element={<DetailProjectPage />} />
+
+          <Route path="/projects-page" element={<ProjectPage />} />
+
+          <Route path="/contact-page" element={<ContactPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

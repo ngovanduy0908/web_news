@@ -13,7 +13,7 @@ const NavbarArr = ({ arr }) => {
       {arr[1].map((item, idx) => (
         <li key={idx} onClick={() => handleClick(item)}>
           {" "}
-          <div className=" cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+          <div className=" cursor-pointer truncate block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
             {item.title}
           </div>{" "}
         </li>
