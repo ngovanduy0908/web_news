@@ -19,6 +19,12 @@ import PeopleDetail from "./page/People/PeopleDetail";
 import NewsPage from "./page/News";
 import NewDetail from "./page/News/NewDetail";
 
+import TradePage from "./page/Trade";
+import DetailTrade from "./page/Trade/DetailTrade";
+import ProjectPage from "./page/ProjectsPage";
+import DetailProjectPage from "./page/ProjectsPage/DetailProjectPage";
+import ContactPage from "./page/Contact";
+
 function App() {
   return (
     <BrowserRouter>
@@ -42,7 +48,15 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:slug" element={<NewDetail />} />
 
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/trade" element={<TradePage />} />
+          <Route path="/trade/:slug" element={<DetailTrade />} />
+
+          <Route path="/projects-page" element={<ProjectPage />} />
+          <Route path="/projects-page/:slug" element={<DetailProjectPage />} />
+
+          <Route path="/projects-page" element={<ProjectPage />} />
+
+          <Route path="/contact-page" element={<ContactPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
