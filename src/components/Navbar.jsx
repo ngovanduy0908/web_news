@@ -73,23 +73,52 @@ const contentArr = [
     ],
   ],
   [
-    {
-      href: "/trade",
-    },
+    { href: "/user" },
+
     [
       {
-        title: "Doanh nghiệp liên kết",
-        slug: "doanh-nghiep-lien-ket",
+        title: "Đăng nhập",
+        slug: "login",
       },
       {
-        title: "Hợp tác đầu tư",
-        slug: "hop-tac-dau-tu",
+        title: "Đăng ký",
+        slug: "register",
       },
       {
-        title: "Xúc tiến thương mại",
-        slug: "xuc-tien-thuong-mai",
+        title: "Khôi phục mật khẩu",
+        slug: "huong-dan-dang-ky",
       },
-      ,
+      {
+        title: "Thiết lập tài khoản",
+        slug: "hoi-phi",
+      },
+      {
+        title: "Danh sách thành viên",
+        slug: "quyen-loi-tham-gia",
+      },
+      {
+        title: "Thoát",
+        slug: "quyen-loi-hoi-voi",
+      },
+
+      {
+        href: "/trade",
+      },
+      [
+        {
+          title: "Doanh nghiệp liên kết",
+          slug: "doanh-nghiep-lien-ket",
+        },
+        {
+          title: "Hợp tác đầu tư",
+          slug: "hop-tac-dau-tu",
+        },
+        {
+          title: "Xúc tiến thương mại",
+          slug: "xuc-tien-thuong-mai",
+        },
+        ,
+      ],
     ],
   ],
   [
@@ -230,63 +259,6 @@ const Navbar = () => {
               </span>
             </div>
             <NavbarArr arr={contentArr[1]} />
-
-            {/* <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block">
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  Tin hoạt động
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  chỉ đạo điều hành
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  thông tin tuyên truyền
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  thông tin kinh tễ - xã hội
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  tin hội viên
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  tin doanh nhân
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  tin xứ thanh
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  tin kinh tế
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  tin pháp luật
-                </div>{" "}
-              </li>
-            </ul> */}
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
@@ -335,44 +307,7 @@ const Navbar = () => {
                 <AiFillCaretDown />
               </span>
             </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block">
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  Đăng nhập
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  đăng ký
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  khôi phục mật khẩu
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  thiết lập tài khoản
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  danh sách thành viên
-                </div>{" "}
-              </li>
-              <li>
-                {" "}
-                <div className="block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  thoát
-                </div>{" "}
-              </li>
-            </ul>
+            <NavbarArr arr={contentArr[2]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
