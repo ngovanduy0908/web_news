@@ -3,8 +3,10 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaFacebookF, FaRss } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Layout = ({ children }) => {
+  const navigate = useNavigate();
   return (
     <div className="relative">
       <div className="fixed right-0 top-[300px]">
@@ -60,13 +62,13 @@ const Layout = ({ children }) => {
               <span>Lấy ý kiến dự thảo văn bản</span>
             </a>
           </div>
-          <div className="">
+          <div className="" onClick={() => navigate("/page")}>
             <img
               src="https://doanhnhanthanhhoahanoi.com/uploads/menu/duong-day-nong.png"
               alt=""
               className="float-left"
             />
-            <a
+            <span
               href=""
               className=" uppercase rounded rounded-l-xl bg-[#10bcff] text-[14px] font-bold block text-center leading-[20px] text-[#fff] font-['Roboto_Condensed']"
             >
@@ -74,9 +76,9 @@ const Layout = ({ children }) => {
               <span className="inline-block text-[10px]">
                 Sở/ Ban ngành/ Quận/ Huyện
               </span>
-            </a>
+            </span>
           </div>
-          <div className="">
+          <div className="" onClick={() => navigate("/page")}>
             <img
               src="https://doanhnhanthanhhoahanoi.com/uploads/menu/chi-dan-thu-tuc.png"
               alt=""

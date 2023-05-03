@@ -29,6 +29,7 @@ import DetailTrade from "./page/Trade/DetailTrade";
 import ProjectPage from "./page/ProjectsPage";
 import DetailProjectPage from "./page/ProjectsPage/DetailProjectPage";
 import ContactPage from "./page/Contact";
+
 import LostPage from "./page/login/LostPage";
 import UserEdit from "./page/login/UserEdit";
 import Basic from "./page/userInfo/Basic";
@@ -46,6 +47,9 @@ import Group from "./page/userInfo/Group";
 import SafeMode from "./page/userInfo/SafeMode";
 import UserInfo from "./page/userInfo/UserInfo";
 import Test from "./components/Test";
+
+import Page from "./page/Page";
+
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -118,6 +122,7 @@ function App() {
           <Route path="/projects-page" element={<ProjectPage />} />
 
           <Route path="/contact-page" element={<ContactPage />} />
+          <Route path="/page" element={<Page />} />
         </Routes>
       </Layout>
     </BrowserRouter>
