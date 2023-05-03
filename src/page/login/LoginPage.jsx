@@ -28,6 +28,7 @@ const LoginPage = () => {
   const handleLoginWithFB = () => {
     signInWithPopup(auth, providerFB).then((data) => {
       setUser(data.user);
+      login(data.user);
     });
   };
   const handleLogout = () => {
