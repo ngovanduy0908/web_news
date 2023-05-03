@@ -18,23 +18,23 @@ const DetailUser = () => {
               </h2>
             </div>
             <div className="p-4">
-              <div class="relative ">
-                <table class="w-full border-collapse border border-slate-200 text-sm text-left text-[#333]">
+              <div className="relative ">
+                <table className="w-full border-collapse border border-slate-200 text-sm text-left text-[#333]">
                   <colgroup>
                     <col className="w-[200px]" />
                   </colgroup>
                   <tbody>
-                    <tr class="bg-white border-b">
+                    <tr className="bg-white border-b">
                       <td
                         rowSpan={3}
-                        class=" border-collapse border border-slate-500 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        className=" border-collapse border border-slate-500 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
                         <img src="" alt="" className="max-w-[80px]" />
                       </td>
-                      <td class="px-3 py-2 border-collapse border border-slate-500">
+                      <td className="px-3 py-2 border-collapse border border-slate-500">
                         Họ tên
                       </td>
-                      <td class="px-3 py-2 border-collapse border border-slate-500">
+                      <td className="px-3 py-2 border-collapse border border-slate-500">
                         Nguyễn Hùng Dũng
                       </td>
                     </tr>

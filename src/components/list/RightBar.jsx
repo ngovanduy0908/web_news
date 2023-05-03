@@ -1,8 +1,9 @@
 import React from "react";
 import { MdOutlineCalendarToday } from "react-icons/md";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaUser } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
 import { IoMdFlash } from "react-icons/io";
+import { RiCustomerService2Fill } from "react-icons/ri";
 const RightBar = () => {
   return (
     <>
@@ -45,28 +46,42 @@ const RightBar = () => {
         <ul className="p-2 text-[14px] text-[#333]">
           <li className="flex items-center justify-between py-2">
             <span className="flex items-center ">
-              <IoMdFlash className="text-[18px]" />
+              <IoMdFlash className="text-[18px] mr-1" />
               Đang truy cập
             </span>
             <span>1</span>
           </li>
           <li className="flex items-center justify-between py-2">
             <span className="flex items-center ">
-              <FaFilter className="text-[18px]" />
+              <FaUser className="text-[18px] mr-1" />
+              Thành viên online
+            </span>
+            <span>1</span>
+          </li>
+          <li className="flex items-center justify-between py-2">
+            <span className="flex items-center ">
+              <RiCustomerService2Fill className="text-[18px] mr-1" />
+              Khách
+            </span>
+            <span>1</span>
+          </li>
+          <li className="flex items-center justify-between py-2">
+            <span className="flex items-center ">
+              <FaFilter className="text-[18px] mr-1" />
               Hôm nay
             </span>
             <span>20</span>
           </li>
           <li className="flex items-center justify-between py-2">
             <span className="flex items-center ">
-              <MdOutlineCalendarToday className="text-[18px]" />
+              <MdOutlineCalendarToday className="text-[18px] mr-1" />
               Tháng hiện tại
             </span>
             <span>461</span>
           </li>
           <li className="flex items-center justify-between py-2">
             <span className="flex items-center ">
-              <HiMenu className="text-[18px]" />
+              <HiMenu className="text-[18px] mr-1" />
               Tổng lượt truy cập
             </span>
             <span>4,282</span>

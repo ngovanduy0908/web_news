@@ -1,13 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap")
-  repeat scroll 0 0 rgba(0, 0, 0, 0);
+/* @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap")
+  repeat scroll 0 0 rgba(0, 0, 0, 0); */
+
 .footer {
   background: #d5d5d5
     url(https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-footer.png)
     center center no-repeat;
-  background-size: contain;
+  position: relative;
 }
 
 body {
@@ -27,6 +28,13 @@ code {
 }
 h1 h2 h3 {
   font-family: "Roboto Condensed";
+}
+
+.input_select input {
+  outline: none !important;
+  outline-offset: 0 !important;
+  /* background-color: aquamarine !important; */
+  --tw-ring-shadow: none !important;
 }
 
 .menu-conner-left {
@@ -51,7 +59,7 @@ h1 h2 h3 {
   background-size: auto;
 }
 .header_banner_img {
-  background: url(../public/assets/images/banner_header.jpg);
+  background: url(/public/assets/images/banner_header.jpg);
 }
 
 .slick-next {

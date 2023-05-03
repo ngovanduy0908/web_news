@@ -59,7 +59,7 @@ function ContactPage() {
             tôi sẽ phản hồi lại Quý khách trong thời gian sớm nhất.
           </p>
         </div>
-        <div className="grid grid-cols-5 gap-4 py-4 px-2">
+        <div className="grid laptop:grid-cols-5 desktop:grid-cols-5 phone:grid-cols-2 tablet:grid-cols-2 gap-4 py-4 px-2">
           <div className=" col-span-3 rounded border-[#cccccc] border-solid border-[1px]">
             <div>
               <h2 className=" rounded font-bold text-[16px] bg-slate-200 py-2 px-3">
@@ -445,17 +445,17 @@ function ContactPage() {
           </div>
         </div>
         {open && (
-          <div class="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] max-h-full">
-            <div class="relative w-full max-w-md max-h-full m-auto">
-              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 drop-shadow-new">
+          <div className="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div className="relative w-full max-w-md max-h-full m-auto">
+              <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 drop-shadow-new">
                 <button
                   type="button"
-                  class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                  className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
                   onClick={() => setOpen(false)}
                 >
                   <svg
                     aria-hidden="true"
-                    class="w-5 h-5"
+                    className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -466,17 +466,17 @@ function ContactPage() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span class="sr-only">Close modal</span>
+                  <span className="sr-only">Close modal</span>
                 </button>
-                <div class="px-6 py-6 lg:px-8">
-                  <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+                <div className="px-6 py-6 lg:px-8">
+                  <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">
                     Sign in to our platform
                   </h3>
-                  <form class="space-y-6" action="#">
+                  <form className="space-y-6" action="#">
                     <div>
                       <label
                         htmlFor="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Your email
                       </label>
@@ -484,7 +484,7 @@ function ContactPage() {
                         type="email"
                         name="email"
                         id="email"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         placeholder="name@company.com"
                         required
                       />
@@ -492,7 +492,7 @@ function ContactPage() {
                     <div>
                       <label
                         htmlFor="password"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Your password
                       </label>
@@ -501,46 +501,46 @@ function ContactPage() {
                         name="password"
                         id="password"
                         placeholder="••••••••"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         required
                       />
                     </div>
-                    <div class="flex justify-between">
-                      <div class="flex items-start">
-                        <div class="flex items-center h-5">
+                    <div className="flex justify-between">
+                      <div className="flex items-start">
+                        <div className="flex items-center h-5">
                           <input
                             id="remember"
                             type="checkbox"
                             value=""
-                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                            className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
                             required
                           />
                         </div>
                         <label
                           htmlFor="remember"
-                          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                          className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
                           Remember me
                         </label>
                       </div>
                       <a
                         href="#"
-                        class="text-sm text-blue-700 hover:underline dark:text-blue-500"
+                        className="text-sm text-blue-700 hover:underline dark:text-blue-500"
                       >
                         Lost Password?
                       </a>
                     </div>
                     <button
                       type="submit"
-                      class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Login to your account
                     </button>
-                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                    <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                       Not registered?{" "}
                       <a
                         href="#"
-                        class="text-blue-700 hover:underline dark:text-blue-500"
+                        className="text-blue-700 hover:underline dark:text-blue-500"
                       >
                         Create account
                       </a>

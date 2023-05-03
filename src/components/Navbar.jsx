@@ -1,10 +1,11 @@
 import React from "react";
-
+import NavbarArr from "./NavbarArr";
 import { IoHome, IoSearch } from "react-icons/io5";
-import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import NavbarArr from "./NavbarArr";
+
+import { AiFillCaretDown } from "react-icons/ai";
+import SideBar from "./Sidebar";
 
 const contentArr = [
   [
@@ -72,6 +73,50 @@ const contentArr = [
       },
     ],
   ],
+
+  [
+    {
+      href: "/trade",
+    },
+    [
+      {
+        title: "Doanh nghiệp liên kết",
+        slug: "doanh-nghiep-lien-ket",
+      },
+      {
+        title: "Hợp tác đầu tư",
+        slug: "hop-tac-dau-tu",
+      },
+      {
+        title: "Xúc tiến thương mại",
+        slug: "xuc-tien-thuong-mai",
+      },
+    ],
+  ],
+
+  [
+    {
+      href: "/projects-page",
+    },
+    [
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+      {
+        title: "Khu vực Đồng bằng sông Hồng",
+        slug: "khu-vuc-dong-bang-song-hong",
+      },
+      {
+        title: "Khu vực Bắc Trung Bộ",
+        slug: "khu-vuc-bac-trung-bo",
+      },
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+    ],
+  ],
   [
     { href: "/user" },
 
@@ -100,49 +145,6 @@ const contentArr = [
         title: "Thoát",
         slug: "quyen-loi-hoi-voi",
       },
-
-      {
-        href: "/trade",
-      },
-      [
-        {
-          title: "Doanh nghiệp liên kết",
-          slug: "doanh-nghiep-lien-ket",
-        },
-        {
-          title: "Hợp tác đầu tư",
-          slug: "hop-tac-dau-tu",
-        },
-        {
-          title: "Xúc tiến thương mại",
-          slug: "xuc-tien-thuong-mai",
-        },
-        ,
-      ],
-    ],
-  ],
-  [
-    {
-      href: "/projects-page",
-    },
-    [
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-      {
-        title: "Khu vực Đồng bằng sông Hồng",
-        slug: "khu-vuc-dong-bang-song-hong",
-      },
-      {
-        title: "Khu vực Bắc Trung Bộ",
-        slug: "khu-vuc-bac-trung-bo",
-      },
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-      ,
     ],
   ],
 ];
@@ -163,14 +165,14 @@ const Navbar = () => {
     };
   }, [inputRef]);
   return (
-    <div className="w-[1080px] m-auto">
-      <div className="  relative bg-[#0083eb] flex items-center justify-between z-30">
+    <div className="max-w-[1080px] m-auto">
+      <div className=" laptop:flex desktop:flex tablet:flex phone:hidden relative bg-[#0083eb] flex items-center justify-between z-30">
         <div className="menu-conner-left drop-shadow-xl"></div>
         <div className="menu-conner-right drop-shadow-xl"></div>
-        <ul className="flex items-center  text-[#fff] uppercase text-[12px] font-bold">
-          <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+        <ul className="flex items-center  text-[#fff] uppercase desktop:text-[12px] laptop:text-[12px] tablet:text-[7px] font-bold">
+          <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA] tablet:text-[12px]">
             <div
-              className="h-[44px] px-[14px] flex items-center"
+              className="laptop:h-[44px] laptop:text-[16px] laptop:px-4 desktop:px-4 desktop:text-[18px] tablet:h-[40px] px-[14px] tablet:px-[8px] flex items-center"
               onClick={() => navigate("/")}
             >
               <span>
@@ -181,7 +183,7 @@ const Navbar = () => {
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/introduction")}
-              className="h-[44px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
             >
               <span>Giới thiệu</span>
               <span className="text-[12px] ml-[3px]">
@@ -229,7 +231,7 @@ const Navbar = () => {
           </li>
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
-              className="h-[44px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
               onClick={() => navigate("/incorporation")}
             >
               <span>Cơ cấu tổ chức</span>
@@ -238,7 +240,7 @@ const Navbar = () => {
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               href="#"
-              className="h-[44px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
               onClick={() => navigate("/people")}
             >
               <span>Hội Viên</span>
@@ -251,7 +253,7 @@ const Navbar = () => {
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/news")}
-              className="h-[44px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
             >
               <span>Tin Tức</span>
               <span className="text-[12px] ml-[3px]">
@@ -263,7 +265,7 @@ const Navbar = () => {
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/trade")}
-              className="h-[44px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
             >
               <span>Giao Thương</span>
               <span className="text-[12px] ml-[3px]">
@@ -275,7 +277,7 @@ const Navbar = () => {
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/projects-page")}
-              className="h-[44px]  px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
             >
               <span>Dự án</span>
               <span className="text-[12px] ml-[3px]">
@@ -285,7 +287,10 @@ const Navbar = () => {
             <NavbarArr arr={contentArr[3]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px]  px-[10px] flex items-center">
+            <div
+              href="#"
+              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+            >
               <span>Sự kiện</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
@@ -300,19 +305,22 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px]  px-[10px] flex items-center">
+          <li className="block group cursor-pointer relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              href="#"
+              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+            >
               <span>Thành Viên</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
             </div>
-            <NavbarArr arr={contentArr[2]} />
+            <NavbarArr arr={contentArr[4]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/contact-page")}
-              className="h-[44px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
             >
               <span>Liên hệ</span>
               <span className="text-[12px] ml-[3px]">
@@ -332,7 +340,7 @@ const Navbar = () => {
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/search")}
-              className="h-[44px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
             >
               <span>Tìm Kiếm</span>
             </div>
@@ -349,17 +357,17 @@ const Navbar = () => {
           </span>
           {isOpen && (
             <div
-              class="w-[400px] bg-slate-100 absolute group-active:block left-[-360px] bottom-[-60px] py-[10px] px-[10px]"
+              className="w-[400px] bg-slate-100 absolute group-active:block left-[-360px] bottom-[-60px] py-[10px] px-[10px]"
               ref={inputRef}
             >
-              <div class="sm:col-span-12">
+              <div className="sm:col-span-12">
                 <div className="relative">
                   <input
                     type="text"
                     name="first-name"
                     id="first-name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md border-0 py-1.5 pr-8 text-[#555555] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-[#66afe9] sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 pr-8 text-[#555555] shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-[#66afe9] sm:text-sm sm:leading-6"
                   />
                   <span className=" absolute right-[10px] top-[10px] text-[16px] text-[#0256f4]">
                     <IoSearch />
@@ -369,6 +377,9 @@ const Navbar = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className=" laptop:hidden desktop:hidden phone:block tablet:block">
+        <SideBar />
       </div>
     </div>
   );

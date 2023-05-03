@@ -7,99 +7,99 @@ const Footer = () => {
   return (
     <>
       <footer className=" dark:bg-gray-900 footer pb-4">
-        <div className="mx-auto  max-w-screen-xl w-[1080px]">
-          <div className="grid grid-cols-2 gap-8 px-4 pb-6 pt-4 lg:pb-8 lg:pt-4 md:grid-cols-4">
+        <div className="mx-auto max-w-[1080px]">
+          <div className="grid grid-cols-4 gap-8 px-4 pb-6 pt-2 lg:pb-8 lg:pt-4 phone:grid-cols-2 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4">
             <div>
-              <h2 class="mb-10 font-semibold text-gray-700 dark:text-white uppercase text-xl">
+              <h2 className="mb-7 font-semibold text-gray-700 dark:text-white uppercase text-xl">
                 Sở / Ban Ngành
               </h2>
-              <ul class="text-gray-700 dark:text-gray-400 font-medium">
-                <li class="mb-1">
-                  <div href="#" class=" hover:underline">
+              <ul className="text-gray-700 dark:text-gray-400 font-medium">
+                <li className="mb-1">
+                  <div href="#" className=" hover:underline">
                     Sở Giáo Dục và Đào Tạo
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Sở khoa học và công nghệ
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Sở NN&PT Nông thôn
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Sở công thương
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Sở tài chính
                   </div>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-10  font-semibold text-gray-700 dark:text-white uppercase text-xl">
+              <h2 className="mb-7  font-semibold text-gray-700 dark:text-white uppercase text-xl">
                 Bộ / Ngành
               </h2>
-              <ul class="text-gray-700 dark:text-gray-400 font-medium">
-                <li class="mb-1">
-                  <div href="#" class=" hover:underline">
+              <ul className="text-gray-700 dark:text-gray-400 font-medium">
+                <li className="mb-1">
+                  <div href="#" className=" hover:underline">
                     Bộ Nông Nghiệp
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Bộ Giáo Dục
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Bộ Tài Chính
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Bộ Giao thông vận tải
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Bộ Y tế
                   </div>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-10  font-semibold text-gray-700 dark:text-white uppercase text-xl">
+              <h2 className="mb-7  font-semibold text-gray-700 dark:text-white uppercase text-xl">
                 ĐOÀN HỘI
               </h2>
-              <ul class="text-gray-700 dark:text-gray-400 font-medium">
-                <li class="mb-1">
-                  <div href="#" class=" hover:underline">
+              <ul className="text-gray-700 dark:text-gray-400 font-medium">
+                <li className="mb-1">
+                  <div href="#" className=" hover:underline">
                     Liên hiệp các hội KHKT
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     LH Các tổ chức hữu nghị
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Ngân hàng chính sách xã hội
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Đoàn thanh niên Việt Nam
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Hội tin học Việt Nam
                   </div>
                 </li>
@@ -107,32 +107,32 @@ const Footer = () => {
             </div>
 
             <div>
-              <h2 class="mb-10  font-semibold text-gray-700 dark:text-white uppercase text-xl">
+              <h2 className="mb-7  font-semibold text-gray-700 dark:text-white uppercase text-xl">
                 LIÊN KẾT WEBSITE
               </h2>
-              <ul class="text-gray-700 dark:text-gray-400 font-medium">
-                <li class="mb-1">
-                  <div href="#" class=" hover:underline">
+              <ul className="text-gray-700 dark:text-gray-400 font-medium">
+                <li className="mb-1">
+                  <div href="#" className=" hover:underline">
                     Đảng Cộng sản Việt Nam
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Cổng thông tin Chính Phủ
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Báo điện tử Chính phủ
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Thông tấn xã Việt Nam
                   </div>
                 </li>
-                <li class="mb-1">
-                  <div href="#" class="hover:underline">
+                <li className="mb-1">
+                  <div href="#" className="hover:underline">
                     Đài tiếng nói Việt Nam
                   </div>
                 </li>
@@ -140,7 +140,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="px-4 pt-6  text-gray-700">
+          <div className="px-4 pt-6  text-gray-700">
             <div className="text-center">
               <span className="uppercase text-xl">
                 <strong>
@@ -150,33 +150,36 @@ const Footer = () => {
               </span>
               <p>Điện thoại: 0982 885588</p>
               <p>Fax: 0982 885588</p>
-              <p>
-                Email: <div href="#">hoidoanhnhanthanhhoa.hbta@gmail.com</div>
-              </p>
+              <div>
+                Email:{" "}
+                <p className="inline">hoidoanhnhanthanhhoa.hbta@gmail.com</p>
+              </div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center cursor-pointer">
               <div className="text-center">
                 © 2022&nbsp;- Bản quyền&nbsp;thuộc về Hội Doanh Nhân Thanh Hóa
                 tại Hà Nội.
                 <br />
-                <div href="">Điều khoản sử dụng</div>" | "
-                <div href="">Chính sách bảo mật (Quyền riêng tư)</div>
+                <div className="flex items-center justify-center">
+                  <div href="">Điều khoản sử dụng</div> |
+                  <div href="">Chính sách bảo mật (Quyền riêng tư)</div>
+                </div>
               </div>
             </div>
 
             <div className="text-center">
-              <p>
+              <div>
                 Powered by
-                <div href="">NukeViet eGovernment</div>. Designed by
-                <div href="">VINADES.,JSC</div>.
-              </p>
+                <p className="inline">NukeViet eGovernment</p>. Designed by
+                <p className="inline">VINADES.,JSC</p>.
+              </div>
             </div>
           </div>
         </div>
       </footer>
       <div className="bg-gray-500 py-4">
-        <div className="w-[1080px] m-auto flex  justify-between items-center">
+        <div className="max-w-[1080px] m-auto flex  justify-between items-center">
           <div className="flex items-center">
             <div
               href="#"
