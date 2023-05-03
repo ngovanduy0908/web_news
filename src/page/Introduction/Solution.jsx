@@ -18,7 +18,11 @@ const Solution = () => {
             <h2 className="font-semibold text-[20px] mb-5">
               Giải pháp cho doanh nghiệp
             </h2>
-            <Social />
+            <Social
+              url={
+                "https://doanhnhanthanhhoahanoi.com/vi/about/Giai-phap-cho-Doanh-nghiep.html"
+              }
+            />
             <h3>Giải pháp cho doanh nghiệp</h3>
           </div>
           <Login />

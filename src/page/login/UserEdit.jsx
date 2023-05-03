@@ -16,6 +16,11 @@ const arrContent = [
 const UserEdit = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
+  const logOut = () => {
+    alert("Tài khoản của bạn sẽ đăng xuất?");
+    localStorage.setItem("user", null);
+    window.location.reload();
+  };
   return (
     <div>
       <h3 className="mt-5 mb-4 font-bold text-[19px]">Thiết lập tài khoản</h3>
@@ -43,7 +48,7 @@ const UserEdit = () => {
           <BsFillCaretRightFill />
           <span>Thông tin thành viên</span>
         </li>
-        <li className="flex items-center cursor-pointer">
+        <li className="flex items-center cursor-pointer" onClick={logOut}>
           <BsFillCaretRightFill />
           <span>Thoát</span>
         </li>

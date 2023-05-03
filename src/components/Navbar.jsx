@@ -120,57 +120,6 @@ const contentArr = [
     ],
   ],
   [
-    {
-      href: "/trade",
-    },
-    [
-      {
-        title: "Doanh nghiệp liên kết",
-        slug: "doanh-nghiep-lien-ket",
-      },
-      {
-        title: "Hợp tác đầu tư",
-        slug: "hop-tac-dau-tu",
-      },
-      {
-        title: "Xúc tiến thương mại",
-        slug: "xuc-tien-thuong-mai",
-      },
-
-      {
-        title: "Thiết lập tài khoản",
-        slug: "hoi-phi",
-      },
-      {
-        title: "Danh sách thành viên",
-        slug: "quyen-loi-tham-gia",
-      },
-    ],
-  ],
-  [
-    {
-      href: "/projects-page",
-    },
-    [
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-      {
-        title: "Khu vực Đồng bằng sông Hồng",
-        slug: "khu-vuc-dong-bang-song-hong",
-      },
-      {
-        title: "Khu vực Bắc Trung Bộ",
-        slug: "khu-vuc-bac-trung-bo",
-      },
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-    ],
-  ],
-  [
     { href: "/user" },
 
     [
@@ -200,6 +149,29 @@ const contentArr = [
       },
     ],
   ],
+  [
+    {
+      href: "/projects-page",
+    },
+    [
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+      {
+        title: "Khu vực Đồng bằng sông Hồng",
+        slug: "khu-vuc-dong-bang-song-hong",
+      },
+      {
+        title: "Khu vực Bắc Trung Bộ",
+        slug: "khu-vuc-bac-trung-bo",
+      },
+      {
+        title: "Khu vực Duyên hải miền Trung",
+        slug: "khu-vuc-duyen-hai-mien-trung",
+      },
+    ],
+  ],
 ];
 
 const Navbar = () => {
@@ -220,9 +192,9 @@ const Navbar = () => {
   return (
     <div className="max-w-[1080px] m-auto">
       <div className=" laptop:flex desktop:flex tablet:flex phone:hidden relative bg-[#0083eb] flex items-center justify-between z-30">
-        <div className=" desktop:flex laptop:flex mobile:hidden iphone:hidden  relative bg-[#0083eb]  items-center justify-between z-30">
-          <div className="menu-conner-left drop-shadow-xl"></div>
-          <div className="menu-conner-right drop-shadow-xl"></div>
+        <div className="menu-conner-left drop-shadow-xl"></div>
+        <div className="menu-conner-right drop-shadow-xl"></div>
+        <div className=" desktop:flex laptop:flex mobile:hidden iphone:hidden relative bg-[#0083eb]  items-center justify-between z-30">
           <ul className="flex items-center  text-[#fff] uppercase desktop:text-[12px] laptop:text-[12px] tablet:text-[7px] font-bold">
             <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA] tablet:text-[12px]">
               <div

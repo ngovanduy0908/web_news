@@ -16,7 +16,11 @@ const Introduction = () => {
         <div className="px-3 py-4 laptop:col-span-3 desktop:col-span-3 tablet:col-span-4 phone:col-span-4 ">
           <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">
             <h2 className="font-semibold text-[20px] mb-5">Giới thiệu chung</h2>
-            <Social />
+            <Social
+              url={
+                "https://doanhnhanthanhhoahanoi.com/vi/about/Gioi-thieu-chung.html"
+              }
+            />
             <p>
               Trân trọng kính mời các ACE Doanh nhân Thanh Hoá tại Hà Nội đến
               tham dự Đại hội nhiệm kỳ V (2022-2027) và Hội nghị xúc tiến kết
