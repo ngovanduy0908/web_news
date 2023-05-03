@@ -7,6 +7,16 @@ module.exports = {
       tablet: "768px",
       laptop: "992px",
       desktop: "1280px",
+
+      iphone: "360px",
+      tablet: "768px",
+      // => @media (min-width: 640px) { ... }
+
+      laptop: "992px",
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: "1280px",
+      // => @media (min-width: 1280px) { ... }
     },
     fontFamily: {
       regu: ['"Times New Roman"', '"Times"', "serif"],
