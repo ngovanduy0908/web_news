@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { auth, provider, providerFB } from "./config";
 import { signInWithPopup, signOut } from "firebase/auth";
@@ -9,15 +9,19 @@ import { BsFillCaretRightFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+  // console.log("vao day: ", login);
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
   const handleLogin = () => {
     signInWithPopup(auth, provider).then((data) => {
       setUser(data.user);
+      login(data.user);
     });
   };
 

@@ -2,6 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
   theme: {
+    screens: {
+      iphone: "360px",
+      tablet: "768px",
+      // => @media (min-width: 640px) { ... }
+
+      laptop: "992px",
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: "1280px",
+      // => @media (min-width: 1280px) { ... }
+    },
     fontFamily: {
       regu: ['"Times New Roman"', '"Times"', "serif"],
     },

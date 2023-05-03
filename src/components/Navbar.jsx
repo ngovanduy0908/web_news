@@ -5,6 +5,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavbarArr from "./NavbarArr";
+import Test from "./Test";
 
 const contentArr = [
   [
@@ -73,52 +74,22 @@ const contentArr = [
     ],
   ],
   [
-    { href: "/user" },
-
+    {
+      href: "/trade",
+    },
     [
       {
-        title: "Đăng nhập",
-        slug: "login",
+        title: "Doanh nghiệp liên kết",
+        slug: "doanh-nghiep-lien-ket",
       },
       {
-        title: "Đăng ký",
-        slug: "register",
+        title: "Hợp tác đầu tư",
+        slug: "hop-tac-dau-tu",
       },
       {
-        title: "Khôi phục mật khẩu",
-        slug: "huong-dan-dang-ky",
+        title: "Xúc tiến thương mại",
+        slug: "xuc-tien-thuong-mai",
       },
-      {
-        title: "Thiết lập tài khoản",
-        slug: "hoi-phi",
-      },
-      {
-        title: "Danh sách thành viên",
-        slug: "quyen-loi-tham-gia",
-      },
-      {
-        title: "Thoát",
-        slug: "quyen-loi-hoi-voi",
-      },
-
-      {
-        href: "/trade",
-      },
-      [
-        {
-          title: "Doanh nghiệp liên kết",
-          slug: "doanh-nghiep-lien-ket",
-        },
-        {
-          title: "Hợp tác đầu tư",
-          slug: "hop-tac-dau-tu",
-        },
-        {
-          title: "Xúc tiến thương mại",
-          slug: "xuc-tien-thuong-mai",
-        },
-        ,
-      ],
     ],
   ],
   [
@@ -142,7 +113,36 @@ const contentArr = [
         title: "Khu vực Duyên hải miền Trung",
         slug: "khu-vuc-duyen-hai-mien-trung",
       },
-      ,
+    ],
+  ],
+  [
+    { href: "/user" },
+
+    [
+      {
+        title: "Đăng nhập",
+        slug: "login",
+      },
+      {
+        title: "Đăng ký",
+        slug: "register",
+      },
+      {
+        title: "Khôi phục mật khẩu",
+        slug: "lostpass",
+      },
+      {
+        title: "Thiết lập tài khoản",
+        slug: "editinfo",
+      },
+      {
+        title: "Danh sách thành viên",
+        slug: "",
+      },
+      {
+        title: "Thoát",
+        slug: "quyen-loi-hoi-voi",
+      },
     ],
   ],
 ];
@@ -163,8 +163,8 @@ const Navbar = () => {
     };
   }, [inputRef]);
   return (
-    <div className="w-[1080px] m-auto">
-      <div className="  relative bg-[#0083eb] flex items-center justify-between z-30">
+    <div className="max-w-[1080px] m-auto">
+      <div className=" desktop:flex laptop:flex mobile:hidden iphone:hidden  relative bg-[#0083eb]  items-center justify-between z-30">
         <div className="menu-conner-left drop-shadow-xl"></div>
         <div className="menu-conner-right drop-shadow-xl"></div>
         <ul className="flex items-center  text-[#fff] uppercase text-[12px] font-bold">
@@ -300,14 +300,18 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div href="#" className="h-[44px]  px-[10px] flex items-center">
+          <li className="block group cursor-pointer relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              href="#"
+              className="h-[44px]  px-[10px] flex items-center"
+              onClick={() => navigate("/user")}
+            >
               <span>Thành Viên</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
             </div>
-            <NavbarArr arr={contentArr[2]} />
+            <NavbarArr arr={contentArr[4]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
@@ -329,7 +333,7 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+          <li className="block group relative cursor-pointer hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/search")}
               className="h-[44px] px-[10px] flex items-center"

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { AiFillLike } from "react-icons/ai";
+import ShareFaceBook from "../../components/ShareSocial/ShareFaceBook";
 
 const Social = () => {
   return (
@@ -13,7 +14,11 @@ const Social = () => {
         </a>
       </li>
       <li className="inline-block px-2 bg-blue-500 text-white rounded hover:opacity-80">
-        <a href="">Chia sẻ</a>
+        <ShareFaceBook
+          title="Giới thiệu chung"
+          description="doanhnhanthanhhoahanoi"
+          url="https://doanhnhanthanhhoahanoi.com/vi/about/"
+        />
       </li>
     </ul>
   );
