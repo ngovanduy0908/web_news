@@ -10,7 +10,7 @@ function ShareTwitter(props) {
       title={title}
       hashtags={["nguoihaiduongtoi", "nguoihanamtoi"]}
     >
-      Share on Twitter
+      Twitter
     </TwitterShareButton>
   );
 }

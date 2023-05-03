@@ -14,7 +14,11 @@ const Regulations = () => {
         <div className="px-3 py-4 laptop:col-span-3 desktop:col-span-3 tablet:col-span-4 phone:col-span-4">
           <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">
             <h2 className="font-semibold text-[20px] mb-5">Giới thiệu chung</h2>
-            <Social />
+            <Social
+              url={
+                "https://doanhnhanthanhhoahanoi.com/vi/about/Dieu-le-hoat-dong.html"
+              }
+            />
             <div className="leading-[1.7em] mb-3">
               <p className="text-center">
                 <span className="text-[14px]">

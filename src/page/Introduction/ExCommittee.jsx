@@ -15,7 +15,11 @@ const ExCommittee = () => {
         <div className="px-3 py-4 laptop:col-span-3 desktop:col-span-3 tablet:col-span-4 phone:col-span-4">
           <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">
             <h2 className="font-semibold text-[20px] mb-5">Ban chấp hành</h2>
-            <Social />
+            <Social
+              url={
+                "https://doanhnhanthanhhoahanoi.com/vi/about/Ban-chap-hanh.html"
+              }
+            />
             <h3>Danh sách ban chấp hành</h3>
           </div>
           <Login />

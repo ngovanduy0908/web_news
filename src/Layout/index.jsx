@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
       <div className="max-w-[1080px] m-auto drop-shadow-new phone:hidden laptop:block desktop:block">
         <Feedback />
 
-        <div className="w-[1080px] m-auto drop-shadow-new">
+        {/* <div className="w-[1080px] m-auto drop-shadow-new">
           <div className="grid grid-cols-4 gap-3 rounded-t-xl p-6 bg-white mt-3">
             <div className="">
               <img
@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
         <Footer />
       </div>
     </div>
