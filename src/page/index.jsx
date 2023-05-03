@@ -22,15 +22,15 @@ const slides = [
 ];
 const HomePage = () => {
   return (
-    <div className="w-[1080px] m-auto drop-shadow-new">
+    <div className="max-w-[1080px] m-auto drop-shadow-new">
       <SliderPage slides={slides} />
       <div className="rounded-b-xl bg-white grid grid-cols-5 relative top-[-5px] gap-4 px-[14px] py-8">
-        <div className="col-span-2">
-          <div className="bg-gray-200 w-[110%]">
+        <div className="desktop:col-span-2 phone:col-span-5 laptop:col-span-2">
+          <div className="bg-gray-200 w-[110%] phone:w-full">
             <img
               src="https://doanhnhanthanhhoahanoi.com/data/tmp/news_17_197d0083412t2690l8-2_320-0.jpg"
               alt=""
-              className="m-auto w-[90%] h-[215px]"
+              className="m-auto phone:m-auto w-[90%] h-[215px]"
             />
           </div>
           <div>
@@ -50,7 +50,7 @@ const HomePage = () => {
             </span>
           </div>
         </div>
-        <div className="col-span-2 pl-14 pr-8">
+        <div className="desktop:col-span-2 pl-14 pr-8 phone:hidden laptop:col-span-2 desktop:block laptop:block">
           <div className="flex items-center bg-sky-500 text-white p-2 mb-3">
             <AiFillStar />
             <h3 className="font-bold ml-2">TIN NỔI BẬT</h3>
@@ -100,7 +100,7 @@ const HomePage = () => {
             </li>
           </ul>
         </div>
-        <div className="col-span-1">
+        <div className="desktop:col-span-1 desktop:block phone:hidden laptop:col-span-1 laptop:block">
           <div className="flex items-center mb-4">
             <img
               src="https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-tittle-map.png"

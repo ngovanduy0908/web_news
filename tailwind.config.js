@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
   theme: {
     screens: {
+      phone: "360px",
+      tablet: "768px",
+      laptop: "992px",
+      desktop: "1280px",
+
       iphone: "360px",
       tablet: "768px",
       // => @media (min-width: 640px) { ... }
@@ -26,5 +31,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("./node_modules/flowbite/plugin")],
+  corePlugins: {
+    ringOffsetWidth: false,
+    ringOffsetColor: false,
+  },
 };

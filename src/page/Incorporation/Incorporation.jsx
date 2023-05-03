@@ -59,7 +59,7 @@ const Incorporation = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"Cơ Cấu tổ chức"} />
       <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
-        <div className="px-5 pt-4  col-span-3 ">
+        <div className="px-5 pt-4 laptop:col-span-3 desktop:col-span-3 tablet:col-span-4 phone:col-span-4 ">
           <div className="flex items-center justify-between">
             <h2 className=" cursor-pointer text-[#0707CE] font-bold hover:opacity-70 hover:underline">
               <div
@@ -70,7 +70,7 @@ const Incorporation = () => {
                 Ban Tổ Chức
               </div>
             </h2>
-            <div className=" relative  ">
+            <div className=" relative phone:hidden laptop:block desktop:block tablet:hidden ">
               <button
                 className="px-2 py-1 hover:bg-gray-100 border-[1px] border-[#838383] rounded"
                 onClick={() => {
@@ -97,51 +97,51 @@ const Incorporation = () => {
             </div>
           </div>
 
-          <div class="relative overflow-x-auto mt-4">
-            <table class="table-auto border border-collapse w-full text-center border-[#dddddd] text-sm text-gray-500 dark:text-gray-400">
-              <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
+          <div className="relative overflow-x-auto mt-4">
+            <table className="table-auto border border-collapse w-full text-center border-[#dddddd] text-sm text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
                 <tr>
                   <th
                     scope="col"
-                    class="px-6 py-3 border border-collapse border-[#dddddd]"
+                    className="px-6 py-3 border border-collapse border-[#dddddd]"
                   >
                     STT
                   </th>
                   <th
                     scope="col"
-                    class=" border border-collapse border-[#dddddd] px-6 py-3"
+                    className=" border border-collapse border-[#dddddd] px-6 py-3"
                   >
                     Họ tên
                   </th>
                   <th
                     scope="col"
-                    class=" border border-collapse border-[#dddddd] px-6 py-3"
+                    className=" border border-collapse border-[#dddddd] px-6 py-3"
                   >
                     Chức danh chính
                   </th>
                   <th
                     scope="col"
-                    class=" border border-collapse border-[#dddddd] px-6 py-3"
+                    className=" border border-collapse border-[#dddddd] px-6 py-3"
                   >
                     Ảnh
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -151,20 +151,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -174,20 +174,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -197,20 +197,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -220,20 +220,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -243,20 +243,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -266,20 +266,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -289,20 +289,20 @@ const Incorporation = () => {
                     </a>
                   </td>
                 </tr>
-                <tr class="bg-white dark:bg-gray-800">
+                <tr className="bg-white dark:bg-gray-800">
                   <th
                     scope="row"
-                    class="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 border border-collapse border-[#dddddd] font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
                     1
                   </th>
-                  <td class="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
+                  <td className="px-6 py-4 text-[#0707CE] border border-collapse border-[#dddddd] font-bold hover:opacity-70 hover:underline">
                     <a href="">Nguyễn Hùng Dũng</a>
                   </td>
-                  <td class=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" text-[#333] border border-collapse border-[#dddddd] px-6 py-4">
                     <strong>Chủ tịch - Trưởng ban</strong>
                   </td>
-                  <td class=" border border-collapse border-[#dddddd] px-6 py-4">
+                  <td className=" border border-collapse border-[#dddddd] px-6 py-4">
                     <a href="">
                       <img
                         src="https://doanhnhanthanhhoahanoi.com/themes/default/images/organs/no-avatar.jpg"
@@ -316,7 +316,7 @@ const Incorporation = () => {
             </table>
           </div>
         </div>
-        <div>
+        <div className="phone:hidden laptop:block desktop:block tablet:hidden">
           <RightBar />
         </div>
       </div>

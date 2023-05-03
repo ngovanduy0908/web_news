@@ -1,31 +1,38 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { BiRss } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
-    <div className="w-[1080px] m-auto relative drop-shadow-new">
+    <div className="max-w-[1080px] m-auto relative drop-shadow-new">
       <div className="w-full h-[30px] bg-[#1f9cf8]">
         <ul className="flex float-right text-[#fff] text-[12px] justify-center items-center pt-[7px] mx-[10px]">
-          <li className="inline-block px-[5px] border-r-[1px] border-r-[#fff] relative">
-            <a href="#" title="Thành viên" className="text-[16px]">
+          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] relative">
+            <div href="#" title="Thành viên" className="text-[16px]">
               <FaUser />
-            </a>
+            </div>
           </li>
-          <li className="inline-block px-[5px] border-r-[1px] border-r-[#fff]">
-            <a href="#" title="RSS" className="text-[16px]">
+          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff]">
+            <div
+              onClick={() => navigate("/feeds")}
+              href="#"
+              title="RSS"
+              className="text-[16px]"
+            >
               <BiRss />
-            </a>
+            </div>
           </li>
-          <li className="inline-block px-[5px] border-r-[1px] border-r-[#fff] hover:text-[#0256f4]">
-            <a href="#" title="Sơ đồ cổng">
+          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] hover:text-[#0256f4]">
+            <div onClick={() => navigate("/feeds")} href="#" title="Sơ đồ cổng">
               <span>Sơ đồ cổng</span>
-            </a>
+            </div>
           </li>
-          <li className="inline-block px-[5px] hover:text-[#0256f4]">
-            <a href="#" title="Liên kết">
+          <li className=" cursor-pointer inline-block px-[5px] hover:text-[#0256f4]">
+            <div href="#" title="Liên kết">
               <span>Liên kết</span>
-            </a>
+            </div>
           </li>
         </ul>
       </div>
