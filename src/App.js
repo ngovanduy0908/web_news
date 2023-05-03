@@ -24,6 +24,7 @@ import DetailTrade from "./page/Trade/DetailTrade";
 import ProjectPage from "./page/ProjectsPage";
 import DetailProjectPage from "./page/ProjectsPage/DetailProjectPage";
 import ContactPage from "./page/Contact";
+import Page from "./page/Page";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path="/projects-page" element={<ProjectPage />} />
 
           <Route path="/contact-page" element={<ContactPage />} />
+          <Route path="/page" element={<Page />} />
         </Routes>
       </Layout>
     </BrowserRouter>
