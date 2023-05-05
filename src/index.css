@@ -118,3 +118,15 @@ h1 h2 h3 {
     font-size: 12px;
   }
 }
+
+.Crop-Controls {
+  margin-bottom: 10px;
+}
+.Crop-Controls > * {
+  margin-bottom: 3px;
+}
+
+.ReactCrop__child-wrapper {
+  width: 100%;
+  height: 100%;
+}
