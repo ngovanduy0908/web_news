@@ -3,7 +3,7 @@ import Select from "react-select";
 
 const SelectSearch = ({ options, label, forId }) => {
   // const [test, setTest] = useState(options);
-  console.log("vao day", options[0].value);
+  // console.log("vao day", options[0].value);
 
   return (
     <div className="mt-3">

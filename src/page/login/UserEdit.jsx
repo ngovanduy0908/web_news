@@ -13,6 +13,12 @@ const arrContent = [
   { title: "Chế độ an toàn", slug: "safe-mode" },
 ];
 
+const logOut = () => {
+  //confirm("Are you sure you want to log out?");
+  localStorage.setItem("user", null);
+  window.location.reload();
+};
+
 const UserEdit = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(0);

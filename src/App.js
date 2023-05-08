@@ -134,7 +134,7 @@ function App() {
           <Route path="/contact-page" element={<ContactPage />} />
 
           <Route path="/feedbackPage" element={<FeedbackPage />} />
-          <Route path="/detailsFeedback" element={<DetailFeedback />} />
+          <Route path="/detailFeedback" element={<DetailFeedback />} />
 
           <Route path="/page" element={<Page />} />
         </Routes>

@@ -32,46 +32,40 @@ const contentArr = [
   [
     {
       title: "Đại hội Hội Doanh nhân Thanh Hóa tại Hà Nội",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 2",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 3",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 4",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 5",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 6",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
@@ -80,16 +74,14 @@ const contentArr = [
   [
     {
       title: "tile 7",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 8",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
@@ -98,24 +90,21 @@ const contentArr = [
   [
     {
       title: "tile 9",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 10",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
 
       date: "19/04/2023",
       time: "08:52",
     },
     {
       title: "tile 11",
-      des:
-        "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
+      des: "Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không chỉ có “kế hoạch B” mà còn có cả kế hoạch...",
       date: "19/04/2023",
       time: "08:52",
     },
@@ -221,218 +210,19 @@ const Card = () => {
                         <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
                           {item.des}
                         </p>
-                        <span>
-                          <div className=" bg-[#10bcff] text-[12px] text-white p-1">
+                        <div>
+                          <span className=" bg-[#10bcff] text-[12px] text-white p-1">
                             Chi tiết
-                          </div>
-                        </span>
+                          </span>
+                        </div>
                       </div>
                     </a>
                   </div>
                 ))}
-                {/* <div className="p-2">
-                  <a
-                    href="#"
-                    className="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div>
-                      <img
-                        className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
-                        alt=""
-                      />
-                      <div className="flex items-center text-[#999999]">
-                        <span>
-                          <WiTime9 />
-                        </span>
-                        19/04/2023
-                      </div>
-                      <div className="inline-block text-[#999999]">08:52</div>
-                    </div>
-                    <div className=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
-                      <h3 className="mb-2 text-[16px] font-bold text-[#494949]">
-                        Đại hội Hội Doanh nhân Thanh Hóa tại Hà Nội
-                      </h3>
-                      <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
-                        Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn
-                        khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không
-                        chỉ có “kế hoạch B” mà còn có cả kế hoạch...
-                      </p>
-                      <span>
-                        <a
-                          href=""
-                          className=" bg-[#10bcff] text-[12px] text-white p-1"
-                        >
-                          Chi tiết
-                        </a>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div className="p-2">
-                  <a
-                    href="#"
-                    className="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div>
-                      <img
-                        className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
-                        alt=""
-                      />
-                      <div className="flex items-center text-[#999999]">
-                        <span>
-                          <WiTime9 />
-                        </span>
-                        19/04/2023
-                      </div>
-                      <div className="inline-block text-[#999999]">08:52</div>
-                    </div>
-                    <div className=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
-                      <h3 className="mb-2 text-[16px] font-bold text-[#494949]">
-                        Hậu TPP: Việt Nam có tới 6 kế hoạch phòng xa
-                      </h3>
-                      <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
-                        Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn
-                        khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không
-                        chỉ có “kế hoạch B” mà còn có cả kế hoạch...
-                      </p>
-                      <span>
-                        <a
-                          href=""
-                          className=" bg-[#10bcff] text-[12px] text-white p-1"
-                        >
-                          Chi tiết
-                        </a>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div className="p-2">
-                  <a
-                    href="#"
-                    className="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div>
-                      <img
-                        className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
-                        alt=""
-                      />
-                      <div className="flex items-center text-[#999999]">
-                        <span>
-                          <WiTime9 />
-                        </span>
-                        19/04/2023
-                      </div>
-                      <div className="inline-block text-[#999999]">08:52</div>
-                    </div>
-                    <div className=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
-                      <h3 className="mb-2 text-[16px] font-bold text-[#494949]">
-                        Bộ Thông tin và Truyền thông ban hành Phương pháp đánh
-                        giá mức độ ứng dụng công nghệ thông tin của cơ quan nhà
-                        nước năm 2016
-                      </h3>
-                      <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
-                        Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn
-                        khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không
-                        chỉ có “kế hoạch B” mà còn có cả kế hoạch...
-                      </p>
-                      <span>
-                        <a
-                          href=""
-                          className=" bg-[#10bcff] text-[12px] text-white p-1"
-                        >
-                          Chi tiết
-                        </a>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div className="p-2">
-                  <a
-                    href="#"
-                    className="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div>
-                      <img
-                        className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
-                        alt=""
-                      />
-                      <div className="flex items-center text-[#999999]">
-                        <span>
-                          <WiTime9 />
-                        </span>
-                        19/04/2023
-                      </div>
-                      <div className="inline-block text-[#999999]">08:52</div>
-                    </div>
-                    <div className=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
-                      <h3 className="mb-2 text-[16px] font-bold text-[#494949]">
-                        PHÓ CHỦ TỊCH UBND TỈNH LÊ ĐỨC GIANG LÀM VIỆC VỚI HỘI
-                        DOANH NHÂN THANH HÓA TẠI HÀ NỘI
-                      </h3>
-                      <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
-                        Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn
-                        khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không
-                        chỉ có “kế hoạch B” mà còn có cả kế hoạch...
-                      </p>
-                      <span>
-                        <a
-                          href=""
-                          className=" bg-[#10bcff] text-[12px] text-white p-1"
-                        >
-                          Chi tiết
-                        </a>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-                <div className="p-2">
-                  <a
-                    href="#"
-                    className="grid grid-cols-3 gap-5 p-4 bg-[#f4f4f4] border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div>
-                      <img
-                        className="object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="https://doanhnhanthanhhoahanoi.com/uploads/no-image.jpg"
-                        alt=""
-                      />
-                      <div className="flex items-center text-[#999999]">
-                        <span>
-                          <WiTime9 />
-                        </span>
-                        19/04/2023
-                      </div>
-                      <div className="inline-block text-[#999999]">08:52</div>
-                    </div>
-                    <div className=" col-span-2 flex flex-col justify-between leading-normal overflow-hidden h-[210px] text-ellipsis">
-                      <h3 className="mb-2 text-[16px] font-bold text-[#494949]">
-                        PHÓ CHỦ TỊCH UBND TỈNH LÊ ĐỨC GIANG LÀM VIỆC VỚI HỘI
-                        DOANH NHÂN THANH HÓA TẠI HÀ NỘI
-                      </h3>
-                      <p className="mb-3 text-[14px] text-gray-700 dark:text-gray-400 line-clamp-4">
-                        Theo các nhà quan sát nước ngoài, “Việt Nam đã khôn
-                        khoan không bỏ hết trứng vào giỏ TPP” và Việt Nam không
-                        chỉ có “kế hoạch B” mà còn có cả kế hoạch...
-                      </p>
-                      <span>
-                        <a
-                          href=""
-                          className=" bg-[#10bcff] text-[12px] text-white p-1"
-                        >
-                          Chi tiết
-                        </a>
-                      </span>
-                    </div>
-                  </a>
-                </div> */}
               </Slider>
             </div>
           </div>
-          <div className="grid grid-cols-2 phone:grid-cols-1 gap-3 pb-8 border-b-[1px] bobder-b-solid border-b-gray-400 ">
+          <div className="grid laptop:grid-cols-2 desktop:grid-cols-2 tablet:grid-cols-1 phone:grid-cols-1 gap-3 pb-8 border-b-[1px] bobder-b-solid border-b-gray-400 ">
             <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
               <div className="py-3">
                 <h2 className="uppercase text-[#494949] font-bold text-[20px] pb-1 border-b-[2px] border-b-solid border-b-[#fba919]">

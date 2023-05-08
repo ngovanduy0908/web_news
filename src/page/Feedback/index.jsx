@@ -14,6 +14,9 @@ const documents = [
     filePdf: "",
     timeStart: "01/09/2017",
     timeEnd: "03/12/2017",
+    category: "Thông tư",
+    sphere: "Giáo dục",
+    department: "Phòng LĐTB&XH",
   },
   {
     id: 2,
@@ -23,6 +26,9 @@ const documents = [
     filePdf: "",
     timeStart: "",
     timeEnd: "",
+    category: "Thông tư",
+    sphere: "Giáo dục",
+    department: "Phòng LĐTB&XH",
   },
   {
     id: 3,
@@ -32,6 +38,9 @@ const documents = [
     filePdf: "",
     timeStart: "01/09/2017",
     timeEnd: "",
+    category: "Thông tư",
+    sphere: "Giáo dục",
+    department: "Phòng LĐTB&XH",
   },
 ];
 const options_1 = [
@@ -198,11 +207,22 @@ const FeedbackPage = () => {
                     <td className="border border-slate-300 text-center">
                       {item.id}
                     </td>
-                    <td className="border border-slate-300 text-center">
+                    <td
+                      className="border border-slate-300 text-center cursor-pointer"
+                      onClick={() =>
+                        navigate(`/detailFeedback?feedbackId=${item.id}`)
+                      }
+                    >
                       {item.numberSymbol}
                     </td>
-                    <td className="border border-slate-300 p-2">
-                      <a href="">{item.epitomize}</a>
+                    <td className="border border-slate-300 p-2 cursor-pointer">
+                      <div
+                        onClick={() =>
+                          navigate(`/detailFeedback?feedbackId=${item.id}`)
+                        }
+                      >
+                        {item.epitomize}
+                      </div>
                       <span className="block text-[#8a6d3b] ">
                         {item.timeStart ? `Từ ${item.timeStart}` : ""}{" "}
                         {item.timeEnd ? `- Đến ${item.timeEnd}` : ""}
@@ -215,11 +235,13 @@ const FeedbackPage = () => {
                       </div>
                     </td>
                     {new Date(item.timeEnd) < new Date() ? (
-                      <td className="border border-slate-300 min-w-[90px] text-2xl">
+                      <td className="border border-slate-300 min-w-[90px] text-2xl cursor-pointer">
                         <div
                           title="hết hạn"
                           className="flex items-center justify-center"
-                          onClick={() => navigate("/detailsFeedback")}
+                          onClick={() =>
+                            navigate(`/detailFeedback?feedbackId=${item.id}`)
+                          }
                         >
                           {" "}
                           <FcExpired />
@@ -229,8 +251,10 @@ const FeedbackPage = () => {
                       <td className="border border-slate-300 min-w-[90px] text-2xl">
                         <div
                           title="Gửi góp ý"
-                          className="flex items-center justify-center"
-                          onClick={() => navigate("/detailsFeedback")}
+                          className="flex items-center justify-center cursor-pointer"
+                          onClick={() =>
+                            navigate(`/detailFeedback?feedbackId=${item.id}`)
+                          }
                         >
                           {" "}
                           <FcFeedback />
@@ -297,14 +321,14 @@ const FeedbackPage = () => {
             <button
               onClick={clearvalueSearch}
               type="button"
-              class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
             >
               Xóa trắng
             </button>
 
             <button
               type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-3 py-2 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Tìm kiếm
             </button>

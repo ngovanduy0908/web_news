@@ -19,7 +19,17 @@ const RegisterPage = () => {
   const password = watch("password");
   const [captcha, setCaptcha] = useState(generateCaptcha);
 
-  const onSubmit = (data) => console.log(watch(data));
+  const onSubmit = (data) => {
+    let username = data.username;
+    let password = data.password;
+    if (!data) {
+      alert("Đăng ký không thành công!");
+    } else {
+      localStorage.setItem("user", JSON.stringify(username));
+      localStorage.setItem("user", JSON.stringify(password));
+      navigate("/user/login");
+    }
+  };
   const [open, setOpen] = useState(false);
 
   const resetCaptcha = (data) => {

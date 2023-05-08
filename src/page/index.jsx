@@ -50,7 +50,7 @@ const HomePage = () => {
             </span>
           </div>
         </div>
-        <div className="desktop:col-span-2 pl-14 pr-8 phone:hidden laptop:col-span-2 desktop:block laptop:block">
+        <div className="desktop:col-span-2 pl-8 pr-8 phone:hidden laptop:col-span-2 desktop:block laptop:block">
           <div className="flex items-center bg-sky-500 text-white p-2 mb-3">
             <AiFillStar />
             <h3 className="font-bold ml-2">TIN NỔI BẬT</h3>

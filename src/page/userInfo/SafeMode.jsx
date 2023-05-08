@@ -16,6 +16,8 @@ const SafeMode = () => {
     reset();
   };
   const { currentUser } = useContext(AuthContext);
+
+  const onSubmit = () => {};
   return (
     <div>
       <div className="flex items-center justify-center gap-2 font-bold text-[20px] mb-2">
@@ -46,16 +48,16 @@ const SafeMode = () => {
         4.Click vào nút Chấp nhận.
       </div>
 
-      <form action="" className="mt-2">
+      <form action="" className="mt-2" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center relative">
           <p className="w-[23%] text-end mr-2 text-[14px]">Mật khẩu</p>
-          <div className="border-t-[1px] border-l-[1px] border-b-[1px] border-[#ccc] py-[7.5px] px-[8px] rounded-l-md">
+          <div className="border-t-[1px] border-l-[1px] border-b-[1px] border-[#ccc] py-[8.5px] px-[8px] rounded-l-md">
             <MdKey />
           </div>
           <input
             type="password"
-            {...register("lastName", {
-              required: "Trường này không được để trống",
+            {...register("password", {
+              required: "Mật khẩu đăng nhập chưa được khai báo",
             })}
             className={`w-[48%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-r-md shadow-lg`}
             // defaultValue={currentUser ? currentUser.displayName : ""}
@@ -63,29 +65,38 @@ const SafeMode = () => {
           <span className=" text-red-600 text-[18px] absolute top-[50%] right-[25%] translate-y-[-30%]">
             *
           </span>
+          {errors.password && (
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] left-[50%] translate-x-[-50%] text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-9px] after:left-[50%] after:translate-x-[-50%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+              {errors.password.message}
+            </span>
+          )}
         </div>
 
         <div className="flex items-center relative">
           <p className="w-[23%] text-end mr-2 text-[14px]">Mã xác minh</p>
-          <div className="border-t-[1px] border-l-[1px] border-b-[1px] border-[#ccc] py-[7.5px] px-[8px] rounded-l-md">
+          <div className="border-t-[1px] border-l-[1px] border-b-[1px] border-[#ccc] py-[8.5px] px-[8px] rounded-l-md">
             <AiFillSafetyCertificate />
           </div>
           <input
             type="text"
-            {...register("lastName", {
-              required: "Trường này không được để trống",
+            {...register("veriCode", {
+              required: "Trường này là bắt buộc",
             })}
             className={`w-[34%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc]  shadow-lg`}
             // defaultValue={currentUser ? currentUser.displayName : ""}
           />
-          <div className="text-[13px] py-[6px] px-[12px] bg-[#F0AD4E] rounded-r-md text-white">
+          <div className="text-[13px] py-[7px] px-[12px] bg-[#F0AD4E] rounded-r-md text-white shadow-lg">
             Gửi mã xác minh
           </div>
-          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[38%] translate-y-[-30%]">
+          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[39%] translate-y-[-30%]">
             *
           </span>
+          {errors.veriCode && (
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] left-[50%] translate-x-[-50%] text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-9px] after:left-[50%] after:translate-x-[-50%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+              {errors.veriCode.message}
+            </span>
+          )}
         </div>
-
         <div className="text-center text-[13px] mt-3 w-[72%]">
           <button
             className="bg-gray-50 p-2 mr-4 rounded-lg"
