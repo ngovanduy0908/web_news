@@ -181,7 +181,7 @@ function ContactPage() {
                     </div>
                     <button
                       type="button"
-                      onClick={() => setOpen(true)}
+                      onClick={() => setOpen(!open)}
                       className="px-[12px] py-[6px] text-[18px] bg-slate-200 border-[1px] border-[#cccccc] "
                     >
                       <BiLogIn />
@@ -214,7 +214,7 @@ function ContactPage() {
                       <input
                         type="text"
                         className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
-                          errors.fullname ? "border-red-500 border-[1px]" : ""
+                          errors.email ? "border-red-500 border-[1px]" : ""
                         }`}
                         {...register("email", {
                           required: "Không được bỏ trống trường này",
@@ -409,7 +409,7 @@ function ContactPage() {
                   <button
                     type="button"
                     onClick={onReset}
-                    className="border-[1px] border-solid border-[#ccc] px-3 py-2 text-[13px] rounded-xl mr-2 hover:bg-slate-200"
+                    className="text-[#333333] border-[1px] border-solid border-[#ccc] px-3 py-2 text-[13px] rounded-xl mr-2 hover:bg-slate-200"
                   >
                     Nhập lại
                   </button>
@@ -421,31 +421,11 @@ function ContactPage() {
                   </button>
                 </div>
               </form>
-
-              {/* <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              {...register("firstName", {
-                required: true,
-                maxLength: 10,
-                minLength: 1,
-              })}
-            />
-            {errors.firstName && <p>Please check the First Name</p>}
-            <select {...register("gender")}>
-              <option value="female">female</option>
-              <option value="male">male</option>
-              <option value="other">other</option>
-            </select>
-            <input type="submit" />
-          </form> */}
             </div>
-            {/* <div>
-            <button type="submit">Submit</button>
-          </div> */}
           </div>
         </div>
         {open && (
-          <div className="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div className="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] top-0 max-h-full">
             <div className="relative w-full max-w-md max-h-full m-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 drop-shadow-new">
                 <button

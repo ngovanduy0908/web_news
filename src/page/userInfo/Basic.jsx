@@ -56,15 +56,15 @@ const Basic = () => {
 
           <div className="flex bg-white items-center gap-2 w-[66%] px-3 py-2 mt-2 my-2 rounded-md shadow-lg border-[1px] border-[#ccc] ">
             <label htmlFor="" className="flex items-center gap-1">
-              <input type="radio" value="N" />
+              <input type="radio" name="gender" value="N" />
               <span className="text-sm">N/A</span>
             </label>
             <label htmlFor="" className="flex items-center gap-1">
-              <input type="radio" value="N" />
+              <input type="radio" name="gender" value="N" />
               <span className="text-sm">Nam</span>
             </label>
             <label htmlFor="" className="flex items-center gap-1">
-              <input type="radio" value="N" />
+              <input type="radio" name="gender" value="N" />
               <span className="text-sm">Nữ</span>
             </label>
           </div>
@@ -80,7 +80,7 @@ const Basic = () => {
             {...register("birthday", {
               required: "Trường này không được để trống",
             })}
-            className={`w-[27%]  outline-none h-full px-3 pt-3 bg-gray-200 pb-0 mt-2 my-[8px] text-[13px] border-[1px] border-[#ccc] rounded-sm shadow-lg`}
+            className={`w-[27%]  outline-none h-full px-3 py-1 bg-gray-100 mt-2 my-[8px] text-[13px] border-[1px] border-[#ccc] rounded-sm shadow-lg`}
           />
           <span className=" text-red-600 text-[18px] absolute top-[50%] right-[55%] translate-y-[-30%]">
             *

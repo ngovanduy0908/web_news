@@ -13,6 +13,12 @@ const arrContent = [
   { title: "Chế độ an toàn", slug: "safe-mode" },
 ];
 
+const logOut = () => {
+  //confirm("Are you sure you want to log out?");
+  localStorage.setItem("user", null);
+  window.location.reload();
+};
+
 const UserEdit = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
@@ -43,7 +49,7 @@ const UserEdit = () => {
           <BsFillCaretRightFill />
           <span>Thông tin thành viên</span>
         </li>
-        <li className="flex items-center cursor-pointer">
+        <li className="flex items-center cursor-pointer" onClick={logOut}>
           <BsFillCaretRightFill />
           <span>Thoát</span>
         </li>
