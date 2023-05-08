@@ -191,6 +191,7 @@ const Navbar = () => {
   }, [inputRef]);
   return (
     <div className="max-w-[1080px] m-auto">
+
       <div className=" desktop:flex laptop:flex phone:hidden tablet:hidden  relative bg-[#0083eb]  items-center justify-between z-30">
         <div className="menu-conner-left drop-shadow-xl"></div>
         <div className="menu-conner-right drop-shadow-xl"></div>
@@ -279,6 +280,196 @@ const Navbar = () => {
             <div
               onClick={() => navigate("/news")}
               className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+
+      <div className=" laptop:flex desktop:flex tablet:flex phone:hidden relative bg-[#0083eb] flex items-center justify-between z-30">
+        <div className="menu-conner-left drop-shadow-xl"></div>
+        <div className="menu-conner-right drop-shadow-xl"></div>
+        <div className=" desktop:flex laptop:flex mobile:hidden iphone:hidden relative bg-[#0083eb]  items-center justify-between z-30">
+          <ul className="flex items-center  text-[#fff] uppercase desktop:text-[12px] laptop:text-[12px] tablet:text-[7px] font-bold">
+            <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA] tablet:text-[12px]">
+              <div
+                className="laptop:h-[44px] laptop:text-[16px] laptop:px-4 desktop:px-4 desktop:text-[18px] tablet:h-[40px] px-[14px] tablet:px-[8px] flex items-center"
+                onClick={() => navigate("/")}
+              >
+                <span>
+                  <IoHome />
+                </span>
+              </div>
+            </li>
+            <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/introduction")}
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+              >
+                <span>Giới thiệu</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+                <li className="block">
+                  {" "}
+                  <div
+                    className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                    onClick={() => navigate("/introduction")}
+                  >
+                    Giới thiệu chung
+                  </div>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <div
+                    className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                    onClick={() => navigate("/regulations")}
+                  >
+                    điều lệ hoạt động
+                  </div>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <div
+                    className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                    onClick={() => navigate("/exCommittee")}
+                  >
+                    ban chấp hành
+                  </div>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <div
+                    className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
+                    onClick={() => navigate("/solution")}
+                  >
+                    giải pháp cho doanh nghiệp
+                  </div>{" "}
+                </li>
+              </ul>
+            </li>
+            <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+                onClick={() => navigate("/incorporation")}
+              >
+                <span>Cơ cấu tổ chức</span>
+              </div>
+            </li>
+            <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                href="#"
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+                onClick={() => navigate("/people")}
+              >
+                <span>Hội Viên</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <NavbarArr arr={contentArr[0]} />
+            </li>
+            <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/news")}
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              >
+                <span>Tin Tức</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <NavbarArr arr={contentArr[1]} />
+            </li>
+            <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/trade")}
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              >
+                <span>Giao Thương</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <NavbarArr arr={contentArr[2]} />
+            </li>
+            <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/projects-page")}
+                className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+              >
+                <span>Dự án</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <NavbarArr arr={contentArr[3]} />
+            </li>
+            <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                href="#"
+                className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+              >
+                <span>Sự kiện</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+                <li className="block">
+                  {" "}
+                  <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                    hội doanh nhân
+                  </div>{" "}
+                </li>
+              </ul>
+            </li>
+            <li className="block group cursor-pointer relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                href="#"
+                className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+                onClick={() => navigate("/user")}
+              >
+                <span>Thành Viên</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <NavbarArr arr={contentArr[4]} />
+            </li>
+            <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/contact-page")}
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              >
+                <span>Liên hệ</span>
+                <span className="text-[12px] ml-[3px]">
+                  <AiFillCaretDown />
+                </span>
+              </div>
+              <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+                <li className="block">
+                  {" "}
+                  <div className="block py-[6px] px-[8px] font-light truncate hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                    Ban biên tập Cổng thông tin điện tử Hội Doanh Nhân Thanh Hóa
+                    Tại Hà Nội
+                  </div>{" "}
+                </li>
+              </ul>
+            </li>
+            <li className="block group relative cursor-pointer hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+              <div
+                onClick={() => navigate("/search")}
+                className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              >
+                <span>Tìm Kiếm</span>
+              </div>
+            </li>
+          </ul>
+          <div className=" relative">
+            <span
+              className=" block p-[10px] pl-[13px] text-[#fff] border-l-[2px] border-l-[#085798]"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+
             >
               <span>Tin Tức</span>
               <span className="text-[12px] ml-[3px]">

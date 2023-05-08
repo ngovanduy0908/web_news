@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Breadcrumbs from "../../components/Breadcrumb";
 import {
   FaFolderOpen,
@@ -15,9 +15,13 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 
 import generateCaptcha from "../../uitls";
+import LoginPage from "../login/LoginPage";
+import Modal from "../../components/Modal/Modal";
+import { AuthContext } from "../../context/authContext";
 function ContactPage() {
   const [captcha, setCaptcha] = useState(generateCaptcha);
   const [open, setOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
 
   const {
     register,
@@ -164,6 +168,8 @@ function ContactPage() {
                       <input
                         type="text"
                         className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
+                          currentUser ? "bg-gray-200 cursor-not-allowed" : ""
+                        } ${
                           errors.fullname ? "border-red-500 border-[1px]" : ""
                         }`}
                         {...register("fullname", {
@@ -174,11 +180,16 @@ function ContactPage() {
                           },
                         })}
                         placeholder="Họ và tên"
+                        defaultValue={
+                          currentUser ? currentUser.displayName : ""
+                        }
+                        disabled={currentUser ? true : false}
                       />
                       <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
                         *
                       </span>
                     </div>
+
                     <button
                       type="button"
                       onClick={() => setOpen(!open)}
@@ -186,6 +197,19 @@ function ContactPage() {
                     >
                       <BiLogIn />
                     </button>
+
+                    {currentUser ? (
+                      ""
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setOpen(true)}
+                        className="px-[12px] py-[6px] text-[18px] bg-slate-200 border-[1px] border-[#cccccc] "
+                      >
+                        <BiLogIn />
+                      </button>
+                    )}
+
                   </div>
                   <ErrorMessage
                     errors={errors}
@@ -213,8 +237,14 @@ function ContactPage() {
                     <div className="w-full relative">
                       <input
                         type="text"
+
                         className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
                           errors.email ? "border-red-500 border-[1px]" : ""
+
+                        className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] 
+                        ${currentUser ? "bg-gray-200 cursor-not-allowed" : ""}
+                        ${
+                          errors.fullname ? "border-red-500 border-[1px]" : ""
                         }`}
                         {...register("email", {
                           required: "Không được bỏ trống trường này",
@@ -225,6 +255,8 @@ function ContactPage() {
                           },
                         })}
                         placeholder="Email"
+                        defaultValue={currentUser ? currentUser.email : ""}
+                        disabled={currentUser ? true : false}
                       />
                       <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
                         *
@@ -235,7 +267,6 @@ function ContactPage() {
                     errors={errors}
                     name="email"
                     render={({ messages }) => {
-                      //console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <p
@@ -276,7 +307,6 @@ function ContactPage() {
                     errors={errors}
                     name="phone"
                     render={({ messages }) => {
-                      //console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <p
@@ -308,7 +338,6 @@ function ContactPage() {
                     errors={errors}
                     name="address"
                     render={({ messages }) => {
-                      //console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <p
@@ -347,7 +376,6 @@ function ContactPage() {
                     errors={errors}
                     name="content"
                     render={({ messages }) => {
-                      //console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <p
@@ -424,6 +452,7 @@ function ContactPage() {
             </div>
           </div>
         </div>
+
         {open && (
           <div className="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] top-0 max-h-full">
             <div className="relative w-full max-w-md max-h-full m-auto">
@@ -531,6 +560,10 @@ function ContactPage() {
             </div>
           </div>
         )}
+
+        <Modal open={open} setOpen={setOpen}>
+          <LoginPage className={"w-[80%]"} />
+        </Modal>
       </div>
     </>
   );

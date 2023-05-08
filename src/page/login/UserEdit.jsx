@@ -22,6 +22,11 @@ const logOut = () => {
 const UserEdit = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState(0);
+  const logOut = () => {
+    alert("Tài khoản của bạn sẽ đăng xuất?");
+    localStorage.setItem("user", null);
+    window.location.reload();
+  };
   return (
     <div>
       <h3 className="mt-5 mb-4 font-bold text-[19px]">Thiết lập tài khoản</h3>
