@@ -8,6 +8,10 @@ const defaltImg =
 const UserInfo = () => {
   const { currentUser } = useContext(AuthContext);
   console.log(currentUser);
+  const logOut = () => {
+    localStorage.setItem("user", null);
+    window.location.reload();
+  };
   return (
     <div className="mt-4">
       <div className="border-[1px] border-gray-200 rounded-md p-4">
@@ -117,7 +121,7 @@ const UserInfo = () => {
           <BsFillCaretRightFill />
           <span>Thông tin thành viên</span>
         </li>
-        <li className="flex items-center cursor-pointer">
+        <li className="flex items-center cursor-pointer" onClick={logOut}>
           <BsFillCaretRightFill />
           <span>Thoát</span>
         </li>

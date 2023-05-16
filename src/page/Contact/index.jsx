@@ -190,13 +190,13 @@ function ContactPage() {
                       </span>
                     </div>
 
-                    <button
+                    {/* <button
                       type="button"
                       onClick={() => setOpen(!open)}
                       className="px-[12px] py-[6px] text-[18px] bg-slate-200 border-[1px] border-[#cccccc] "
                     >
                       <BiLogIn />
-                    </button>
+                    </button> */}
 
                     {currentUser ? (
                       ""
@@ -209,7 +209,6 @@ function ContactPage() {
                         <BiLogIn />
                       </button>
                     )}
-
                   </div>
                   <ErrorMessage
                     errors={errors}
@@ -237,14 +236,8 @@ function ContactPage() {
                     <div className="w-full relative">
                       <input
                         type="text"
-
                         className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
                           errors.email ? "border-red-500 border-[1px]" : ""
-
-                        className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] 
-                        ${currentUser ? "bg-gray-200 cursor-not-allowed" : ""}
-                        ${
-                          errors.fullname ? "border-red-500 border-[1px]" : ""
                         }`}
                         {...register("email", {
                           required: "Không được bỏ trống trường này",
