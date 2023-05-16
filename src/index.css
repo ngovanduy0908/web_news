@@ -3,7 +3,7 @@
 @tailwind utilities;
 /* @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap")
   repeat scroll 0 0 rgba(0, 0, 0, 0); */
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Wix+Madefor+Display:wght@400;500;600;700&display=swap");
 .footer {
   background: #d5d5d5
     url(https://doanhnhanthanhhoahanoi.com/themes/egov/images/bg-footer.png)
@@ -14,7 +14,7 @@
 body {
   margin: 0;
   color: #333333;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Wix Madefor Display", open-sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eeeeee

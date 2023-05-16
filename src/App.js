@@ -18,8 +18,6 @@ import LoginPage from "./page/login/LoginPage";
 import Oganize from "./page/Incorporation/items/Oganize";
 import DetailUser from "./page/Incorporation/items/DetailUser";
 import SearchPage from "./page/search";
-import People from "./page/People";
-import PeopleDetail from "./page/People/PeopleDetail";
 
 import UserAuth from "./page/login";
 import RegisterPage from "./page/login/RegisterPage";
@@ -57,6 +55,9 @@ import UserInfo from "./page/userInfo/UserInfo";
 import Test from "./components/Test";
 
 import Page from "./page/Page";
+import Member from "./page/Member";
+import MenuMember from "./page/Member/MenuMember";
+import MemberDetail from "./page/Member/MemberDetail";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -113,8 +114,10 @@ function App() {
           <Route path="/oganize" element={<Oganize />} />
           <Route path="/detailUser" element={<DetailUser />} />
           <Route path="/office" element={<Office />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/people/:slug" element={<PeopleDetail />} />
+          <Route path="/member" element={<Member />} />
+          <Route path="/member/:id" element={<MemberDetail />} />
+
+          <Route path="/member/:slug" element={<MenuMember />} />
 
           <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<NotFound />} />

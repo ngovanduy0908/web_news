@@ -12,7 +12,7 @@ import Test from "./Test";
 const contentArr = [
   [
     {
-      href: "/people",
+      href: "/member",
     },
     [
       {
@@ -149,29 +149,6 @@ const contentArr = [
       },
     ],
   ],
-  [
-    {
-      href: "/projects-page",
-    },
-    [
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-      {
-        title: "Khu vực Đồng bằng sông Hồng",
-        slug: "khu-vuc-dong-bang-song-hong",
-      },
-      {
-        title: "Khu vực Bắc Trung Bộ",
-        slug: "khu-vuc-bac-trung-bo",
-      },
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-    ],
-  ],
 ];
 
 const Navbar = () => {
@@ -266,7 +243,7 @@ const Navbar = () => {
             <div
               href="#"
               className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
-              onClick={() => navigate("/people")}
+              onClick={() => navigate("/member")}
             >
               <span>Hội Viên</span>
               <span className="text-[12px] ml-[3px]">
