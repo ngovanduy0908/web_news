@@ -53,11 +53,14 @@ import Group from "./page/userInfo/Group";
 import SafeMode from "./page/userInfo/SafeMode";
 import UserInfo from "./page/userInfo/UserInfo";
 import Test from "./components/Test";
-
+import PageEvents from "./page/Events";
 import Page from "./page/Page";
 import Member from "./page/Member";
-import MenuMember from "./page/Member/MenuMember";
 import MemberDetail from "./page/Member/MemberDetail";
+import ListOfExecutives from "./page/Member/ListOfExecutives";
+import MembershipBenefits from "./page/Member/MembershipBenefits";
+import EventsDetail from "./page/Events/EventsDetail";
+import RegisterMember from "./page/Member/RegisterMember";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -115,9 +118,13 @@ function App() {
           <Route path="/detailUser" element={<DetailUser />} />
           <Route path="/office" element={<Office />} />
           <Route path="/member" element={<Member />} />
+          <Route
+            path="/ban-chap-hanh-hiep-hoi"
+            element={<ListOfExecutives />}
+          />
+          <Route path="/quyen-loi-hoi-vien" element={<MembershipBenefits />} />
+          <Route path="/dang-ky-hoi-vien" element={<RegisterMember />} />
           <Route path="/member/:id" element={<MemberDetail />} />
-
-          <Route path="/member/:slug" element={<MenuMember />} />
 
           <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<NotFound />} />
@@ -132,7 +139,8 @@ function App() {
           <Route path="/projects-page" element={<ProjectPage />} />
           <Route path="/projects-page/:slug" element={<DetailProjectPage />} />
 
-          <Route path="/projects-page" element={<ProjectPage />} />
+          <Route path="/events-page" element={<PageEvents />} />
+          <Route path="/events-page/:id" element={<EventsDetail />} />
 
           <Route path="/contact-page" element={<ContactPage />} />
 

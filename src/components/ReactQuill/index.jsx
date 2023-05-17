@@ -1,17 +1,43 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-const ReactQuillEditor = () => {
+import Quill from "quill";
+import ImageResize from "quill-image-resize-module-react";
+import { ImageDrop } from "quill-image-drop-module";
+
+Quill.register("modules/imageResize", ImageResize);
+Quill.register("modules/imageDrop", ImageDrop);
+const ReactQuillEditor = ({ onContentChange }) => {
   const [content, setContent] = useState("");
 
   const modules = {
     toolbar: [
-      [{ header: [1, 2, 3, 4, false] }],
-      ["bold", "italic", "underline", "strike"],
+      [
+        { header: "1" },
+        { header: "2" },
+        { header: [3, 4, 5, 6] },
+        { font: [] },
+      ],
+      [{ size: [] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
       [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
+      ["link", "video", "image"],
       ["clean"],
+      ["code-block"],
+      [{ color: [] }],
+      [{ background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+      [{ script: "sub" }, { script: "super" }], // superscript/subscript
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }],
+      [{ table: true }],
     ],
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize"],
+    },
+    imageDrop: true,
   };
 
   const formats = [
@@ -21,17 +47,28 @@ const ReactQuillEditor = () => {
     "bold",
     "italic",
     "underline",
+    "strike",
     "blockquote",
-    "code-block",
     "list",
     "bullet",
     "link",
     "image",
     "video",
+    "code-block",
+
+    "color",
+
+    "align",
+    "direction",
+    "indent",
+    "background",
+    "script",
+    "table",
   ];
 
   const handleChange = (value) => {
     setContent(value);
+    onContentChange(value);
   };
   return (
     <ReactQuill

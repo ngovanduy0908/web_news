@@ -7,6 +7,7 @@ import { FaFacebookF, FaRss } from "react-icons/fa";
 import Feedback from "../components/Feedback";
 
 import { useNavigate } from "react-router-dom";
+import PopupEvent from "../components/PopUpEvents";
 
 const Layout = ({ children }) => {
   const navigate = useNavigate();
@@ -107,6 +108,9 @@ const Layout = ({ children }) => {
         {/* <Footer /> */}
       </div>
       <Footer />
+      <div>
+        <PopupEvent />
+      </div>
     </div>
   );
 };

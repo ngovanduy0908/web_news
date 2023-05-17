@@ -11,67 +11,16 @@ import Test from "./Test";
 
 const contentArr = [
   [
-    {
-      href: "/member",
-    },
-    [
-      {
-        title: "Điều kiện tham gia",
-        slug: "dieu-kien-tham-gia",
-      },
-      {
-        title: "Quyền lợi Hội Viên",
-        slug: "quyen-loi-hoi-vien",
-      },
-      {
-        title: "Hướng dẫn đăng ký",
-        slug: "huong-dan-dang-ky",
-      },
-      {
-        title: "Hội Phí",
-        slug: "hoi-phi",
-      },
-    ],
-  ],
-  [
     { href: "/news" },
 
     [
       {
+        title: "Tin tức",
+        slug: "tin-tuc",
+      },
+      {
         title: "Tin hoạt động",
         slug: "tin-hoat-dong",
-      },
-      {
-        title: "Chỉ đạo điều",
-        slug: "chi-dao-dieu",
-      },
-      {
-        title: "Thông tin tuyên",
-        slug: "thong-tin-tuyen",
-      },
-      {
-        title: "Thông tin kinh",
-        slug: "thong-tin-kinh",
-      },
-      {
-        title: "Tin hội viên",
-        slug: "tin-hoi-viên",
-      },
-      {
-        title: "Tin doanh nhân",
-        slug: "tin-doanh-nhan",
-      },
-      {
-        title: "Tin xứ thanh",
-        slug: "tin-xu-thanh",
-      },
-      {
-        title: "Tin kinh tế",
-        slug: "tin-kinh-te",
-      },
-      {
-        title: "Tin pháp luật",
-        slug: "tin-phap-luat",
       },
     ],
   ],
@@ -185,7 +134,7 @@ const Navbar = () => {
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/introduction")}
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center cursor-pointer"
             >
               <span>Giới thiệu</span>
               <span className="text-[12px] ml-[3px]">
@@ -220,7 +169,7 @@ const Navbar = () => {
                   ban chấp hành
                 </div>{" "}
               </li>
-              <li>
+              {/* <li>
                 {" "}
                 <div
                   className="cursor-pointer block py-[6px] pl-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out"
@@ -228,21 +177,21 @@ const Navbar = () => {
                 >
                   giải pháp cho doanh nghiệp
                 </div>{" "}
-              </li>
+              </li> */}
             </ul>
           </li>
-          <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+          {/* <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center cursor-pointer"
               onClick={() => navigate("/incorporation")}
             >
               <span>Cơ cấu tổ chức</span>
             </div>
-          </li>
+          </li> */}
           <li className="block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               href="#"
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center cursor-pointer"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center cursor-pointer"
               onClick={() => navigate("/member")}
             >
               <span>Hội Viên</span>
@@ -250,14 +199,60 @@ const Navbar = () => {
                 <AiFillCaretDown />
               </span>
             </div>
-            <NavbarArr arr={contentArr[0]} />
+            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+              <li
+                className="block cursor-pointer"
+                onClick={() => navigate("/ban-chap-hanh-hiep-hoi")}
+              >
+                {" "}
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                  Ban chấp hành hiệp hội
+                </div>{" "}
+              </li>
+              <li className="block cursor-pointer">
+                {" "}
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                  Danh sách hội viên
+                </div>{" "}
+              </li>
+              <li
+                className="block cursor-pointer"
+                onClick={() => navigate("/quyen-loi-hoi-vien")}
+              >
+                {" "}
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                  Quyền lợi hội viên
+                </div>{" "}
+              </li>
+              <li
+                className="block cursor-pointer"
+                onClick={() => navigate("/dang-ky-hoi-vien")}
+              >
+                {" "}
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                  Đăng ký hội viên
+                </div>{" "}
+              </li>
+            </ul>
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/news")}
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center"
             >
-              <span>Tin Tức</span>
+              <span>Điểm tin</span>
+              <span className="text-[12px] ml-[3px]">
+                <AiFillCaretDown />
+              </span>
+            </div>
+            <NavbarArr arr={contentArr[0]} />
+          </li>
+          {/* <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              onClick={() => navigate("/trade")}
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center"
+            >
+              <span>Giao Thương</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
@@ -266,22 +261,42 @@ const Navbar = () => {
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
-              onClick={() => navigate("/trade")}
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              onClick={() => navigate("/projects-page")}
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px]  px-6 flex items-center"
             >
-              <span>Giao Thương</span>
+              <span>Dự án</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
             </div>
             <NavbarArr arr={contentArr[2]} />
-          </li>
+          </li> */}
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
-              onClick={() => navigate("/projects-page")}
-              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px]  px-6 flex items-center"
+              onClick={() => navigate("/events-page")}
             >
-              <span>Dự án</span>
+              <span>Sự kiện</span>
+              {/* <span className="text-[12px] ml-[3px]">
+                <AiFillCaretDown />
+              </span> */}
+            </div>
+            {/* <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
+              <li className="block">
+                {" "}
+                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
+                  hội doanh nhân
+                </div>{" "}
+              </li>
+            </ul> */}
+          </li>
+          <li className="block group cursor-pointer relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              href="#"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px]  px-6 flex items-center"
+              onClick={() => navigate("/user")}
+            >
+              <span>Thành Viên</span>
               <span className="text-[12px] ml-[3px]">
                 <AiFillCaretDown />
               </span>
@@ -290,40 +305,8 @@ const Navbar = () => {
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
-              href="#"
-              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
-            >
-              <span>Sự kiện</span>
-              <span className="text-[12px] ml-[3px]">
-                <AiFillCaretDown />
-              </span>
-            </div>
-            <ul className="bg-[#fff] w-[200px] drop-shadow-xl top-[44px] absolute hidden text-black group-hover:block transition duration-350 ease-in-out">
-              <li className="block">
-                {" "}
-                <div className="block py-[6px] px-[8px] font-light hover:bg-yellow-300 hover:text-[#fff] hover:font-bold transition duration-0 hover:duration-150 ease-in-out">
-                  hội doanh nhân
-                </div>{" "}
-              </li>
-            </ul>
-          </li>
-          <li className="block group cursor-pointer relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div
-              href="#"
-              className="laptop:h-[44px] tablet:h-[40px]  px-[10px] flex items-center"
-              onClick={() => navigate("/user")}
-            >
-              <span>Thành Viên</span>
-              <span className="text-[12px] ml-[3px]">
-                <AiFillCaretDown />
-              </span>
-            </div>
-            <NavbarArr arr={contentArr[4]} />
-          </li>
-          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
-            <div
               onClick={() => navigate("/contact-page")}
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center"
             >
               <span>Liên hệ</span>
               <span className="text-[12px] ml-[3px]">
@@ -340,16 +323,16 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="block group relative cursor-pointer hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+          {/* <li className="block group relative cursor-pointer hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
               onClick={() => navigate("/search")}
-              className="laptop:h-[44px] tablet:h-[40px] px-[10px] flex items-center"
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px] px-6 flex items-center"
             >
               <span>Tìm Kiếm</span>
             </div>
-          </li>
+          </li> */}
         </ul>
-        <div className=" relative">
+        {/* <div className=" relative">
           <span
             className=" block p-[10px] pl-[13px] text-[#fff] border-l-[2px] border-l-[#085798]"
             onClick={() => {
@@ -360,7 +343,7 @@ const Navbar = () => {
           </span>
           {isOpen && (
             <div
-              className="w-[400px] bg-slate-100 absolute group-active:block left-[-360px] bottom-[-60px] py-[10px] px-[10px]"
+              className="w-[400px] bg-slate-100 absolute group-active:block left-[-360px] bottom-[-60px] py-[10px] px-6"
               ref={inputRef}
             >
               <div className="sm:col-span-12">
@@ -379,7 +362,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
       <div className=" laptop:hidden desktop:hidden phone:block tablet:block">
         <SideBar />
