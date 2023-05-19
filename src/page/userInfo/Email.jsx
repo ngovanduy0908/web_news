@@ -38,21 +38,39 @@ const Email = () => {
           <p className="w-[23%] text-end mr-2 text-[14px]">Email cũ:</p>
           <span className="font-bold text-[13px]">{currentUser.email}</span>
         </div>
-
-        <div className="flex items-center relative">
-          <p className="w-[23%] text-end mr-2 text-[14px]">Mật khẩu</p>
-          <input
-            type="text"
-            {...register("password", {
-              required: "Trường này không được để trống",
-            })}
-            className={`w-[50%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
-            // defaultValue={currentUser ? currentUser.displayName : ""}
+        <div className="text-center mb-2">
+          <div className="flex items-center relative">
+            <p className="w-[23%] text-end mr-2 text-[14px]">Mật khẩu</p>
+            <input
+              type="text"
+              className={`block focus:outline-none w-[50%] rounded h-[32px] text-[13px] leading-[15px] border-[#cccccc] shadow-lg ${
+                errors.password ? "border-red-500 border-[1px]" : ""
+              }`}
+              {...register("password", {
+                required: "Trường này không được để trống",
+              })}
+              // defaultValue={currentUser ? currentUser.displayName : ""}
+            />
+            <span className=" text-red-600 text-[18px] absolute top-[50%] right-[28%] translate-y-[-30%]">
+              *
+            </span>
+          </div>
+          <ErrorMessage
+            errors={errors}
+            name="password"
+            render={({ messages }) => {
+              //console.log("messages", messages);
+              return messages
+                ? Object.entries(messages).map(([type, message]) => (
+                    <p className="text-[14px] text-red-500" key={type}>
+                      {message}
+                    </p>
+                  ))
+                : null;
+            }}
           />
-          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[28%] translate-y-[-30%]">
-            *
-          </span>
         </div>
+
         <div className="text-center">
           <div className="flex items-center relative">
             <p className="w-[23%] text-end mr-2 text-[14px]">Email mới</p>

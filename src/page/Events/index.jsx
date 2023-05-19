@@ -23,7 +23,7 @@ const PageEvents = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"Sự kiện"} />
       <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
-        <div className="px-5 pt-4 col-span-3 border">
+        <div className="px-5 pt-4 desktop:col-span-3 laptop:col-span-3 tablet:col-span-3 phone:col-span-4 border">
           <div>
             <h1 className="text-xl my-3 text-red-500 font-medium border-b border-b-slate-500">
               Sự Kiện

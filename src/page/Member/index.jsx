@@ -94,7 +94,7 @@ const Member = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"Hội viên"} />
       <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
-        <div className="px-5 pt-4  col-span-3 ">
+        <div className="px-5 pt-4 desktop:col-span-3 laptop:col-span-3 tablet:col-span-3 phone:col-span-4">
           <div>
             {currentItems.map((member) => (
               <div
@@ -159,9 +159,8 @@ const Member = () => {
             <Paginate pageCount={pageCount} handlePageClick={handlePageClick} />
           </div>
         </div>
-        <div>
-          <RightBar />
-        </div>
+
+        <RightBar />
       </div>
     </div>
   );

@@ -43,10 +43,10 @@ const RegisterMember = () => {
   return (
     <div className="bg-white py-6">
       <form
-        className="grid grid-cols-2 gap-4"
+        className="grid desktop:grid-cols-2 laptop:grid-cols-2 tablet:grid-cols-2 phone:grid-cols-1 gap-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="px-10">
+        <div className="px-10 phone:col-span-2 desktop:col-span-1 laptop:col-span-1 tablet:col-span-1">
           <h3 className="font-semibold text-base">Thông tin doanh nghiệp</h3>
           <div className="my-4">
             <input

@@ -179,25 +179,13 @@ const Footer = () => {
         </div>
       </footer>
       <div className="bg-gray-500 py-4">
-        <div className="max-w-[1080px] m-auto flex  justify-between items-center">
+        <div className="max-w-[1080px] m-auto flex justify-between items-center px-3">
           <div className="flex items-center">
             <div
               href="#"
               className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
             >
               <TbBrandStackshare className="font-bold text-lg" />
-            </div>
-            <div
-              href="#"
-              className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
-            >
-              <BsLaptop className="font-bold text-lg" />
-            </div>
-            <div
-              href="#"
-              className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
-            >
-              <AiOutlineMobile className="font-bold text-lg" />
             </div>
           </div>
           <div>

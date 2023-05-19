@@ -32,47 +32,51 @@ const Password = () => {
     <div>
       <form onSubmit={handleSubmit(onChangeSubmit)}>
         <div className="flex items-center relative">
-          <p className="w-[23%] text-end mr-2 text-[14px]">Mật khẩu cũ</p>
+          <p className="desktop:w-[23%] laptop:w-[23%] tablet:w-[23%] phone:w-[26%] text-end mr-2 text-[14px]">
+            Mật khẩu cũ
+          </p>
           <input
             type="password"
             {...register("passwordOld", {
               required:
                 "Chú ý: Bạn cần khai báo tất cả các ô có đánh dấu hoa thị (*)",
             })}
-            className={`w-[50%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
+            className={`desktop:w-[50%] laptop:w-[50%] tablet:w-[50%] phone:w-[70%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
             // defaultValue={currentUser ? currentUser.displayName : ""}
           />
-          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[28%] translate-y-[-30%]">
+          <span className=" text-red-600 text-[18px] absolute top-[50%] desktop:right-[28%] laptop:right-[28%] tablet:right-[28%] phone:right-[5%] translate-y-[-30%]">
             *
           </span>
           {errors.passwordOld && (
-            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] right-[170px] text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.passwordOld.message}
             </span>
           )}
         </div>
         <div className="flex items-center relative">
-          <p className="w-[23%] text-end mr-2 text-[14px]">Mật khẩu mới</p>
+          <p className="desktop:w-[23%] laptop:w-[23%] tablet:w-[23%] phone:w-[26%] text-end mr-2 text-[14px]">
+            Mật khẩu mới
+          </p>
           <input
             type="password"
             {...register("passwordNew", {
               required:
                 "Chú ý: Bạn cần khai báo tất cả các ô có đánh dấu hoa thị (*)",
             })}
-            className={`w-[50%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
+            className={`desktop:w-[50%] laptop:w-[50%] tablet:w-[50%] phone:w-[70%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
             // defaultValue={currentUser ? currentUser.displayName : ""}
           />
-          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[28%] translate-y-[-30%]">
+          <span className=" text-red-600 text-[18px] absolute top-[50%] desktop:right-[28%] laptop:right-[28%] tablet:right-[28%] phone:right-[5%] translate-y-[-30%]">
             *
           </span>
           {errors.passwordNew && (
-            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] right-[170px] text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 latop:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 tablet:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.passwordNew.message}
             </span>
           )}
         </div>
         <div className="flex items-center relative">
-          <p className="w-[23%] text-end mr-2 text-[14px]">
+          <p className="desktop:w-[23%] laptop:w-[23%] tablet:w-[23%] phone:w-[26%] text-end mr-2 text-[14px]">
             Nhập lại mật khẩu mới
           </p>
 
@@ -84,14 +88,14 @@ const Password = () => {
               required:
                 "Chú ý: Bạn cần khai báo tất cả các ô có đánh dấu hoa thị (*)",
             })}
-            className={`w-[50%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
+            className={`desktop:w-[50%] laptop:w-[50%] tablet:w-[50%] phone:w-[70%] outline-none h-full px-3 py-2 mt-2 my-2 text-[13px] border-[1px] border-[#ccc] rounded-md shadow-lg`}
             // defaultValue={currentUser ? currentUser.displayName : ""}
           />
-          <span className=" text-red-600 text-[18px] absolute top-[50%] right-[28%] translate-y-[-30%]">
+          <span className=" text-red-600 text-[18px] absolute top-[50%] desktop:right-[28%] laptop:right-[28%] tablet:right-[28%] phone:right-[5%] translate-y-[-30%]">
             *
           </span>
           {errors.confirmPassword && (
-            <span className=" absolute px-2 py-1 rounded bg-red-500 top-[50px] right-[170px] text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.confirmPassword.message}
             </span>
           )}

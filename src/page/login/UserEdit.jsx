@@ -30,12 +30,12 @@ const UserEdit = () => {
   return (
     <div>
       <h3 className="mt-5 mb-4 font-bold text-[19px]">Thiết lập tài khoản</h3>
-      <ul className="flex">
+      <ul className="flex flex-wrap">
         {arrContent.map((item, idx) => (
           <li
             className={`${
               idx === active ? "bg-[#428bca] text-white" : "hover:bg-gray-100"
-            } px-2 py-1 rounded-md   text-[14px] mr-1 text-[#494949] cursor-pointer`}
+            } px-2 py-1 rounded-md text-[14px] phone:text-[16px] laptop:text-[14px] tablet:text-[14px] mr-1 text-[#494949] cursor-pointer`}
             key={idx}
             onClick={() => {
               setActive(idx);

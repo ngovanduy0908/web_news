@@ -6,7 +6,7 @@ import { IoMdFlash } from "react-icons/io";
 import { RiCustomerService2Fill } from "react-icons/ri";
 const RightBar = () => {
   return (
-    <>
+    <div className="desktop:block laptop:block phone:hidden tablet:block">
       <div className="mb-3">
         <a href="">
           <img
@@ -88,7 +88,7 @@ const RightBar = () => {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
