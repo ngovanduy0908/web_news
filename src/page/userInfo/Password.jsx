@@ -48,7 +48,7 @@ const Password = () => {
             *
           </span>
           {errors.passwordOld && (
-            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.passwordOld.message}
             </span>
           )}
@@ -70,7 +70,7 @@ const Password = () => {
             *
           </span>
           {errors.passwordNew && (
-            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 latop:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 tablet:desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute z-20 px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.passwordNew.message}
             </span>
           )}
@@ -95,7 +95,7 @@ const Password = () => {
             *
           </span>
           {errors.confirmPassword && (
-            <span className=" absolute px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
+            <span className=" absolute px-2 py-1 rounded bg-red-500 top-[50px] desktop:right-[170px] latop:right-[170px] tablet:right-[170px] phone:right-0 text-white text-[12px] after:content after:absolute after:border-l-[10px] after:border-r-[10px] after:border-transparent after:block after:border-b-[10px] after:border-solid after:border-b-red-500 after:top-[-10px] after:left-[40%] transition-all ease-in-out delay-[1000ms] duration-[3000ms]">
               {errors.confirmPassword.message}
             </span>
           )}

@@ -52,64 +52,64 @@ const UserInfo = () => {
         </div>
       </div>
 
-      <table class="border-collapse border border-slate-500 w-full mt-6">
+      <table className="border-collapse border border-slate-500 w-full mt-6">
         <tbody>
           <tr className="bg-[#f9f9f9]">
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
               Họ tên
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">
+            <td className="border border-slate-400 text-[15px] p-[6px]">
               {currentUser.displayName}
             </td>
           </tr>
           <tr>
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%]">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%]">
               Ngày tháng năm sinh
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">
+            <td className="border border-slate-400 text-[15px] p-[6px]">
               {" "}
               04/04/1989
             </td>
           </tr>
           <tr className="bg-[#f9f9f9]">
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
               Giới tính
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">Nam</td>
+            <td className="border border-slate-400 text-[15px] p-[6px]">Nam</td>
           </tr>
           <tr>
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%]">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%]">
               Hiển thị email
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]"> Có</td>
+            <td className="border border-slate-400 text-[15px] p-[6px]"> Có</td>
           </tr>
           <tr className="bg-[#f9f9f9]">
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
               Ngày tham gia
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">
+            <td className="border border-slate-400 text-[15px] p-[6px]">
               25/04/2023
             </td>
           </tr>
           <tr>
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%]">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%]">
               Khả năng đăng nhập thông thường
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]"> Có</td>
+            <td className="border border-slate-400 text-[15px] p-[6px]"> Có</td>
           </tr>
           <tr className="bg-[#f9f9f9]">
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%] ">
               Xác thực hai bước
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">
+            <td className="border border-slate-400 text-[15px] p-[6px]">
               Tắt (Thiết lập)
             </td>
           </tr>
           <tr>
-            <td class="border border-slate-400 text-[15px] p-[6px] w-[45%]">
+            <td className="border border-slate-400 text-[15px] p-[6px] w-[45%]">
               Lần truy cập trước
             </td>
-            <td class="border border-slate-400 text-[15px] p-[6px]">
+            <td className="border border-slate-400 text-[15px] p-[6px]">
               Thứ tư, 26/04/2023 16:45
             </td>
           </tr>

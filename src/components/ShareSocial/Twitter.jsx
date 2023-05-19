@@ -6,11 +6,7 @@ function ShareTwitter(props) {
 
   return (
     <div className="flex">
-      <TwitterShareButton
-        url={url}
-        title={title}
-        hashtags={"#doanhnhanthanhhoa"}
-      >
+      <TwitterShareButton url={url} title={title}>
         {icon ? icon : "Twitter"}
       </TwitterShareButton>
     </div>
