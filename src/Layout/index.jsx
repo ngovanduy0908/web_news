@@ -6,7 +6,7 @@ import { FaFacebookF, FaRss } from "react-icons/fa";
 
 import Feedback from "../components/Feedback";
 
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import PopupEvent from "../components/PopUpEvents";
 
 const Layout = ({ children }) => {
@@ -37,11 +37,9 @@ const Layout = ({ children }) => {
       <Navbar />
       <main className="max-w-[1080px] m-auto drop-shadow-new rounded-b-2xl">
         {children}
+        <Outlet />
       </main>
 
-      {/* <div className="max-w-[1080px] m-auto drop-shadow-new phone:hidden laptop:block desktop:block">
-        <Feedback />
-      </div> */}
       <Footer />
       <div>
         <PopupEvent />
