@@ -14,7 +14,7 @@
 body {
   margin: 0;
   color: #333333;
-  font-family: "Wix Madefor Display", open-sans-serif;
+  font-family: "Wix Madefor Display", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eeeeee
@@ -74,7 +74,7 @@ h1 h2 h3 {
 
 .bgr_card {
   margin: 20px 0;
-  line-height: 32px;
+  line-height: 25px;
   font-size: 18px;
   font-weight: 700;
   padding-left: 40px;

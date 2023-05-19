@@ -119,7 +119,7 @@ const Navbar = () => {
     <div className="max-w-[1080px] m-auto">
       <div className=" laptop:flex desktop:flex tablet:flex phone:hidden relative bg-[#0083eb] flex items-center justify-between z-30">
         <div className="menu-conner-left drop-shadow-xl"></div>
-        <div className="menu-conner-right drop-shadow-xl"></div>
+        <div className="menu-conner-right drop-shadow-xl laptop:hidden desktop:block"></div>
         <ul className="flex items-center  text-[#fff] uppercase desktop:text-[12px] laptop:text-[12px] tablet:text-[7px] font-bold">
           <li className="block hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA] tablet:text-[12px]">
             <div

@@ -36,17 +36,17 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className=" header_banner_img items-center grid grid-flow-col auto-cols-max gap-6 relative">
+      <div className=" header_banner_img items-center grid grid-flow-col auto-cols-max desktop:gap-6 laptop:gap-6 phone:gap-4 tablet:gap-4 relative">
         <img
           src="/assets/images/logo-107x107.png"
           alt=""
-          className="px-[10px] py-[12px]"
+          className="pl-[10px] py-[12px] desktop:w-auto desktop:h-auto phone:w-[90px]"
         />
         <div>
           <span className="text-[21px] text-[#0256f4]">
             Cổng thông tin điện tử
           </span>
-          <h2 className="font-bold text-[25px] text-[#0256f4]">
+          <h2 className="font-bold desktop:text-[25px] laptop:text-[25px] phone:text-[14px] tablet:text-[15px] text-[#0256f4]">
             Hội Doanh Nhân Thanh Hóa Tại Hà Nội
           </h2>
         </div>

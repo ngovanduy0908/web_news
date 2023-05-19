@@ -15,15 +15,15 @@ import RightBar from "./list/RightBar";
 
 const titleArr = [
   {
-    title: "Thông tin tuyên truyền",
+    title: "Điểm tin",
     border: true,
   },
   {
-    title: "Thông tin kinh tễ - xã hội",
+    title: "Tin Tức",
     border: true,
   },
   {
-    title: "tin doanh nhân",
+    title: "tin hoạt động",
     border: false,
   },
 ];
@@ -127,31 +127,33 @@ const Card = () => {
       <div className="grid grid-cols-4 gap-2 p-6 bg-white rounded-xl">
         <div className="col-span-3 phone:col-span-4 laptop:col-span-3 desktop:col-span-3 border-t-[1px] border-t-solid border-t-gray-400 mt-[25px]">
           <div className="bgr_card phone:hidden laptop:block desktop:block">
-            <ul className="flex items-center text-[17px]">
-              {titleArr.map((item, idx) => (
-                <li
-                  className={`${
-                    item.border
-                      ? "uppercase inline-block px-[8px] border-r-[1px] border-r-solid border-r-gray-400"
-                      : "uppercase inline-block px-[8px]"
-                  } cursor-pointer`}
-                  key={idx}
-                  onClick={() => {
-                    setIsActive(idx);
-                    setContent(contentArr[idx]);
-                  }}
-                >
-                  <h2>
-                    <span
-                      className={`${
-                        isActive === idx ? "text-[#000]" : "text-[#a5a5a5]"
-                      } block my-[5px] leading-[22px]"`}
-                    >
-                      {item.title}
-                    </span>
-                  </h2>
-                </li>
-              ))}
+            <ul className="flex items-center justify-around text-[20px]">
+              <div>
+                {titleArr.map((item, idx) => (
+                  <li
+                    className={`${
+                      item.border
+                        ? "uppercase inline-block px-5 border-r-[1px] border-r-solid border-r-gray-400"
+                        : "uppercase inline-block px-5"
+                    } cursor-pointer`}
+                    key={idx}
+                    onClick={() => {
+                      setIsActive(idx);
+                      setContent(contentArr[idx]);
+                    }}
+                  >
+                    <h2>
+                      <span
+                        className={`${
+                          isActive === idx ? "text-[#000]" : "text-[#a5a5a5]"
+                        } block my-[5px] leading-[22px]"`}
+                      >
+                        {item.title}
+                      </span>
+                    </h2>
+                  </li>
+                ))}
+              </div>
               <li className="inline-block">
                 <div className="flex items-center">
                   <span
@@ -301,7 +303,7 @@ const Card = () => {
                 </a>
               </p>
             </div>
-            <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
+            {/* <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
               <div className="py-3">
                 <h2 className="uppercase text-[#494949] font-bold text-[20px] pb-1 border-b-[2px] border-b-solid border-b-[#fba919]">
                   <a href="" className=" block leading-[1.5]">
@@ -339,8 +341,8 @@ const Card = () => {
                   <IoMdArrowDropright />
                 </a>
               </p>
-            </div>
-            <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
+            </div> */}
+            {/* <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
               <div className="py-3">
                 <h2 className="uppercase text-[#494949] font-bold text-[20px] pb-1 border-b-[2px] border-b-solid border-b-[#fba919]">
                   <a href="" className=" block leading-[1.5]">
@@ -378,7 +380,7 @@ const Card = () => {
                   <IoMdArrowDropright />
                 </a>
               </p>
-            </div>
+            </div> */}
             <div className="p-[15px] border-[1px] border-solid border-gray-400 rounded">
               <div className="py-3">
                 <h2 className="uppercase text-[#494949] font-bold text-[20px] pb-1 border-b-[2px] border-b-solid border-b-[#fba919]">
@@ -422,7 +424,7 @@ const Card = () => {
               <div className="py-3">
                 <h2 className="uppercase text-[#494949] font-bold text-[20px] pb-1 border-b-[2px] border-b-solid border-b-[#fba919]">
                   <a href="" className=" block leading-[1.5]">
-                    Tin doanh nhân
+                    Phương thức hoạt động
                   </a>
                 </h2>
               </div>
@@ -458,7 +460,7 @@ const Card = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 phone:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-2">
+          {/* <div className="grid grid-cols-2 phone:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-2">
             <div>
               <div className="bgr_card">
                 <h2 className="uppercase text-[#353535] font-bold text-[20px] pl-3">
@@ -495,7 +497,7 @@ const Card = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="p-3 laptop:block desktop:block phone:hidden">
           <div className="pb-6">
@@ -520,7 +522,7 @@ const Card = () => {
               </a>
             </div>
           </div>
-          <div className=" border-[1px] bobder-solid border-gray-400 rounded">
+          {/* <div className=" border-[1px] bobder-solid border-gray-400 rounded">
             <h2 className=" uppercase font-semibold text-[16px] px-[20px] py-[6px] bg-[#1f9cf8] text-white rounded">
               <a href="">lãnh đạo, chỉ đạo</a>
             </h2>
@@ -544,7 +546,7 @@ const Card = () => {
                 </a>
               </h3>
             </div>
-          </div>
+          </div> */}
           <RightBar />
         </div>
       </div>

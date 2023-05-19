@@ -7,7 +7,7 @@ const PopupEvent = () => {
     const currentDate = new Date().toDateString();
     const lastViewedDate = localStorage.getItem("lastViewedDate");
 
-    if (lastViewedDate === currentDate) {
+    if (lastViewedDate !== currentDate) {
       setShowPopup(true);
       localStorage.setItem("lastViewedDate", currentDate);
     }
