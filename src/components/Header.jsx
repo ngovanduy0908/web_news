@@ -25,12 +25,12 @@ const Header = () => {
             </div>
           </li>
           <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] hover:text-[#0256f4]">
-            <div onClick={() => navigate("/feeds")} href="#" title="Sơ đồ cổng">
+            <div onClick={() => navigate("/feeds")} title="Sơ đồ cổng">
               <span>Sơ đồ cổng</span>
             </div>
           </li>
           <li className=" cursor-pointer inline-block px-[5px] hover:text-[#0256f4]">
-            <div href="#" title="Liên kết">
+            <div onClick={() => navigate("/page")} title="Liên kết">
               <span>Liên kết</span>
             </div>
           </li>
@@ -38,6 +38,7 @@ const Header = () => {
       </div>
       <div className=" header_banner_img items-center grid grid-flow-col auto-cols-max desktop:gap-6 laptop:gap-6 phone:gap-4 tablet:gap-4 relative">
         <img
+          onClick={() => navigate("/")}
           src="/assets/images/logo-107x107.png"
           alt=""
           className="pl-[10px] py-[12px] desktop:w-auto desktop:h-auto phone:w-[90px]"

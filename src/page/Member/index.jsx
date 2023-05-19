@@ -114,7 +114,7 @@ const Member = () => {
                     </span>
                     {member.name_member}
                   </p>
-                  <p class="mb-1 font-semibold text-red-600 dark:text-gray-400">
+                  <p className="mb-1 font-semibold text-red-600 dark:text-gray-400">
                     {member.position}
                   </p>
                   <p>

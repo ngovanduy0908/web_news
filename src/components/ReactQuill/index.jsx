@@ -31,7 +31,6 @@ const ReactQuillEditor = ({ onContentChange }) => {
       [{ script: "sub" }, { script: "super" }], // superscript/subscript
       [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
       [{ direction: "rtl" }],
-      [{ table: true }],
     ],
     imageResize: {
       parchment: Quill.import("parchment"),
@@ -63,7 +62,6 @@ const ReactQuillEditor = ({ onContentChange }) => {
     "indent",
     "background",
     "script",
-    "table",
   ];
 
   const handleChange = (value) => {

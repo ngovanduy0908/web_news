@@ -9,9 +9,9 @@ const Page = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"Thông báo"} />
 
-      <div className="grid grid-cols-4 gap-3 p-7">
-        <div className="px-3 py-4 col-span-3">
-          <div className="border-[1px] border-solid border-[#4f4f4f] px-6 py-4 rounded">
+      <div className="grid grid-cols-4 gap-3 p-3">
+        <div className="px-3 py-4 desktop:col-span-3 laptop:col-span-3 tablet:col-span-3 phone:col-span-4">
+          <div className="border-[1px] border-solid border-[#4f4f4f] px-2 py-4 rounded">
             <h2 className="font-semibold text-[20px] mb-5">Giới thiệu chung</h2>
             <Social />
             <p className="font-bold text-[14px] pb-5">

@@ -36,50 +36,6 @@ const contentArr = [
       },
     ],
   ],
-
-  [
-    {
-      href: "/trade",
-    },
-    [
-      {
-        title: "Doanh nghiệp liên kết",
-        slug: "doanh-nghiep-lien-ket",
-      },
-      {
-        title: "Hợp tác đầu tư",
-        slug: "hop-tac-dau-tu",
-      },
-      {
-        title: "Xúc tiến thương mại",
-        slug: "xuc-tien-thuong-mai",
-      },
-    ],
-  ],
-
-  [
-    {
-      href: "/projects-page",
-    },
-    [
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-      {
-        title: "Khu vực Đồng bằng sông Hồng",
-        slug: "khu-vuc-dong-bang-song-hong",
-      },
-      {
-        title: "Khu vực Bắc Trung Bộ",
-        slug: "khu-vuc-bac-trung-bo",
-      },
-      {
-        title: "Khu vực Duyên hải miền Trung",
-        slug: "khu-vuc-duyen-hai-mien-trung",
-      },
-    ],
-  ],
   [
     { href: "/user" },
 
@@ -266,7 +222,7 @@ const Navbar = () => {
                 <AiFillCaretDown />
               </span>
             </div>
-            <NavbarArr arr={contentArr[3]} />
+            <NavbarArr arr={contentArr[1]} />
           </li>
           <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
             <div
@@ -291,7 +247,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className=" laptop:hidden desktop:hidden phone:block tablet:block">
-        <SideBar />
+        <SideBar props={contentArr} />
       </div>
     </div>
   );

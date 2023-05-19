@@ -19,7 +19,7 @@ const Social = ({ url }) => {
         <li className="inline-block px-2 bg-blue-500 text-white rounded hover:opacity-80">
           <ShareFaceBook url={url} />
         </li>
-        <li className=" ml-[40px] px-2 bg-[#1d9bf0] text-white rounded-lg mr-3 hover:opacity-80 flex items-center">
+        <li className="ml-4 px-2 bg-[#1d9bf0] text-white rounded-lg mr-3 hover:opacity-80 flex items-center">
           <AiOutlineTwitter />
           <Twitter url={url} />
         </li>
