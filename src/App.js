@@ -1,6 +1,12 @@
 import React from "react";
 
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import Layout from "./Layout";
 import HomePage from "./page";
@@ -62,12 +68,23 @@ import EventsDetail from "./page/Events/EventsDetail";
 import RegisterMember from "./page/Member/RegisterMember";
 import ContentDetail from "./page/Detail/ContentDetail";
 
-function App() {
-  const { currentUser } = useContext(AuthContext);
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
+import HomePageAdmin from "./page/Admin";
+import NewsManager from "./page/Admin/NewsManager";
+import LayoutAdmin from "./Layout/LayoutAdmin";
+
+const AppLayout = ({ currentUser }) => {
+  if (currentUser) {
+    return (
+      <Routes>
+        <Route path="/admin" element={<LayoutAdmin />}>
+          {/* Các route và component cho layout của admin */}
+          <Route path="" element={<HomePageAdmin />} />
+          <Route path="/admin/news" element={<NewsManager />} />
+        </Route>
+
+        <Route path="/" element={<Layout />}>
+          {/* Các route và component cho layout của admin */}
+
           <Route path="/feeds" element={<RssFeeds />} />
           <Route path="/feeds/:slug" element={<RssDetail />} />
           <Route path="/" element={<HomePage />} />
@@ -149,8 +166,101 @@ function App() {
 
           <Route path="/page" element={<Page />} />
           <Route path="/:slug" element={<ContentDetail />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
+    );
+  }
+
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/feeds" element={<RssFeeds />} />
+        <Route path="/feeds/:slug" element={<RssDetail />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/regulations" element={<Regulations />} />
+        <Route path="/exCommittee" element={<ExCommittee />} />
+        <Route path="/solution" element={<Solution />} />
+
+        <Route path="/incorporation" element={<Incorporation />} />
+
+        <Route path="/user" element={<UserAuth />}>
+          <Route
+            path="login"
+            element={
+              currentUser ? <Navigate to="/user/editinfo" /> : <LoginPage />
+            }
+          />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="lostpass" element={<LostPage />} />
+
+          <Route path="editinfo" element={<UserEdit />}>
+            <Route path="" element={<Navigate to="basic" replace={true} />} />
+            {currentUser ? (
+              <>
+                <Route path="basic" element={<Basic />} />
+                <Route path="avatar" element={<Avatar />} />
+                <Route path="email" element={<Email />} />
+                <Route path="password" element={<Password />} />
+                <Route path="question" element={<Question />} />
+                <Route path="two-step-veri" element={<TwoStepVeri />} />
+                <Route path="group" element={<Group />} />
+                <Route path="safe-mode" element={<SafeMode />} />
+              </>
+            ) : (
+              <Route path="*" element={<Navigate to="/user/login" />} />
+            )}
+          </Route>
+          <Route path="" element={currentUser ? <UserInfo /> : <LoginPage />} />
+        </Route>
+
+        <Route path="/two-step-verification" element={<StartVerify />} />
+        <Route path="/two-step-verification/setup" element={<Setup />} />
+
+        <Route path="/oganize" element={<Oganize />} />
+        <Route path="/detailUser" element={<DetailUser />} />
+        <Route path="/office" element={<Office />} />
+        <Route path="/member" element={<Member />} />
+        <Route path="/ban-chap-hanh-hiep-hoi" element={<ListOfExecutives />} />
+        <Route path="/quyen-loi-hoi-vien" element={<MembershipBenefits />} />
+        <Route path="/dang-ky-hoi-vien" element={<RegisterMember />} />
+        <Route path="/member/:id" element={<MemberDetail />} />
+
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="*" element={<NotFound />} />
+
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:slug" element={<NewDetail />} />
+        <Route path="/news/:slug/:subslug" element={<DetailPost />} />
+
+        <Route path="/trade" element={<TradePage />} />
+        <Route path="/trade/:slug" element={<DetailTrade />} />
+
+        <Route path="/projects-page" element={<ProjectPage />} />
+        <Route path="/projects-page/:slug" element={<DetailProjectPage />} />
+
+        <Route path="/events-page" element={<PageEvents />} />
+        <Route path="/events-page/:id" element={<EventsDetail />} />
+
+        <Route path="/contact-page" element={<ContactPage />} />
+
+        <Route path="/feedbackPage" element={<FeedbackPage />} />
+        <Route path="/detailFeedback" element={<DetailFeedback />} />
+
+        <Route path="/page" element={<Page />} />
+        <Route path="/:slug" element={<ContentDetail />} />
+      </Routes>
+    </Layout>
+  );
+};
+
+function App() {
+  const { currentUser } = useContext(AuthContext);
+  return (
+    <BrowserRouter>
+      <AppLayout currentUser={currentUser}>
+        <Outlet />
+      </AppLayout>
     </BrowserRouter>
   );
 }

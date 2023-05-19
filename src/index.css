@@ -34,7 +34,7 @@ h1 h2 h3 {
 .input_select input {
   outline: none !important;
   outline-offset: 0 !important;
-  /* background-color: aquamarine !important; */
+
   --tw-ring-shadow: none !important;
 }
 
