@@ -67,7 +67,9 @@ const LoginPage = ({ className }) => {
           <div className="">
             <LayoutLoginPage
               className={`${
-                className ? className : "w-[45%]"
+                className
+                  ? className
+                  : "desktop:w-[45%] phone:w-full tablet:w-[50%] laptop:w-[45%]"
               } mx-auto rounded-md shadow-lg mt-6`}
               title="Thành viên đăng nhập"
               subtitle="Hãy đăng nhập thành viên để trải nghiệm đầy đủ các tiện ích trên site"

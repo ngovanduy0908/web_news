@@ -5,7 +5,6 @@ import App from "./App";
 import "flowbite";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./context/authContext";
-import "flowbite";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

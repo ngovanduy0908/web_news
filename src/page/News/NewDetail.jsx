@@ -62,9 +62,9 @@ const NewDetail = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"điểm tin"} subtitle={props.title} link={"/news"} />
       <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
-        <div className="pt-4 col-span-3 ">
+        <div className="pt-4 col-span-3 phone:col-span-4 desktop:col-span-3 laptop:col-span-3 tablet:col-span-3">
           <HeaderTitle title={props.title} />
-          <div className="pr-5 list">
+          <div className="desktop:pr-5 list phone:pr-0">
             {newsPost.map((post, index) => (
               <div
                 key={index}
@@ -86,7 +86,7 @@ const NewDetail = () => {
                     {post.title}
                   </div>
                 </h2>
-                <div className="flex items-center text-[12px] text-[#999999] mb-2">
+                <div className="inline-flex items-center text-[12px] phone:font-semibold text-[#999999] my-2">
                   <span className="flex items-center ml-2">
                     <span className="inline-block  mr-1">
                       <BiTime />
@@ -106,7 +106,9 @@ const NewDetail = () => {
                     Phản hồi: {post.reply}
                   </span>
                 </div>
-                <p>{post.description}</p>
+                <p className="desktop:line-clamp-none tablet:line-clamp-none laptop:line-clamp-none phone:line-clamp-3">
+                  {post.description}
+                </p>
                 <div className="float-right">
                   <button
                     onClick={() =>

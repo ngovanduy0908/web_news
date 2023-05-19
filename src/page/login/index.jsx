@@ -12,7 +12,7 @@ const UserAuth = () => {
         </div>
 
         <div className="grid grid-cols-4 gap-4 p-4">
-          <div className="col-span-3">
+          <div className="desktop:col-span-3 laptop:col-span-3 tablet:col-span-3 phone:col-span-4">
             <Outlet />
           </div>
 
