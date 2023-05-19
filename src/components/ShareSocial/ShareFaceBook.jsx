@@ -1,11 +1,11 @@
 import React from "react";
-import { FacebookShareButton, FacebookIcon } from "react-share";
+import { FacebookShareButton } from "react-share";
 
-function ShareFaceBook({ url, title }) {
+function ShareFaceBook({ url, title, icon }) {
   return (
-    <div>
-      <FacebookShareButton url={url} quote={title} hashtag="#dungHNduyHD">
-        {/* <FacebookIcon size={32} round={true} /> */}Chia sẻ
+    <div className="flex">
+      <FacebookShareButton url={url} quote={title} hashtag="#doanhnhanthanhhoa">
+        {icon ? icon : "Chia Sẻ"}
       </FacebookShareButton>
     </div>
   );

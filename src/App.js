@@ -52,7 +52,6 @@ import Setup from "./page/userInfo/verify/Setup";
 import Group from "./page/userInfo/Group";
 import SafeMode from "./page/userInfo/SafeMode";
 import UserInfo from "./page/userInfo/UserInfo";
-import Test from "./components/Test";
 import PageEvents from "./page/Events";
 import Page from "./page/Page";
 import Member from "./page/Member";
@@ -61,6 +60,7 @@ import ListOfExecutives from "./page/Member/ListOfExecutives";
 import MembershipBenefits from "./page/Member/MembershipBenefits";
 import EventsDetail from "./page/Events/EventsDetail";
 import RegisterMember from "./page/Member/RegisterMember";
+import ContentDetail from "./page/Detail/ContentDetail";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -75,8 +75,8 @@ function App() {
           <Route path="/regulations" element={<Regulations />} />
           <Route path="/exCommittee" element={<ExCommittee />} />
           <Route path="/solution" element={<Solution />} />
+
           <Route path="/incorporation" element={<Incorporation />} />
-          {/* <Route path="/test" element={<Test />} /> */}
 
           <Route path="/user" element={<UserAuth />}>
             <Route
@@ -148,6 +148,7 @@ function App() {
           <Route path="/detailFeedback" element={<DetailFeedback />} />
 
           <Route path="/page" element={<Page />} />
+          <Route path="/:slug" element={<ContentDetail />} />
         </Routes>
       </Layout>
     </BrowserRouter>
