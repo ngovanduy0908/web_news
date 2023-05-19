@@ -11,40 +11,10 @@ const Category = () => {
           <a href="">Tin hoạt động</a>{" "}
         </li>
         <li className="py-3 hover:opacity-80">
-          <a href="">chỉ đạo điều hành</a>{" "}
+          <a href="">tin tức hội viên</a>{" "}
         </li>
         <li className="py-3 hover:opacity-80">
-          <a href="">thông tin tuyên truyền</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">thông tin kinh tế - xã hội</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin hội viên</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin doanh nhân</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin xứ thanh</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">công trình - đề tài</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">thông tin thống kê</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin hội viên</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tinh doanh nhân</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin kinh tế</a>{" "}
-        </li>
-        <li className="py-3 hover:opacity-80">
-          <a href="">tin pháp luật</a>
+          <a href="">tin tức thanh hóa</a>{" "}
         </li>
       </ul>
     </div>

@@ -60,7 +60,7 @@ const NewDetail = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-white pt-6">
-      <Breadcrumbs title={"tin tức"} subtitle={props.title} link={"/news"} />
+      <Breadcrumbs title={"điểm tin"} subtitle={props.title} link={"/news"} />
       <div className=" pb-14 grid grid-cols-4 gap-3 pt-4 px-6">
         <div className="pt-4 col-span-3 ">
           <HeaderTitle title={props.title} />
@@ -71,9 +71,7 @@ const NewDetail = () => {
                 className="block text-[14px] py-8 border-b-[2px] border-[#999999] border-solid item"
               >
                 <div
-                  onClick={() =>
-                    navigate(`/news/${props.slug}/${post.subslug}`)
-                  }
+                  onClick={() => navigate(`/${post.subslug}`)}
                   className=" cursor-pointer"
                 >
                   <img
@@ -84,11 +82,7 @@ const NewDetail = () => {
                   />
                 </div>
                 <h2 className="font-bold text-[#375480] text-[16px] mb-1 cursor-pointer">
-                  <div
-                    onClick={() =>
-                      navigate(`/news/${props.slug}/${post.subslug}`)
-                    }
-                  >
+                  <div onClick={() => navigate(`/${post.subslug}`)}>
                     {post.title}
                   </div>
                 </h2>
