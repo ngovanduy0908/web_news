@@ -80,6 +80,7 @@ export default function LayoutAdmin() {
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                 alt="Your Company"
+                onClick={() => navigate("/")}
               />
             </div>
             <nav className="flex flex-1 flex-col">

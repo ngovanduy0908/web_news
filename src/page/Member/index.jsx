@@ -18,6 +18,7 @@ const members = [
     address: "484 Trần Phú - Phường Ba Đình- TPTH",
     image:
       "http://dntpthanhhoa.vn/wp-content/uploads/2020/09/96385e1d7e0e8150d81f-150x150.jpg",
+    desc: "Công ty thương mại và dịch vụ số 1 Minh Châu: là công ty thương mại chuyên cung cấp vòng bi , dây curoa , nhông xích , que hàn, phớt và các phụ tùng máy công nhiệp, nông nghiệp . Sản phẩm được nhập khẩu từ các nước Nhật Bản , Trung Quốc , Việt Nam . Các mặt hàng của công ty đã cung cấp cho các đại lý ở các tỉnh Thái Nguyên , Nam Định , Vĩnh Phúc , Nghệ An và tất cả các huyện , các nhà máy ( Dệt may , bao bì , gạch , xi măng , sữa chữa ô tô …)trên địa bàn tỉnh Thanh Hóa . Bằng sự uy tín từ nguồn hàng chính hãng và giá cả cạnh tranh , Minh Châu đã trở thành nhà cung cấp tin cậy cho các đại lý và các nhà máy trong và ngoài tỉnh.",
   },
   {
     id_member: 2,
@@ -31,6 +32,7 @@ const members = [
     address: "484 Trần Phú - Phường Ba Đình- TPTH",
     image:
       "http://dntpthanhhoa.vn/wp-content/uploads/2020/09/96385e1d7e0e8150d81f-150x150.jpg",
+    desc: "Công ty thương mại và dịch vụ số 1 Minh Châu: là công ty thương mại chuyên cung cấp vòng bi , dây curoa , nhông xích , que hàn, phớt và các phụ tùng máy công nhiệp, nông nghiệp . Sản phẩm được nhập khẩu từ các nước Nhật Bản , Trung Quốc , Việt Nam . Các mặt hàng của công ty đã cung cấp cho các đại lý ở các tỉnh Thái Nguyên , Nam Định , Vĩnh Phúc , Nghệ An và tất cả các huyện , các nhà máy ( Dệt may , bao bì , gạch , xi măng , sữa chữa ô tô …)trên địa bàn tỉnh Thanh Hóa . Bằng sự uy tín từ nguồn hàng chính hãng và giá cả cạnh tranh , Minh Châu đã trở thành nhà cung cấp tin cậy cho các đại lý và các nhà máy trong và ngoài tỉnh.",
   },
   {
     id_member: 3,
@@ -152,6 +154,11 @@ const Member = () => {
                       Địa chỉ:{" "}
                     </span>
                     {member.address}
+                  </p>
+                  <p className="">
+                    <span className=" text-[#333333] text-[14px] line-clamp-2">
+                      <b>Mô tả:</b> {member.desc}
+                    </span>
                   </p>
                 </div>
               </div>

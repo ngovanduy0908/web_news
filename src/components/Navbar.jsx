@@ -244,6 +244,14 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
+          <li className="cursor-pointer block group relative hover:bg-gradient-to-b from-[#82b2dc] to-[#428BCA]">
+            <div
+              className="laptop:h-[44px] tablet:h-[40px] desktop:text-[14px] laptop:text-[14px]  px-6 flex items-center"
+              onClick={() => navigate("/search")}
+            >
+              <span>Tìm kiếm</span>
+            </div>
+          </li>
         </ul>
       </div>
       <div className=" laptop:hidden desktop:hidden phone:block tablet:block">
