@@ -69,8 +69,16 @@ import RegisterMember from "./page/Member/RegisterMember";
 import ContentDetail from "./page/Detail/ContentDetail";
 
 import HomePageAdmin from "./page/Admin";
-import NewsManager from "./page/Admin/NewsManager";
 import LayoutAdmin from "./Layout/LayoutAdmin";
+import RoleManager from "./page/Admin/role/RoleManager";
+import CategoryManager from "./page/Admin/category/CategoryManager";
+import NewsManager from "./page/Admin/news/NewsManager";
+import MemberManager from "./page/Admin/member/MemberManager";
+import UserManager from "./page/Admin/user/UserManager";
+import EventManager from "./page/Admin/event/EventManager";
+import ContactManager from "./page/Admin/contact/ContactManager";
+
+const prevHref = "/admin";
 
 const AppLayout = ({ currentUser }) => {
   if (currentUser) {
@@ -79,7 +87,13 @@ const AppLayout = ({ currentUser }) => {
         <Route path="/admin" element={<LayoutAdmin />}>
           {/* Các route và component cho layout của admin */}
           <Route path="" element={<HomePageAdmin />} />
-          <Route path="/admin/news" element={<NewsManager />} />
+          <Route path={`${prevHref}/role`} element={<RoleManager />} />
+          <Route path={`${prevHref}/category`} element={<CategoryManager />} />
+          <Route path={`${prevHref}/news`} element={<NewsManager />} />
+          <Route path={`${prevHref}/member`} element={<MemberManager />} />
+          <Route path={`${prevHref}/user`} element={<UserManager />} />
+          <Route path={`${prevHref}/event`} element={<EventManager />} />
+          <Route path={`${prevHref}/contact`} element={<ContactManager />} />
         </Route>
 
         <Route path="/" element={<Layout />}>
