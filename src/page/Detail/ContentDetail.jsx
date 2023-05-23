@@ -118,6 +118,9 @@ const ContentDetail = () => {
               icon={<BsFacebook className="text-[20px] text-blue-500" />}
             />
             <ShareTwitter
+              url={
+                "http://dntpthanhhoa.vn/trung-tam-nghien-cuu-khoa-hoc-va-xet-nghiem-cong-nghe-cao-hstc.html"
+              }
               icon={
                 <AiFillTwitterCircle className="text-[23px] text-blue-500" />
               }

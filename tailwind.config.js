@@ -20,6 +20,9 @@ module.exports = {
         ],
       },
     },
+    colors: {
+      primaryColor: "#22d3ee",
+    },
   },
   plugins: [require("./node_modules/flowbite/plugin")],
   corePlugins: {

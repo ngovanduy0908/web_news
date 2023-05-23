@@ -23,15 +23,7 @@ const MemberDetail = () => {
                 </span>
                 Công ty TNHH Thương mại và dịch vụ số 1 Minh Châu
               </p>
-              {/* <p class="mb-1 font-semibold text-red-600 dark:text-gray-400">
-                    {member.position}
-                  </p> */}
-              {/* <p>
-                    <span className="font-semibold text-[#333333] text-[14px]">
-                      Người đại diện :{" "}
-                    </span>
-                    Nguyễn Ngọc Bắc
-                  </p> */}
+
               <p>
                 <span className="font-semibold text-[#333333] text-[14px]">
                   SĐT :{" "}
@@ -70,12 +62,6 @@ const MemberDetail = () => {
               alt=""
             />
             <div className=" p-4 pl-8 leading-normal">
-              {/* <p className="mb-1 tracking-tight text-gray-900 dark:text-white">
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  Tên doanh nghiệp:{" "}
-                </span>
-                Công ty TNHH Thương mại và dịch vụ số 1 Minh Châu
-              </p> */}
               <p>
                 <span className="font-semibold text-[#333333] text-[14px]">
                   Người đại diện :{" "}
@@ -85,36 +71,6 @@ const MemberDetail = () => {
               <p class="mt-3 font-semibold text-red-600 dark:text-gray-400">
                 Hội viên
               </p>
-
-              {/* <p>
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  SĐT :{" "}
-                </span>
-                0'977910112
-              </p> */}
-              {/* <p>
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  Email:{" "}
-                </span>
-                anhminh050581@gmail.com
-              </p> */}
-              {/* <p>
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  Lĩnh vực hoạt động:{" "}
-                </span>
-                Vòng bi - dây curoa
-              </p> */}
-              {/* <p>
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  Website:{" "}
-                </span>
-              </p> */}
-              {/* <p>
-                <span className="font-semibold text-[#333333] text-[14px]">
-                  Địa chỉ:{" "}
-                </span>
-                484 Trần Phú - Phường Ba Đình- TPTH
-              </p> */}
             </div>
           </div>
           <div>

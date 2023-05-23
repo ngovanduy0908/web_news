@@ -183,14 +183,14 @@ const Footer = () => {
           <div className="flex items-center">
             <div
               href="#"
-              className="mr-3 w-7 h-7 rounded-full flex items-center bg-sky-500 text-white justify-center"
+              className="mr-3 w-7 h-7 rounded-full flex items-center bg-primaryColor text-white justify-center"
             >
               <TbBrandStackshare className="font-bold text-lg" />
             </div>
           </div>
           <div>
             <button
-              className="w-8 h-8 rounded-full flex items-center bg-sky-500 text-white justify-center"
+              className="w-8 h-8 rounded-full flex items-center bg-blue-500 text-white justify-center"
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
               }}

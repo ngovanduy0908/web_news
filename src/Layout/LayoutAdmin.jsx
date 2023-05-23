@@ -1,12 +1,65 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { AiFillDashboard } from "react-icons/ai";
+import { SiLevelsdotfyi } from "react-icons/si";
+import { BiNews, BiCategoryAlt } from "react-icons/bi";
+import {
+  MdCardMembership,
+  MdOutlineConnectWithoutContact,
+} from "react-icons/md";
+import { FaUserAlt } from "react-icons/fa";
+import { TbTimelineEventText } from "react-icons/tb";
+
+const prevHref = "/admin";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: "Dashboard", current: true },
-  { name: "Team", href: "#", icon: "Dashboard", current: false },
-  { name: "Projects", href: "#", icon: "Dashboard", current: false },
-  { name: "Calendar", href: "#", icon: "Dashboard", current: false },
-  { name: "Documents", href: "#", icon: "Dashboard", current: false },
-  { name: "Reports", href: "#", icon: "Dashboard", current: false },
+  {
+    name: "Dashboard",
+    href: `${prevHref}`,
+    icon: AiFillDashboard,
+    current: true,
+  },
+  {
+    name: "Quản Lý Chức Vụ",
+    href: `${prevHref}/role`,
+    icon: SiLevelsdotfyi,
+    current: false,
+  },
+  {
+    name: "Quản Lý Danh Mục",
+    href: `${prevHref}/category`,
+    icon: BiCategoryAlt,
+    current: false,
+  },
+  {
+    name: "Quản Lý Tin Tức",
+    href: `${prevHref}/news`,
+    icon: BiNews,
+    current: false,
+  },
+  {
+    name: "Quản Lý Hội Viên",
+    href: `${prevHref}/member`,
+    icon: MdCardMembership,
+    current: false,
+  },
+  {
+    name: "Quản Lý Người Dùng",
+    href: `${prevHref}/user`,
+    icon: FaUserAlt,
+    current: false,
+  },
+  {
+    name: "Quản Lý Sự Kiện",
+    href: `${prevHref}/event`,
+    icon: TbTimelineEventText,
+    current: false,
+  },
+  {
+    name: "Quản Lý Liên Hệ",
+    href: `${prevHref}/contact`,
+    icon: MdOutlineConnectWithoutContact,
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -14,6 +67,7 @@ function classNames(...classes) {
 }
 
 export default function LayoutAdmin() {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -26,6 +80,7 @@ export default function LayoutAdmin() {
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                 alt="Your Company"
+                onClick={() => navigate("/")}
               />
             </div>
             <nav className="flex flex-1 flex-col">
@@ -34,13 +89,14 @@ export default function LayoutAdmin() {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                       <li key={item.name}>
-                        <a
+                        <button
+                          onClick={() => navigate(item.href)}
                           href={item.href}
                           className={classNames(
                             item.current
                               ? "bg-gray-800 text-white"
                               : "text-gray-400 hover:text-white hover:bg-gray-800",
-                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold w-full"
                           )}
                         >
                           <item.icon
@@ -48,7 +104,7 @@ export default function LayoutAdmin() {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
