@@ -31,7 +31,7 @@ h1 h2 h3 {
   font-family: "Roboto Condensed";
 }
 
-.input_select input {
+input {
   outline: none !important;
   outline-offset: 0 !important;
 
