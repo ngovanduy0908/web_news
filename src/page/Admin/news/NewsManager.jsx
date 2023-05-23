@@ -6,6 +6,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { AiOutlinePlusCircle, AiOutlineDelete } from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import Button from "../../../components/Buttons/Button";
+import ReactQuillEditor from "../../../components/ReactQuill";
 const options = [
   { label: "Tin tức hoạt động", value: "tin-tuc-hoat-dong" },
   { label: "Tin tức Xứ Thanh", value: "tin-tuc-xu-thanh" },
@@ -13,15 +14,15 @@ const options = [
   { label: "Hoạt động", value: "hoat-dong" },
 ];
 
-// const options_role = [
-//   { value: "admin", label: "Admin" },
-//   { value: "hoi_vien", label: "Hội viên" },
-//   { value: "nguoi_dung", label: "Người dùng" },
-// ];
+const options_post = [
+  { value: "chua_duyet", label: "Chưa duyệt" },
+  { value: "da_duyet", label: "Đã duyệt" },
+];
 const NewsManager = () => {
   const [open, setOpen] = useState(false);
   const {
     register,
+    setValue,
     formState: { errors },
     handleSubmit,
   } = useForm({ criteriaMode: "all" });
@@ -31,29 +32,34 @@ const NewsManager = () => {
     setOpen(true);
   };
   return (
-    <div className="relative">
-      <div>
-        <div className="grid grid-cols-3 gap-4">
+    <div className="relative transition-all ease-linear">
+      <div className="bg-white p-4 rounded-xl drop-shadow-new transition-all ease-linear">
+        <div className="grid grid-cols-5 gap-4">
           <Select
             options={options}
             className="col-span-2"
             placeholder={"------Tìm danh mục theo------"}
           />
+          <Select
+            options={options_post}
+            className="col-span-2"
+            placeholder={"------ Lọc bài viết ------"}
+          />
           <button className="py-2 px-4 font-semibold text-base bg-gray-500 rounded text-white hover:bg-primaryColor">
             Tìm kiếm
           </button>
         </div>
-        <table className="border border-blue-400 w-full mt-10 bg-white">
+        <table className="border border-blue-400 w-full mt-10 bg-white overflow-y-auto relative">
           <thead>
             <tr>
               <th scope="col" className="p-4 border border-blue-400">
-                <div class="flex items-center">
+                <div className="flex items-center">
                   <input
                     id="checkbox-all-search"
                     type="checkbox"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
-                  <label for="checkbox-all-search" class="sr-only">
+                  <label htmlFor="checkbox-all-search" className="sr-only">
                     checkbox
                   </label>
                 </div>
@@ -73,9 +79,9 @@ const NewsManager = () => {
                   <input
                     id="checkbox-table-search-1"
                     type="checkbox"
-                    classNmae="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
-                  <label for="checkbox-table-search-1" class="sr-only">
+                  <label htmlFor="checkbox-table-search-1" className="sr-only">
                     checkbox
                   </label>
                 </div>
@@ -108,61 +114,122 @@ const NewsManager = () => {
         </table>
 
         <div className="mt-5">
-          <Button
-            click={handleOpen}
-            type="button"
-            className="flex items-center"
-            title={"Thêm danh mục"}
-            colorText={"text-black"}
-            colorBgr={"bg-white"}
-            colorHover={"bg-gray-100"}
-            icon={<AiOutlinePlusCircle className="text-[18px]" />}
-          />
+          <div className="flex">
+            <Button
+              click={handleOpen}
+              type="button"
+              className="flex items-center"
+              title={"Thêm danh mục"}
+              colorText={"text-black"}
+              colorBgr={"border border-gray-700"}
+              colorHover={"bg-gray-100"}
+              icon={<AiOutlinePlusCircle className="text-[18px]" />}
+            />
+            <Button
+              title={"Xóa các lựa chọn"}
+              colorBgr={"bg-red-500"}
+              colorText={"text-white"}
+              colorHover={"bg-red-800"}
+            />
+            <Button
+              title={"Duyệt các lựa chọn"}
+              colorBgr={"bg-yellow-400 hover:bg-yellow-600"}
+              colorText={"text-white"}
+            />
+          </div>
 
           {open && (
             <form onSubmit={handleSubmit(onSubmit)} className="w-full mt-2">
-              <div className="w-full relative">
-                <input
-                  type="text"
-                  className={`block bg-white rounded focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
-                    errors.category ? "border-red-500 border-[1px]" : ""
-                  }`}
-                  {...register("category", {
-                    required: "Không được bỏ trống trường này",
-                  })}
-                  placeholder="Thêm danh mục"
+              <div>
+                <div className="w-full relative">
+                  <input
+                    type="text"
+                    className={`block bg-white rounded focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
+                      errors.title ? "border-red-500 border-[1px]" : ""
+                    }`}
+                    {...register("title", {
+                      required: "Không được bỏ trống trường này",
+                    })}
+                    placeholder="Thêm Tiêu đề"
+                  />
+                  <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
+                    *
+                  </span>
+                </div>
+                <ErrorMessage
+                  errors={errors}
+                  name="title"
+                  render={({ messages }) => {
+                    //console.log("messages", messages);
+                    return messages
+                      ? Object.entries(messages).map(([type, message]) => (
+                          <p
+                            className="ml-10 text-[14px] text-red-500"
+                            key={type}
+                          >
+                            {message}
+                          </p>
+                        ))
+                      : null;
+                  }}
                 />
-                <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
-                  *
-                </span>
               </div>
-              <ErrorMessage
-                errors={errors}
-                name="category"
-                render={({ messages }) => {
-                  //console.log("messages", messages);
-                  return messages
-                    ? Object.entries(messages).map(([type, message]) => (
-                        <p
-                          className="ml-10 text-[14px] text-red-500"
-                          key={type}
-                        >
-                          {message}
-                        </p>
-                      ))
-                    : null;
-                }}
-              />
+              <div className="mt-2">
+                <div className="w-full relative">
+                  <input
+                    type="text"
+                    className={`block bg-white rounded focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
+                      errors.sub_title ? "border-red-500 border-[1px]" : ""
+                    }`}
+                    {...register("sub_title", {
+                      required: "Không được bỏ trống trường này",
+                    })}
+                    placeholder="Giới thiệu ngắn gọn"
+                  />
+                  <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
+                    *
+                  </span>
+                </div>
+                <ErrorMessage
+                  errors={errors}
+                  name="sub_title"
+                  render={({ messages }) => {
+                    //console.log("messages", messages);
+                    return messages
+                      ? Object.entries(messages).map(([type, message]) => (
+                          <p
+                            className="ml-10 text-[14px] text-red-500"
+                            key={type}
+                          >
+                            {message}
+                          </p>
+                        ))
+                      : null;
+                  }}
+                />
+              </div>
+              <div className="bg-white">
+                <ReactQuillEditor
+                  {...register("content", {
+                    required: true,
+                  })}
+                  onContentChange={(value) => {
+                    setValue("content", value);
+                  }}
+                  placeholder={"Nhập content..."}
+                />
+              </div>
+
               <button
                 type="submit"
-                class="text-white mt-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                className="text-white mt-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
                 Thêm{" "}
               </button>
               <button
                 onClick={() => setOpen(false)}
                 type="button"
-                class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 ml-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 ml-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
               >
                 Hủy
               </button>
