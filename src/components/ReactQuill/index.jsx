@@ -7,7 +7,10 @@ import { ImageDrop } from "quill-image-drop-module";
 
 Quill.register("modules/imageResize", ImageResize);
 Quill.register("modules/imageDrop", ImageDrop);
-const ReactQuillEditor = ({ onContentChange, placeholder }) => {
+
+const ReactQuillEditor = ({ content, setContent }) => {
+
+
   const [content, setContent] = useState("");
 
   const modules = {
@@ -65,8 +68,8 @@ const ReactQuillEditor = ({ onContentChange, placeholder }) => {
   ];
 
   const handleChange = (value) => {
+    // setContent(value);
     setContent(value);
-    onContentChange(value);
   };
   return (
     <ReactQuill
