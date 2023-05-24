@@ -78,6 +78,8 @@ import UserManager from "./page/Admin/user/UserManager";
 import EventManager from "./page/Admin/event/EventManager";
 import ContactManager from "./page/Admin/contact/ContactManager";
 import ContactManagerDetail from "./page/Admin/contact/ContactManagerDetail";
+import UserDetail from "./page/Admin/user/UserDetail";
+import NewsDetail from "./page/Admin/news/NewsDetail";
 
 const prevHref = "/admin";
 
@@ -99,6 +101,8 @@ const AppLayout = ({ currentUser }) => {
             path={`${prevHref}/contact/:id`}
             element={<ContactManagerDetail />}
           />
+          <Route path={`${prevHref}/user/:id`} element={<UserDetail />} />
+          <Route path={`${prevHref}/news/:id`} element={<NewsDetail />} />
         </Route>
 
         <Route path="/" element={<Layout />}>
