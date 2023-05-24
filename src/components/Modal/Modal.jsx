@@ -2,14 +2,21 @@ import React from "react";
 import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function Modal({ title, children, open, setOpen, className }) {
+export default function Modal({
+  title,
+  children,
+  open,
+  setOpen,
+  className,
+  classNameChildren,
+}) {
   const cancelButtonRef = useRef(null);
 
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className={`relative z-40`}
+        className={`${className ? className : ""}relative z-40`}
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
@@ -36,7 +43,11 @@ export default function Modal({ title, children, open, setOpen, className }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="w-[500px] max-h-[700px] overflow-y-auto m-auto relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <Dialog.Panel
+                className={`${
+                  classNameChildren ? classNameChildren : ""
+                } w-[500px] max-h-[700px] overflow-y-auto m-auto relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg`}
+              >
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
