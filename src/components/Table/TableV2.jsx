@@ -35,7 +35,7 @@ const TableV2 = ({
                     <th
                       key={idx}
                       scope="col"
-                      className="px-6 py-4 md:py-10 text-left text-base font-medium text-black tracking-wider border border-slate-600"
+                      className="px-6 py-4 md:py-10 text-left text-base text-black tracking-wider border border-slate-600"
                     >
                       {column}
                     </th>

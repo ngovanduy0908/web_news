@@ -116,7 +116,7 @@ const NewsManager = () => {
         <div className="mt-5">
           <div className="flex">
             <Button
-              click={handleOpen}
+              onClick={handleOpen}
               type="button"
               className="flex items-center"
               title={"Thêm danh mục"}

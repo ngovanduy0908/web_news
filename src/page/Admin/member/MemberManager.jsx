@@ -3,10 +3,15 @@ import { useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { AiOutlinePlusCircle, AiOutlineDelete } from "react-icons/ai";
+import {
+  AiOutlinePlusCircle,
+  AiOutlineDelete,
+  AiOutlineCheckCircle,
+} from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import Button from "../../../components/Buttons/Button";
 import ReactQuillEditor from "../../../components/ReactQuill";
+import { FiAlertCircle } from "react-icons/fi";
 const options = [
   { label: "Hội viên", value: "hoi_vien" },
   { label: "Ban chấp hành", value: "ban_chap_hanh" },
@@ -98,6 +103,11 @@ const MemberManager = () => {
               <td className="text-center text-[12px]">Chưa duyệt</td>
               <td className="flex items-center justify-center p-2">
                 <Button
+                  //onClick={() => setOpenAlertModal(true)}
+                  icon={<FiAlertCircle className="text-[18px]" />}
+                  colorBgr={"bg-yellow-400 text-white hover:bg-yellow-800"}
+                />
+                <Button
                   colorText={"text-white"}
                   colorBgr={"bg-blue-600"}
                   colorHover={"bg-blue-700"}
@@ -117,15 +127,17 @@ const MemberManager = () => {
         <div className="mt-5">
           <div className="flex">
             <Button
+              icon={<AiOutlineCheckCircle className="text-[18px]" />}
+              title={"Duyệt các lựa chọn"}
+              colorBgr={"bg-green-400 hover:bg-green-600"}
+              colorText={"text-white"}
+            />
+            <Button
+              icon={<AiOutlineDelete className="text-[18px]" />}
               title={"Xóa các lựa chọn"}
               colorBgr={"bg-red-500"}
               colorText={"text-white"}
               colorHover={"bg-red-800"}
-            />
-            <Button
-              title={"Duyệt các lựa chọn"}
-              colorBgr={"bg-yellow-400 hover:bg-yellow-600"}
-              colorText={"text-white"}
             />
           </div>
         </div>

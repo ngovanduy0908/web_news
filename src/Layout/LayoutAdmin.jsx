@@ -72,7 +72,7 @@ export default function LayoutAdmin() {
     <>
       <div>
         {/* Static sidebar for desktop */}
-        <div className="hidden desktop:fixed desktop:inset-y-0 desktop:z-50 desktop:flex desktop:w-72 desktop:flex-col">
+        <div className="desktop:fixed desktop:inset-y-0 desktop:z-50 desktop:flex desktop:w-72 desktop:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
             <div className="flex h-16 shrink-0 items-center">

@@ -3,9 +3,14 @@ import { useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { AiOutlinePlusCircle, AiOutlineDelete } from "react-icons/ai";
+import {
+  AiOutlinePlusCircle,
+  AiOutlineDelete,
+  AiOutlineCheckCircle,
+} from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import Button from "../../../components/Buttons/Button";
+import Card from "../../../components/Card/Card";
 const options = [
   { label: "Tin tức hoạt động", value: "tin-tuc-hoat-dong" },
   { label: "Tin tức Xứ Thanh", value: "tin-tuc-xu-thanh" },
@@ -31,8 +36,8 @@ const CategoryManager = () => {
     setOpen(true);
   };
   return (
-    <div className="relative">
-      <div>
+    <Card title={"Quản lý danh mục"} className="overflow-visible">
+      <Card.Content>
         <div className="grid grid-cols-3 gap-4">
           <Select
             options={options}
@@ -128,16 +133,30 @@ const CategoryManager = () => {
         </table>
 
         <div className="mt-5">
-          <Button
-            click={handleOpen}
-            type="button"
-            className="flex items-center"
-            title={"Thêm danh mục"}
-            colorText={"text-black"}
-            colorBgr={"bg-white"}
-            colorHover={"bg-gray-100"}
-            icon={<AiOutlinePlusCircle className="text-[18px]" />}
-          />
+          <div className="flex">
+            <Button
+              onClick={handleOpen}
+              type="button"
+              title={"Thêm danh mục"}
+              colorText={"text-black border border-gray-600"}
+              colorBgr={"bg-white"}
+              colorHover={"bg-gray-100"}
+              icon={<AiOutlinePlusCircle className="text-[18px]" />}
+            />
+            <Button
+              icon={<AiOutlineCheckCircle className="text-[18px]" />}
+              title={"Duyệt các lựa chọn"}
+              colorBgr={"bg-green-400 hover:bg-green-600"}
+              colorText={"text-white"}
+            />
+            <Button
+              icon={<AiOutlineDelete className="text-[18px]" />}
+              title={"Xóa các lựa chọn"}
+              colorBgr={"bg-red-500"}
+              colorText={"text-white"}
+              colorHover={"bg-red-800"}
+            />
+          </div>
 
           {open && (
             <form onSubmit={handleSubmit(onSubmit)} className="w-full mt-2">
@@ -189,8 +208,8 @@ const CategoryManager = () => {
             </form>
           )}
         </div>
-      </div>
-    </div>
+      </Card.Content>
+    </Card>
   );
 };
 
