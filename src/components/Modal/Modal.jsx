@@ -45,8 +45,8 @@ export default function Modal({
             >
               <Dialog.Panel
                 className={`${
-                  classNameChildren ? classNameChildren : ""
-                } w-[500px] max-h-[700px] overflow-y-auto m-auto relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg`}
+                  classNameChildren ? classNameChildren : " w-[500px]"
+                } max-h-[700px] overflow-y-auto m-auto relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg`}
               >
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">

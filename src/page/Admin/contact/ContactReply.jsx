@@ -54,7 +54,7 @@ const ContactReply = () => {
                     "bg-[#428bca] border border-[#357ebd] m-auto text-white "
                   }
                   title={"Gửi phản hồi"}
-                  click={sendReply}
+                  onClick={sendReply}
                 />
               </td>
             </tr>
