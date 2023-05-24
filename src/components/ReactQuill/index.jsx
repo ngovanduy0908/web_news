@@ -71,7 +71,7 @@ const ReactQuillEditor = ({ content, setContent }) => {
       onChange={handleChange}
       modules={modules}
       formats={formats}
-      className="mt-4 border border-slate-400"
+      className=" border border-slate-400"
     />
   );
 };
