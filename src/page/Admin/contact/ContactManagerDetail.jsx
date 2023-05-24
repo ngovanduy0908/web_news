@@ -77,7 +77,7 @@ const ContactManagerDetail = () => {
               <Button
                 title={"Gửi phản hồi"}
                 colorText={"border border-slate-500  bg-white"}
-                click={reply}
+                onClick={reply}
               />
               <Button
                 title={"Xóa"}
@@ -86,7 +86,7 @@ const ContactManagerDetail = () => {
               <Button
                 title={"Quay Lại"}
                 colorText={"border border-slate-500  bg-white"}
-                click={back}
+                onClick={back}
               />
               <Button
                 title={"Đánh dấu là chưa đọc"}

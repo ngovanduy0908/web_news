@@ -39,7 +39,7 @@ const EventManager = () => {
         title="Thêm Mới"
         colorBgr="bg-blue-500"
         colorText="text-white mb-2"
-        click={() => setOpen(true)}
+        onClick={() => setOpen(true)}
       />
       <Card title={"Danh Sách Sự Kiện"}>
         <Card.Content>
