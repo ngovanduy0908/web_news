@@ -1,8 +1,8 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 import Loading from "../Loading/Loading";
 import { HiXMark } from "react-icons/hi2";
-import { Button, ButtonProps } from "../Button/Button";
+import { ButtonV2 } from "../Buttons/ButtonV2";
 
 const ModalV2 = ({
   visible = false,
@@ -94,21 +94,21 @@ const ModalV2 = ({
               {hideCancelBtn && hideOkBtn ? null : (
                 <div className={`modal-footer ${footerClass}`}>
                   {!hideOkBtn && (
-                    <Button
+                    <ButtonV2
                       type="primary"
                       onClick={onOk}
                       label={okText}
                       className="w-full inline-flex justify-center sm:ml-3 sm:w-auto sm:col-start-2"
                       {...okProps}
-                    ></Button>
+                    ></ButtonV2>
                   )}
                   {!hideCancelBtn && (
-                    <Button
+                    <ButtonV2
                       onClick={onClose}
                       label={cancelText}
                       disabled={okProps && okProps.loading}
                       className="mt-3 w-full inline-flex justify-center sm:mt-0 sm:w-auto sm:text-sm sm:col-start-1"
-                    ></Button>
+                    ></ButtonV2>
                   )}
                 </div>
               )}
