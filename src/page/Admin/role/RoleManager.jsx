@@ -3,7 +3,11 @@ import { useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlinePlusCircle } from "react-icons/ai";
+import Card from "../../../components/Card/Card";
+import Button from "../../../components/Buttons/Button";
+import { FiAlertCircle } from "react-icons/fi";
+import { TbEdit } from "react-icons/tb";
 const options = [
   { value: "id", label: "Id" },
   { value: "ten_tai_khoan", label: "Tên tài khoản" },
@@ -28,8 +32,8 @@ const RoleManager = () => {
     setOpen(true);
   };
   return (
-    <div className="relative">
-      <div>
+    <Card title={"Quản Lý Chức Vụ"} className="overflow-visible">
+      <Card.Content>
         <div className="grid grid-cols-5 gap-4">
           <Select
             options={options}
@@ -89,20 +93,22 @@ const RoleManager = () => {
               <td className="text-center">dung@gail.com</td>
               <td className="text-center">0912452754</td>
               <td className="text-center">Họat động</td>
-              <td className="flex items-center justify-center">
-                <button
-                  type="button"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Sửa
-                </button>
-
-                <button
-                  type="button"
-                  class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center  dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-                >
-                  Xóa
-                </button>
+              <td className="flex items-center justify-center p-2">
+                <Button
+                  //onClick={() => setOpenAlertModal(true)}
+                  icon={<FiAlertCircle />}
+                  colorBgr={"bg-yellow-400 text-white hover:bg-yellow-800"}
+                />
+                <Button
+                  //onClick={() => setOpenEditModal(true)}
+                  icon={<TbEdit />}
+                  colorBgr={"bg-green-500 text-white hover:bg-green-800"}
+                />
+                <Button
+                  //onClick={() => setOpenDeleteModal(true)}
+                  icon={<AiOutlineDelete />}
+                  colorBgr={"bg-red-600 text-white hover:bg-red-800"}
+                />
               </td>
             </tr>
           </tbody>
@@ -167,8 +173,8 @@ const RoleManager = () => {
             </form>
           )}
         </div>
-      </div>
-    </div>
+      </Card.Content>
+    </Card>
   );
 };
 

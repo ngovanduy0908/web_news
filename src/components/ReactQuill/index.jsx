@@ -53,9 +53,7 @@ const ReactQuillEditor = ({ content, setContent }) => {
     "image",
     "video",
     "code-block",
-
     "color",
-
     "align",
     "direction",
     "indent",

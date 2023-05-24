@@ -136,9 +136,10 @@ input {
   object-fit: contain;
 }
 
-table tr:nth-child(odd) {
+table tr:nth-child(even) {
   background-color: #f4f4f4;
 }
+
 .Crop-Controls {
   margin-bottom: 10px;
 }
