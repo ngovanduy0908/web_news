@@ -72,7 +72,7 @@ export default function LayoutAdmin() {
     <>
       <div>
         {/* Static sidebar for desktop */}
-        <div className="desktop:fixed desktop:inset-y-0 desktop:z-50 desktop:flex desktop:w-72 desktop:flex-col">
+        <div className="desktop:fixed desktop:inset-y-0 desktop:z-20 desktop:flex desktop:w-72 desktop:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
             <div className="flex h-16 shrink-0 items-center">
@@ -129,7 +129,7 @@ export default function LayoutAdmin() {
           </div>
         </div>
 
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-sm ">
+        <div className="sticky top-0 z-10 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-sm ">
           <span className="sr-only">Open sidebar</span>
           {/* <Bars3Icon className="h-6 w-6" aria-hidden="true" /> */}
           <div className="flex-1 text-sm font-semibold leading-6 text-white">
