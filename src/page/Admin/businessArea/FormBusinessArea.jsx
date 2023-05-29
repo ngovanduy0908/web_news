@@ -2,10 +2,13 @@ import React from "react";
 import ReactQuillEditor from "../../../components/ReactQuill";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Toggle from "../../../components/Toggle/Toggle";
 
 const FormBusinessArea = ({ initValue, onSave }) => {
+  console.log("init value: ", initValue);
   const [content, setContent] = useState(initValue.content);
   const [isContentError, setIsContentError] = useState(false);
+  const [isPublic, setIsPublic] = useState(initValue.status);
 
   const {
     register,
@@ -71,7 +74,15 @@ const FormBusinessArea = ({ initValue, onSave }) => {
                   )}
                 </div>
               </div>
-
+              <div className="col-span-2">
+                <div className="mt-2">
+                  <Toggle
+                    label="Hoạt động"
+                    value={isPublic}
+                    onChange={(e) => setIsPublic(e)}
+                  />
+                </div>
+              </div>
               <div className="col-span-2">
                 <label
                   htmlFor="content"

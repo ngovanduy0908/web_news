@@ -12,7 +12,7 @@ const FormBusinessAreaEdit = ({ idBusinessArea }) => {
     // call api tra ve data
     const data = {
       title: `fetch data theo ${idBusinessArea} `,
-      status: true,
+      status: false,
       content: "Theo api tra ra",
     };
 
