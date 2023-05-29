@@ -8,7 +8,7 @@ import {
 } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
 import { TbTimelineEventText } from "react-icons/tb";
-
+import { IoIosBusiness } from "react-icons/io";
 const prevHref = "/admin";
 
 const navigation = [
@@ -34,6 +34,12 @@ const navigation = [
     name: "Quản Lý Tin Tức",
     href: `${prevHref}/news`,
     icon: BiNews,
+    current: false,
+  },
+  {
+    name: "Quản Lý Lĩnh Vực Kinh Doanh",
+    href: `${prevHref}/business-area`,
+    icon: IoIosBusiness,
     current: false,
   },
   {

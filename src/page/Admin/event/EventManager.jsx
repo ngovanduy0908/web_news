@@ -25,7 +25,6 @@ const EventManager = () => {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
 
-  const [value, setValue] = useState(initValue);
   const [eventOne, setEventOne] = useState();
   const handleFetchData = () => {
     // setValue({
@@ -88,7 +87,6 @@ const EventManager = () => {
         colorBgr="bg-blue-500"
         colorText="text-white mb-2"
         onClick={() => {
-          setValue(initValue);
           setOpen(true);
         }}
       />
