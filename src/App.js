@@ -80,7 +80,11 @@ import ContactManager from "./page/Admin/contact/ContactManager";
 import ContactManagerDetail from "./page/Admin/contact/ContactManagerDetail";
 import UserDetail from "./page/Admin/user/UserDetail";
 import NewsDetail from "./page/Admin/news/NewsDetail";
+
 import MembersDetail from "./page/Admin/member/MembersDetail";
+
+import BusinessArea from "./page/Admin/businessArea/BusinessArea";
+
 
 const prevHref = "/admin";
 
@@ -94,7 +98,12 @@ const AppLayout = ({ currentUser }) => {
           <Route path={`${prevHref}/role`} element={<RoleManager />} />
           <Route path={`${prevHref}/category`} element={<CategoryManager />} />
           <Route path={`${prevHref}/news`} element={<NewsManager />} />
+          <Route
+            path={`${prevHref}/business-area`}
+            element={<BusinessArea />}
+          />
           <Route path={`${prevHref}/member`} element={<MemberManager />} />
+
           <Route path={`${prevHref}/user`} element={<UserManager />} />
           <Route path={`${prevHref}/event`} element={<EventManager />} />
           <Route path={`${prevHref}/contact`} element={<ContactManager />} />
