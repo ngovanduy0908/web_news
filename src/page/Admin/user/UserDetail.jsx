@@ -11,10 +11,13 @@ const UserDetail = () => {
         <Card.Content>
           <div className="flex">
             <img
-              src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/345051678_636468057966827_669236983773815341_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=zi5gEJiE2HkAX_N6pC-&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCWMuJVblqJJAr24gKOVidb14LI3oEU_1RgRl_VeLZ9vQ&oe=6472E6CC"
-              alt=""
+              src={
+                "" ||
+                "https://i.pinimg.com/736x/c6/e5/65/c6e56503cfdd87da299f72dc416023d4.jpg"
+              }
+              alt="Ảnh đại diện"
               width={200}
-              className=" drop-shadow-xl border border-gray-600 rounded-lg backdrop-blur"
+              className=" drop-shadow-xl border border-gray-600 rounded-lg backdrop-blur object-cover"
             />
 
             <div className=" relative w-full pl-5">

@@ -37,7 +37,7 @@ const RegisterMember = () => {
     // }
     // return console.log("khôn");
     //reset();
-    console.log(data.content);
+    console.log(data);
   };
 
   return (
@@ -86,7 +86,7 @@ const RegisterMember = () => {
           </div>
           <div className="my-4">
             <input
-              type="number"
+              type="text"
               className={`block focus:outline-none w-full h-[40px] text-[13px] leading-[15px] rounded border-[#cccccc] 
                            "border-red-500 border-[1px]"
                         `}
@@ -167,9 +167,7 @@ const RegisterMember = () => {
                 name=""
                 placeholder="Chưa...chọn"
                 id=""
-                {...register("img_1", {
-                  required: true,
-                })}
+                {...register("img_1")}
                 onChange={(e) => handleImageChange(e, "firstImage")}
               />
               <div className="border border-dashed">
@@ -195,9 +193,7 @@ const RegisterMember = () => {
                 name=""
                 placeholder="Chưa...chọn"
                 id=""
-                {...register("img_2", {
-                  required: true,
-                })}
+                {...register("img_2")}
                 onChange={(e) => handleImageChange(e, "secondImage")}
               />
               <div className="border border-dashed">
@@ -214,7 +210,7 @@ const RegisterMember = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-2 px-10">
+        {/* <div className="col-span-2 px-10">
           <ReactQuillEditor
             {...register("content", {
               required: true,
@@ -223,7 +219,7 @@ const RegisterMember = () => {
               setValue("content", value);
             }}
           />
-        </div>
+        </div> */}
         <div className="col-span-2 text-center">
           <button
             type="submit"

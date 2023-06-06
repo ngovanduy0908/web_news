@@ -59,7 +59,7 @@ import Group from "./page/userInfo/Group";
 import SafeMode from "./page/userInfo/SafeMode";
 import UserInfo from "./page/userInfo/UserInfo";
 import PageEvents from "./page/Events";
-import Page from "./page/Page";
+// import Page from "./page/Page";
 import Member from "./page/Member";
 import MemberDetail from "./page/Member/MemberDetail";
 import ListOfExecutives from "./page/Member/ListOfExecutives";
@@ -80,6 +80,7 @@ import ContactManager from "./page/Admin/contact/ContactManager";
 import ContactManagerDetail from "./page/Admin/contact/ContactManagerDetail";
 import UserDetail from "./page/Admin/user/UserDetail";
 import NewsDetail from "./page/Admin/news/NewsDetail";
+import MembersDetail from "./page/Admin/member/MembersDetail";
 
 const prevHref = "/admin";
 
@@ -103,6 +104,7 @@ const AppLayout = ({ currentUser }) => {
           />
           <Route path={`${prevHref}/user/:id`} element={<UserDetail />} />
           <Route path={`${prevHref}/news/:id`} element={<NewsDetail />} />
+          <Route path={`${prevHref}/member/:id`} element={<MembersDetail />} />
         </Route>
 
         <Route path="/" element={<Layout />}>
@@ -187,7 +189,7 @@ const AppLayout = ({ currentUser }) => {
           <Route path="/feedbackPage" element={<FeedbackPage />} />
           <Route path="/detailFeedback" element={<DetailFeedback />} />
 
-          <Route path="/page" element={<Page />} />
+          {/* <Route path="/page" element={<Page />} /> */}
           <Route path="/:slug" element={<ContentDetail />} />
         </Route>
       </Routes>
@@ -270,7 +272,7 @@ const AppLayout = ({ currentUser }) => {
         <Route path="/feedbackPage" element={<FeedbackPage />} />
         <Route path="/detailFeedback" element={<DetailFeedback />} />
 
-        <Route path="/page" element={<Page />} />
+        {/* <Route path="/page" element={<Page />} /> */}
         <Route path="/:slug" element={<ContentDetail />} />
       </Routes>
     </Layout>

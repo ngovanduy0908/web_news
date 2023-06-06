@@ -146,8 +146,11 @@ const LoginPage = ({ className }) => {
                 <div className="mt-4">
                   <h3 className="text-center text-sm font-bold mb-2">Or</h3>
                   <div className="flex justify-center gap-4 items-center cursor-pointer">
-                    <FcGoogle onClick={handleLogin} />
-                    <BsFacebook onClick={handleLoginWithFB} />
+                    <FcGoogle onClick={handleLogin} className="text-[26px]" />
+                    <BsFacebook
+                      onClick={handleLoginWithFB}
+                      className="text-[26px]"
+                    />
                   </div>
                 </div>
 

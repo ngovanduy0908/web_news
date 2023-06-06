@@ -9,9 +9,14 @@ const UserEdit = () => {
   };
 
   const userFormFields = [
-    { name: "first_name", label: "Họ và tên đệm", type: "text" },
-    { name: "last_name", label: "Tên", type: "text" },
-    { name: "account", label: "Tài khoản", type: "text" },
+    {
+      name: "first_name",
+      label: "Họ và tên đệm",
+      type: "text",
+      value: "tao có khiên",
+    },
+    { name: "last_name", label: "Tên", type: "text", value: "" },
+    { name: "account", label: "Tài khoản", type: "text", value: "" },
     {
       name: "gender",
       label: "Giới tính",
@@ -20,11 +25,51 @@ const UserEdit = () => {
         { value: "Nam", label: "Nam" },
         { value: "Nữ", label: "Nữ" },
       ],
+      value: "Nam",
     },
-    { name: "birthday", label: "Ngày tháng năm sinh", type: "date" },
-    { name: "email", label: "Email", type: "email" },
-    { name: "password", label: "Mật khẩu", type: "password" },
-    { name: "confirm_password", label: "Nhập lại mật khẩu", type: "password" },
+    {
+      name: "birthday",
+      label: "Ngày tháng năm sinh",
+      type: "date",
+      value: "2023-05-11",
+    },
+
+    {
+      name: "image",
+      label: "Hình đại diện",
+      type: "file",
+      value: "",
+      col_span: true,
+    },
+    { name: "email", label: "Email", type: "email", value: "", col_span: true },
+    { name: "password", label: "Mật khẩu", type: "password", value: "" },
+    {
+      name: "confirm_password",
+      label: "Nhập lại mật khẩu",
+      type: "password",
+      value: "",
+    },
+    {
+      name: "signature",
+      label: "Chữ ký",
+      type: "text",
+      col_span: true,
+      value: "",
+    },
+    {
+      name: "question",
+      label: "Câu hỏi bảo mật",
+      type: "text",
+      col_span: true,
+      value: "",
+    },
+    {
+      name: "answer",
+      label: "Câu trả lời",
+      type: "text",
+      col_span: true,
+      value: "",
+    },
   ];
   return (
     <Card title={"Chỉnh sửa thông tin tài khoản"} className={"py-2 px-3"}>
