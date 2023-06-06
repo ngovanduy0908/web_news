@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { FiAlertCircle } from "react-icons/fi";
 import Modal from "../../../components/Modal/Modal";
 import NewsEdit from "./NewsEdit";
+import NewsInsert from "./NewsInsert";
 const options = [
   { label: "Tin tức hoạt động", value: "tin-tuc-hoat-dong" },
   { label: "Tin tức Xứ Thanh", value: "tin-tuc-xu-thanh" },
@@ -25,6 +26,8 @@ const options_post = [
 const NewsManager = () => {
   const [open, setOpen] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
+  const [openInsertModal, setOpenInsertModal] = useState(false);
+
   const navigate = useNavigate();
   const {
     register,
@@ -128,14 +131,10 @@ const NewsManager = () => {
         <div className="mt-5">
           <div className="flex">
             <Button
-              onClick={handleOpen}
-              type="button"
-              className="flex items-center"
-              title={"Thêm danh mục"}
-              colorText={"text-black"}
-              colorBgr={"border border-gray-700"}
-              colorHover={"bg-gray-100"}
+              onClick={() => setOpenInsertModal(true)}
               icon={<AiOutlinePlusCircle className="text-[18px]" />}
+              title={"Thêm bài viết"}
+              colorBgr={"border border-gray-700 hover:bg-gray-200"}
             />
             <Button
               title={"Xóa các lựa chọn"}
@@ -254,6 +253,13 @@ const NewsManager = () => {
             setOpen={setOpenEditModal}
           >
             <NewsEdit />
+          </Modal>
+          <Modal
+            classNameChildren={"w-[800px]"}
+            open={openInsertModal}
+            setOpen={setOpenInsertModal}
+          >
+            <NewsInsert />
           </Modal>
         </div>
       </div>

@@ -12,6 +12,10 @@ import { TbEdit } from "react-icons/tb";
 import Button from "../../../components/Buttons/Button";
 import ReactQuillEditor from "../../../components/ReactQuill";
 import { FiAlertCircle } from "react-icons/fi";
+import Modal from "../../../components/Modal/Modal";
+import MemberEdit from "./MemberEdit";
+import MemberInsert from "./MemberInsert";
+import { useNavigate } from "react-router-dom";
 const options = [
   { label: "Hội viên", value: "hoi_vien" },
   { label: "Ban chấp hành", value: "ban_chap_hanh" },
@@ -28,6 +32,10 @@ const options_status = [
 const options_field = [{ value: "day_cuoa", label: "Vòng bi - dây curoa" }];
 
 const MemberManager = () => {
+  const navigate = useNavigate();
+  const [openInsertModal, setOpenInsertModal] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
+
   return (
     <div className="relative transition-all ease-linear">
       <div className="bg-white p-4 rounded-xl drop-shadow-new transition-all ease-linear">
@@ -104,10 +112,12 @@ const MemberManager = () => {
               <td className="flex items-center justify-center p-2">
                 <Button
                   //onClick={() => setOpenAlertModal(true)}
+                  onClick={() => navigate(`/admin/member/1`)}
                   icon={<FiAlertCircle className="text-[18px]" />}
                   colorBgr={"bg-yellow-400 text-white hover:bg-yellow-800"}
                 />
                 <Button
+                  onClick={() => setOpenEditModal(true)}
                   colorText={"text-white"}
                   colorBgr={"bg-blue-600"}
                   colorHover={"bg-blue-700"}
@@ -127,6 +137,12 @@ const MemberManager = () => {
         <div className="mt-5">
           <div className="flex">
             <Button
+              onClick={() => setOpenInsertModal(true)}
+              icon={<AiOutlinePlusCircle className="text-[18px]" />}
+              title={"Thêm Doanh nghiệp"}
+              colorBgr={"border border-gray-700 hover:bg-gray-200"}
+            />
+            <Button
               icon={<AiOutlineCheckCircle className="text-[18px]" />}
               title={"Duyệt các lựa chọn"}
               colorBgr={"bg-green-400 hover:bg-green-600"}
@@ -141,6 +157,20 @@ const MemberManager = () => {
             />
           </div>
         </div>
+        <Modal
+          classNameChildren={"w-[800px]"}
+          open={openEditModal}
+          setOpen={setOpenEditModal}
+        >
+          <MemberEdit />
+        </Modal>
+        <Modal
+          classNameChildren={"w-[800px]"}
+          open={openInsertModal}
+          setOpen={setOpenInsertModal}
+        >
+          <MemberInsert />
+        </Modal>
       </div>
     </div>
   );

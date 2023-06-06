@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ButtonV2 } from "../Buttons/ButtonV2";
 import Button from "../Buttons/Button";
@@ -6,10 +6,44 @@ import Select from "react-select";
 import ReactQuillEditor from "../ReactQuill";
 import { useState } from "react";
 const Form = ({ formFields, onSubmit }) => {
-  const [content, setContent] = useState();
-  const { register, handleSubmit, setValue } = useForm();
+  const [imageDeputy, setImageDeputy] = useState({
+    firstImage: null,
+    secondImage: null,
+  });
 
+  useEffect(() => {
+    const imageField = formFields.find((item) => item.name === "image");
+    const imageFieldDeputy = formFields.find(
+      (item) => item.name === "image_deputy"
+    );
+
+    if (imageField) {
+      setImageDeputy((prevState) => ({
+        ...prevState,
+        firstImage: imageField.value,
+      }));
+      setValue("image", imageField.value);
+    }
+
+    if (imageFieldDeputy) {
+      setImageDeputy((prevState) => ({
+        ...prevState,
+        secondImage: imageFieldDeputy.value,
+      }));
+      setValue("image_deputy", imageFieldDeputy.value);
+    }
+  }, [formFields]);
+
+  const [content, setContent] = useState();
+  const { register, handleSubmit, setValue, watch, getValues } = useForm();
+  //const values = watch();
   const handleFormSubmit = (data) => {
+    console.log(data);
+    // const formData = {
+    //   ...data,
+    //   file: imageURL || (imageURL && imageDeputy),
+    // };
+
     onSubmit(data);
   };
 
@@ -17,13 +51,31 @@ const Form = ({ formFields, onSubmit }) => {
     setValue(fieldName, selectedOption);
   };
 
+  const handleImageChange = (e, inputName) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageDeputy((prevState) => ({
+          ...prevState,
+          [inputName]: reader.result,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  //console.log(imageURL);
+
   const renderField = (field) => {
+    const defaultValue = field.value;
+    //console.log(defaultValue);
     if (field.type === "react-quill") {
       return (
         <>
           <span className=" font-semibold text-sm ">{field.label}</span>
           <ReactQuillEditor
             {...register(field.name, { required: true })}
+            defaultValue={field.value}
             content={content}
             setContent={(value) => {
               setContent(value);
@@ -46,9 +98,91 @@ const Form = ({ formFields, onSubmit }) => {
             onChange={(selectedOption) =>
               handleSelectChange(selectedOption, field.name)
             }
+            value={field.value}
             placeholder={`${field.label}`}
           />
         </>
+      );
+    }
+
+    if (field.type === "file" && field.name === "image") {
+      return (
+        <div className={field.col_span ? "col-span-2" : ""} key={field.name}>
+          <label>
+            <span className="block font-semibold text-sm">{field.label}</span>
+            {imageDeputy.firstImage ? (
+              <div>
+                <img
+                  width={200}
+                  src={imageDeputy.firstImage}
+                  alt="Uploaded"
+                  style={{ width: "200px" }}
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div>
+                <img
+                  width={200}
+                  src={
+                    field.label === "Hình đại diện"
+                      ? "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/347567248_1488831868525963_752115650059248371_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=oSSU2GSFFFsAX_zdckb&_nc_ht=scontent.fhan17-1.fna&oh=00_AfDoE18anvSitq-n8VVv__b3uKMndjGbXEBo-IqSb_6nJg&oe=6479B2B3"
+                      : ""
+                  }
+                  alt="Uploaded"
+                  style={{ width: "200px" }}
+                  className="object-cover"
+                />
+              </div>
+            )}
+            <input
+              type={field.type}
+              {...register(field.name)}
+              onChange={(e) => handleImageChange(e, "firstImage")}
+              className="w-full rounded h-[36px] border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
+            />
+          </label>
+        </div>
+      );
+    }
+    if (field.type === "file" && field.name === "image_deputy") {
+      return (
+        <div className={field.col_span ? "col-span-2" : ""} key={field.name}>
+          <label>
+            <span className="block font-semibold text-sm">{field.label}</span>
+            {imageDeputy.secondImage ? (
+              <div>
+                <img
+                  width={200}
+                  src={imageDeputy.secondImage}
+                  alt="Uploaded"
+                  style={{ width: "200px" }}
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div>
+                <img
+                  width={200}
+                  src={
+                    field.label === "Hình ảnh người đại diện"
+                      ? "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/347567248_1488831868525963_752115650059248371_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=oSSU2GSFFFsAX_zdckb&_nc_ht=scontent.fhan17-1.fna&oh=00_AfDoE18anvSitq-n8VVv__b3uKMndjGbXEBo-IqSb_6nJg&oe=6479B2B3"
+                      : ""
+                  }
+                  alt="Uploaded"
+                  style={{ width: "200px" }}
+                  className="object-cover"
+                />
+              </div>
+            )}
+            <input
+              type={field.type}
+              {...register(field.name)}
+              onChange={(e) => handleImageChange(e, "secondImage")}
+              className="w-full rounded h-[36px] border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
+            />
+          </label>
+        </div>
       );
     }
 
@@ -59,6 +193,7 @@ const Form = ({ formFields, onSubmit }) => {
         <input
           type={field.type}
           {...register(field.name)}
+          defaultValue={defaultValue}
           className="w-full rounded h-[36px] border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
         />
       </label>
@@ -71,7 +206,7 @@ const Form = ({ formFields, onSubmit }) => {
     >
       {formFields.map((field, index) => (
         <div
-          className={`${field.type === "react-quill" ? "col-span-2" : ""}`}
+          className={`${field.col_span === true ? "col-span-2" : ""}`}
           key={index}
         >
           {renderField(field)}

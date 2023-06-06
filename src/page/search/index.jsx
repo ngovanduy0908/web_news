@@ -2,35 +2,35 @@ import React from "react";
 import Breadcrumbs from "../../components/Breadcrumb";
 import Category from "../../components/list/Category";
 import { BsPinFill } from "react-icons/bs";
-const optionValue = [
-  {
-    value: "Giới Thiệu",
-  },
-  {
-    value: "Tin Tức",
-  },
-  {
-    value: "Lấy ý kiến người dân",
-  },
-  {
-    value: "Các câu hỏi thường gặp",
-  },
-  {
-    value: "Page",
-  },
-  {
-    value: "Điều khoản sử dụng",
-  },
-  {
-    value: "Hội Viên",
-  },
-  {
-    value: "Giao Thương",
-  },
-  {
-    value: "Dự Án",
-  },
-];
+// const optionValue = [
+//   {
+//     value: "Giới Thiệu",
+//   },
+//   {
+//     value: "Tin Tức",
+//   },
+//   {
+//     value: "Lấy ý kiến người dân",
+//   },
+//   {
+//     value: "Các câu hỏi thường gặp",
+//   },
+//   {
+//     value: "Page",
+//   },
+//   {
+//     value: "Điều khoản sử dụng",
+//   },
+//   {
+//     value: "Hội Viên",
+//   },
+//   {
+//     value: "Giao Thương",
+//   },
+//   {
+//     value: "Dự Án",
+//   },
+// ];
 const SearchPage = () => {
   return (
     <div className="bg-white pt-6">
@@ -54,7 +54,7 @@ const SearchPage = () => {
                   placeholder="Từ tìm kiếm"
                 />
               </div>
-              <div className="mb-4 ">
+              {/* <div className="mb-4 ">
                 <select
                   name=""
                   id=""
@@ -67,23 +67,23 @@ const SearchPage = () => {
                     </option>
                   ))}
                 </select>
-              </div>
+              </div> */}
 
               <div className="text-center mb-4">
-                <button className="bg-[#428bca] text-white text-[12px] py-[6px] px-[12px] border-[1px] rounded-md mr-3">
+                <button className="bg-[#428bca] text-white text-[12px] py-[6px] px-[12px] border-[1px] rounded-md mr-3 hover:bg-blue-700">
                   Tìm Kiếm
                 </button>
-                <button className="text-[14px]">Nâng Cao</button>
+                {/* <button className="text-[14px]">Nâng Cao</button> */}
               </div>
 
-              <div className="text-center">
+              {/* <div className="text-center">
                 <label className="text-sm mr-3">
                   <input type="radio" name="search" checked /> Cả cụm từ
                 </label>
                 <label className="text-sm">
                   <input type="radio" name="search" /> Tối thiểu 1 cụm từ
                 </label>
-              </div>
+              </div> */}
             </form>
 
             <div>

@@ -1,6 +1,4 @@
 import React from "react";
-import { FaUser } from "react-icons/fa";
-import { BiRss } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -8,31 +6,12 @@ const Header = () => {
   return (
     <div className="max-w-[1080px] m-auto relative drop-shadow-new">
       <div className="w-full h-[30px] bg-[#1f9cf8]">
-        <ul className="flex float-right text-[#fff] text-[12px] justify-center items-center pt-[7px] mx-[10px]">
-          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] relative">
-            <div href="#" title="Thành viên" className="text-[16px]">
-              <FaUser />
-            </div>
+        <ul className="flex float-right text-[#fff] text-[12px] justify-center items-center pt-[5px] mx-[10px]">
+          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] relative hover:text-gray-200">
+            <div className="text-[14px]">Mạnh Dũng</div>
           </li>
-          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff]">
-            <div
-              onClick={() => navigate("/feeds")}
-              href="#"
-              title="RSS"
-              className="text-[16px]"
-            >
-              <BiRss />
-            </div>
-          </li>
-          <li className=" cursor-pointer inline-block px-[5px] border-r-[1px] border-r-[#fff] hover:text-[#0256f4]">
-            <div onClick={() => navigate("/feeds")} title="Sơ đồ cổng">
-              <span>Sơ đồ cổng</span>
-            </div>
-          </li>
-          <li className=" cursor-pointer inline-block px-[5px] hover:text-[#0256f4]">
-            <div onClick={() => navigate("/page")} title="Liên kết">
-              <span>Liên kết</span>
-            </div>
+          <li className=" cursor-pointer inline-block px-[5px] hover:text-gray-200">
+            <div className="text-[14px]">Đăng xuất</div>
           </li>
         </ul>
       </div>

@@ -5,7 +5,6 @@ import MenuIntroduction from "./MenuIntroduction";
 import Category from "../../components/list/Category";
 import RightBar from "../../components/list/RightBar";
 
-import Login from "../../Users/Login";
 import Breadcrumbs from "../../components/Breadcrumb";
 const ExCommittee = () => {
   return (
@@ -22,7 +21,6 @@ const ExCommittee = () => {
             />
             <h3>Danh sách ban chấp hành</h3>
           </div>
-          <Login />
           <MenuIntroduction />
         </div>
         <div className="phone:hidden laptop:block desktop:block tablet:hidden">

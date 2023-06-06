@@ -8,9 +8,9 @@ const MemberDetail = () => {
     <div className="bg-white pt-6">
       <Breadcrumbs title={"Hội viên"} link={"/member"} />
       <div className=" pb-14 grid grid-cols-4 gap-4 pt-4 px-6">
-        <div className="pt-4 col-span-3 phone:col-span-4">
+        <div className="pt-4 col-span-3 phone:col-span-4 desktop:col-span-3 tablet:col-span-4 laptop:col-span-3">
           ID: {id}
-          <div className=" cursor-pointer flex flex-col mb-4 bg-white border border-gray-200 rounded-lg shadow desktop:flex-row desktop:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <div className=" flex flex-col mb-4 bg-white border border-gray-200 rounded-lg shadow desktop:flex-row desktop:max-w-full">
             <img
               className="object-cover w-full rounded-t-lg h-96 desktop:h-auto desktop:w-48 desktop:rounded-none desktop:rounded-l-lg"
               src="http://dntpthanhhoa.vn/wp-content/uploads/2020/09/96385e1d7e0e8150d81f-150x150.jpg"
@@ -55,7 +55,7 @@ const MemberDetail = () => {
               </p>
             </div>
           </div>
-          <div className=" cursor-pointer flex flex-col mb-4 bg-white border border-gray-200 rounded-lg shadow desktop:flex-row desktop:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <div className=" flex flex-col mb-4 bg-white border border-gray-200 rounded-lg shadow desktop:flex-row desktop:max-w-full">
             <img
               className="object-cover w-full rounded-t-lg h-96 desktop:h-auto desktop:w-48 desktop:rounded-none desktop:rounded-l-lg"
               src="http://dntpthanhhoa.vn/wp-content/uploads/2020/09/96385e1d7e0e8150d81f-150x150.jpg"
@@ -100,9 +100,7 @@ const MemberDetail = () => {
           </div>
         </div>
         <div>
-          <div>
-            <RightBar />
-          </div>
+          <RightBar />
         </div>
       </div>
     </div>
