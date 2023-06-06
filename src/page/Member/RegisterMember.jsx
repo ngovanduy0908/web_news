@@ -10,6 +10,7 @@ const RegisterMember = () => {
     setValue,
     formState: { errors },
   } = useForm({ criteriaMode: "all" });
+  const [content, setContent] = useState();
   const [selectedImages, setSelectedImages] = useState({
     firstImage: null,
     secondImage: null,
@@ -37,7 +38,12 @@ const RegisterMember = () => {
     // }
     // return console.log("khôn");
     //reset();
-    console.log(data.content);
+    console.log(data);
+  };
+
+  const handleEditorChange = (value) => {
+    setContent(value); // Cập nhật giá trị của ReactQuillEditor
+    setValue("content", value); // Đặt giá trị mới cho trường "content" trong useForm
   };
 
   return (
@@ -216,12 +222,9 @@ const RegisterMember = () => {
         </div>
         <div className="col-span-2 px-10">
           <ReactQuillEditor
-            {...register("content", {
-              required: true,
-            })}
-            onContentChange={(value) => {
-              setValue("content", value);
-            }}
+            {...register("content", {})}
+            setContent={handleEditorChange}
+            content={content}
           />
         </div>
         <div className="col-span-2 text-center">
