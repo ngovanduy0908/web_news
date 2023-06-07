@@ -11,6 +11,10 @@ import {
 } from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import Modal from "../../../components/Modal/Modal";
+import { useNavigate } from "react-router-dom";
+import UserEdit from "./UserEdit";
+import RegisterPage from "../../login/RegisterPage";
+import UserInsert from "./UserInsert";
 
 const columnsTable = [
   <input type="checkbox" name="" id="" />,
@@ -22,9 +26,10 @@ const columnsTable = [
   "Chức năng",
 ];
 const UserManager = () => {
-  const [openAlertModal, setOpenAlertModal] = useState(false);
+  const [openInsertModal, setOpenInsertModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const navigate = useNavigate();
 
   const TableData = [
     [
@@ -58,7 +63,7 @@ const UserManager = () => {
       "Chưa duyệt",
       <div className="flex justify-center">
         <Button
-          onClick={() => setOpenAlertModal(true)}
+          onClick={() => navigate(`/admin/user/1`)}
           icon={<FiAlertCircle className="text-[18px]" />}
           colorBgr={"bg-yellow-400 text-white hover:bg-yellow-800"}
         />
@@ -90,6 +95,7 @@ const UserManager = () => {
           <TableV2 dataSource={TableData} columns={columnsTable} />
           <div className="mt-3 flex">
             <Button
+              onClick={() => setOpenInsertModal(true)}
               icon={<AiOutlinePlusCircle className="text-[18px]" />}
               title={"Thêm tài khoản"}
               colorBgr={"border border-gray-700 hover:bg-gray-200"}
@@ -107,14 +113,23 @@ const UserManager = () => {
           </div>
         </Card.Content>
       </Card>
-      <Modal open={openAlertModal} setOpen={setOpenAlertModal}>
-        <TableV2 dataSource={TableData} columns={columnsTable} />
-      </Modal>
-      <Modal open={openEditModal} setOpen={setOpenEditModal}>
-        Nội dung modal cho trường hợp edit
+
+      <Modal
+        classNameChildren={"w-[800px]"}
+        open={openEditModal}
+        setOpen={setOpenEditModal}
+      >
+        <UserEdit />
       </Modal>
       <Modal open={openDeleteModal} setOpen={setOpenDeleteModal}>
         Nội dung modal cho trường hợp delete
+      </Modal>
+      <Modal
+        classNameChildren={"w-[800px]"}
+        open={openInsertModal}
+        setOpen={setOpenInsertModal}
+      >
+        <UserInsert />
       </Modal>
     </div>
   );

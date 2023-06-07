@@ -7,6 +7,11 @@ import { AiOutlinePlusCircle, AiOutlineDelete } from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import Button from "../../../components/Buttons/Button";
 import ReactQuillEditor from "../../../components/ReactQuill";
+import { useNavigate } from "react-router-dom";
+import { FiAlertCircle } from "react-icons/fi";
+import Modal from "../../../components/Modal/Modal";
+import NewsEdit from "./NewsEdit";
+import NewsInsert from "./NewsInsert";
 const options = [
   { label: "Tin tức hoạt động", value: "tin-tuc-hoat-dong" },
   { label: "Tin tức Xứ Thanh", value: "tin-tuc-xu-thanh" },
@@ -20,6 +25,10 @@ const options_post = [
 ];
 const NewsManager = () => {
   const [open, setOpen] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
+  const [openInsertModal, setOpenInsertModal] = useState(false);
+
+  const navigate = useNavigate();
   const {
     register,
     setValue,
@@ -97,6 +106,12 @@ const NewsManager = () => {
               <td className="text-center text-[12px]">Chưa duyệt</td>
               <td className="flex items-center justify-center p-2">
                 <Button
+                  onClick={() => navigate(`/admin/news/1`)}
+                  icon={<FiAlertCircle className="text-[18px]" />}
+                  colorBgr={"bg-yellow-400 text-white hover:bg-yellow-800"}
+                />
+                <Button
+                  onClick={() => setOpenEditModal(true)}
                   colorText={"text-white"}
                   colorBgr={"bg-blue-600"}
                   colorHover={"bg-blue-700"}
@@ -116,14 +131,10 @@ const NewsManager = () => {
         <div className="mt-5">
           <div className="flex">
             <Button
-              onClick={handleOpen}
-              type="button"
-              className="flex items-center"
-              title={"Thêm danh mục"}
-              colorText={"text-black"}
-              colorBgr={"border border-gray-700"}
-              colorHover={"bg-gray-100"}
+              onClick={() => setOpenInsertModal(true)}
               icon={<AiOutlinePlusCircle className="text-[18px]" />}
+              title={"Thêm bài viết"}
+              colorBgr={"border border-gray-700 hover:bg-gray-200"}
             />
             <Button
               title={"Xóa các lựa chọn"}
@@ -235,6 +246,21 @@ const NewsManager = () => {
               </button>
             </form>
           )}
+
+          <Modal
+            classNameChildren={"w-[800px]"}
+            open={openEditModal}
+            setOpen={setOpenEditModal}
+          >
+            <NewsEdit />
+          </Modal>
+          <Modal
+            classNameChildren={"w-[800px]"}
+            open={openInsertModal}
+            setOpen={setOpenInsertModal}
+          >
+            <NewsInsert />
+          </Modal>
         </div>
       </div>
     </div>
