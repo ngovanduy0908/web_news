@@ -38,6 +38,12 @@ input {
   --tw-ring-shadow: none !important;
 }
 
+input:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+  --tw-ring-shadow: none !important;
+}
+
 .menu-conner-left {
   background: url(/public/assets/images/menu-left-blue.png);
   position: absolute;

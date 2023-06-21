@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
+import { useLocation } from "react-router-dom";
 
 const PaginationV2 = ({
   total,
@@ -9,6 +10,9 @@ const PaginationV2 = ({
   onChange,
   className,
 }) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const pageUrl = searchParams.get("page");
   const [currentPage, setCurrentPage] = useState(current);
   const totalPage = Math.ceil(total / pageSize);
 
@@ -18,17 +22,17 @@ const PaginationV2 = ({
   };
 
   const prevPage = () => {
-    currentPage !== 1 && onChangePage(currentPage - 1);
+    Number(currentPage) !== 1 && onChangePage(Number(currentPage) - 1);
   };
 
   const nextPage = () => {
-    currentPage !== totalPage &&
-      totalPage !== 0 &&
-      onChangePage(currentPage + 1);
+    Number(currentPage) !== Number(totalPage) &&
+      Number(totalPage) !== 0 &&
+      onChangePage(Number(currentPage) + 1);
   };
 
-  let startPage = currentPage - 2;
-  let endPage = currentPage + 2;
+  let startPage = Number(currentPage) - 2;
+  let endPage = Number(currentPage) + 2;
 
   if (startPage <= 0) {
     endPage -= startPage - 1;
@@ -50,16 +54,16 @@ const PaginationV2 = ({
       }`}
     >
       <div className="pg-paginate-mobile flex-1 flex justify-between sm:hidden">
-        <button
+        {/* <button
           onClick={prevPage}
           className="pg-paginate-prev-btn relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"
         >
           Trước
-        </button>
+        </button> */}
         <div className="flex gap-4 items-center">
           <div
             aria-current="page"
-            className={`pg-page-item pg-page-item-${current} font-semibold rounded-full max-w-[38px] z-10 bg-cyan-50 border-cyan-500 text-primaryColor flex items-center justify-center px-4 py-2 border text-sm`}
+            className={` pg-page-item pg-page-item-${current} font-semibold rounded-full max-w-[38px] z-10 bg-cyan-50 border-cyan-500 text-primaryColor flex items-center justify-center px-4 py-2 border text-sm`}
           >
             {current}
           </div>
@@ -71,14 +75,14 @@ const PaginationV2 = ({
             {totalPage}
           </div>
         </div>
-        <button
+        {/* <button
           onClick={nextPage}
           className="pg-paginate-next-btn ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"
         >
           Sau
-        </button>
+        </button> */}
       </div>
-      <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-center">
+      <div className="sm:flex-1 sm:flex sm:items-center sm:justify-center">
         <div className="flex items-center gap-2">
           <nav
             className="pg-paginate-pc relative z-0 inline-flex rounded-full space-x-2"
@@ -97,6 +101,7 @@ const PaginationV2 = ({
                   current={currentPage}
                   page={1}
                   onChangePage={onChangePage}
+                  pageUrl={pageUrl}
                 />
                 {startPage > 2 && <PageBreak />}
               </Fragment>
@@ -108,6 +113,7 @@ const PaginationV2 = ({
                   page={idx + startPage}
                   current={currentPage}
                   onChangePage={onChangePage}
+                  pageUrl={pageUrl}
                 />
               )
             )}
@@ -118,6 +124,7 @@ const PaginationV2 = ({
                   current={currentPage}
                   page={totalPage}
                   onChangePage={onChangePage}
+                  pageUrl={pageUrl}
                 />
               </Fragment>
             )}
@@ -136,11 +143,14 @@ const PaginationV2 = ({
   );
 };
 
-const Page = ({ current, page, onChangePage }) => {
-  return current === page ? (
+const Page = ({ current, page, onChangePage, pageUrl }) => {
+  //console.log("current: ", current);
+  //console.log("page: ", page);
+  return Number(current) === Number(page) ? (
     <button
+      onClick={() => onChangePage(page)}
       aria-current="page"
-      className={`pg-page-item pg-page-item-${page} font-semibold rounded-full max-w-[38px] z-10 bg-cyan-50 border-cyan-500 text-primaryColor flex items-center justify-center px-4 py-2 border text-sm`}
+      className={`bg-red-500 pg-page-item pg-page-item-${page} font-semibold rounded-full max-w-[38px] z-10 bg-cyan-50 border-cyan-500 text-primaryColor flex items-center justify-center px-4 py-2 border text-sm`}
     >
       {page}
     </button>

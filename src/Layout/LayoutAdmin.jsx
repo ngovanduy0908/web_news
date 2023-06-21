@@ -12,8 +12,9 @@ import { TbTimelineEventText } from "react-icons/tb";
 import { IoLogOutOutline } from "react-icons/io5";
 import { useState } from "react";
 
-
 import { IoIosBusiness } from "react-icons/io";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const prevHref = "/admin";
 
@@ -282,6 +283,7 @@ export default function LayoutAdmin() {
           </div>
         </main>
       </div>
+      <ToastContainer />
     </>
   );
 }

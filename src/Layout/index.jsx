@@ -8,7 +8,8 @@ import Feedback from "../components/Feedback";
 
 import { Outlet, useNavigate } from "react-router-dom";
 import PopupEvent from "../components/PopUpEvents";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Layout = ({ children }) => {
   const navigate = useNavigate();
   return (
@@ -44,6 +45,7 @@ const Layout = ({ children }) => {
       <div>
         <PopupEvent />
       </div>
+      <ToastContainer />
     </div>
   );
 };

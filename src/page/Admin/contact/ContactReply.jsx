@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import Card from "../../../components/Card/Card";
 import ReactQuillEditor from "../../../components/ReactQuill";
 import Button from "../../../components/Buttons/Button";
-import { useNavigate } from "react-router-dom";
-
-const ContactReply = () => {
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+const ContactReply = ({ dataReply }) => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  //console.log(id);
   const [content, setContent] = useState(
-    `<br><br>----------<br>Best regards,<br><br>admin<br>Administrator<br><br>E-mail: hoidoanhnhanthanhhoa.hbta@gmail.com`
+    `<br/><br/>----------<br/>Best regards,<br/><br/>admin<br/>Administrator<br/><br/>E-mail: hoidoanhnhanthanhhoa.hbta@gmail.com`
   );
 
-  const sendReply = () => {
+  const sendReply = async () => {
     const strippedContent = content.replace(/(<([^>]+)>)/gi, "").trim();
 
     if (strippedContent === "") {
@@ -20,7 +23,20 @@ const ContactReply = () => {
       return;
     }
     console.log("content: ", content);
-    navigate("/admin/contact/1");
+    const data = { contactId: id, content: content };
+    try {
+      await toast.promise(axios.post("http://localhost:3001/api/rely", data), {
+        pending: "Đang xử lý...",
+        success: "Gửi phản hồi thành công",
+        error: "Lỗi! Không thể gửi phản hồi... ",
+      });
+      //console.log(res.data);
+      //navigate(`/admin/contact/${dataReply.contact_id}`, { reload: true });
+      window.location.href = `/admin/contact/${dataReply.contact_id}`;
+    } catch (error) {
+      console.log(error.message);
+    }
+    //console.log(data);
   };
   return (
     <Card title={"Gửi Phản Hồi"}>
@@ -30,7 +46,7 @@ const ContactReply = () => {
             <tr>
               <td class="border border-slate-700 px-2 py-1">Tiêu đề gửi</td>
               <td class="border border-slate-700 px-2 py-1">
-                Lấy tiêu đề từ api để vào đây
+                {dataReply.title}
               </td>
             </tr>
             <tr>
@@ -38,7 +54,7 @@ const ContactReply = () => {
                 Gửi liên hệ tới email
               </td>
               <td class="border border-slate-700 px-2 py-1">
-                Lấy Email từ api để vào đây
+                {dataReply.email}
               </td>
             </tr>
             <tr>
