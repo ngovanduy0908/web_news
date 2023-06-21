@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Breadcrumbs from "../../components/Breadcrumb";
 import {
   FaFolderOpen,
@@ -18,31 +18,50 @@ import generateCaptcha from "../../uitls";
 import LoginPage from "../login/LoginPage";
 import Modal from "../../components/Modal/Modal";
 import { AuthContext } from "../../context/authContext";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function ContactPage() {
   const [captcha, setCaptcha] = useState(generateCaptcha);
   const [open, setOpen] = useState(false);
   const { currentUser } = useContext(AuthContext);
-
+  //console.log(currentUser);
   const {
     register,
     handleSubmit,
     watch,
     reset,
+    getValues,
     formState: { errors },
   } = useForm({ criteriaMode: "all" });
-
-  const onSubmit = (data) => {
-    console.log(data.checkCaptcha);
-    console.log(captcha);
+  //console.log(watch("fullname"));
+  const onSubmit = async (data) => {
+    // console.log(data.checkCaptcha);
+    // console.log(captcha);
     if (data.checkCaptcha !== captcha) {
-      return console.log("ngu");
+      return false;
     }
-    return console.log("khôn");
+    try {
+      const response = await toast.promise(
+        axios.post("http://localhost:3001/api/contact/", data),
+        {
+          pending: "Đang xử lý",
+          success: "Bạn đã gửi phản hồi thành công 👌",
+          error: "Xin lỗi !Không thể gửi phản hồi 🤯",
+        }
+      );
+      onReset();
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
     //reset();
   };
 
   const onReset = (data) => {
-    reset();
+    reset(data);
+    setCaptcha(generateCaptcha);
+    reset(data.checkCaptcha);
   };
 
   const resetCaptcha = (data) => {
@@ -101,20 +120,41 @@ function ContactPage() {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div className="mb-4">
-                  <div className="flex items-center rounded overflow-hidden">
+                  <div className={`flex items-center rounded overflow-hidden `}>
                     <span className="px-[12px] py-[6px] text-[18px] bg-slate-200 border-[1px] border-[#cccccc]">
                       <FaFolderOpen />
                     </span>
                     <select
-                      name=""
+                      {...register("topic", {
+                        required: "Vui lòng chọn chủ đề",
+                      })}
                       id=""
-                      className="w-full h-[32px] text-[13px] leading-[15px] rounded-r border-[#cccccc]"
+                      className={`w-full h-[32px] text-[13px] leading-[15px] rounded-r border-[#cccccc] ${
+                        errors.topic ? "border-red-500" : ""
+                      }`}
                     >
                       <option value="">Chủ đề bạn quan tâm</option>
-                      <option value="">Gửi góp ý</option>
-                      <option value="">Gửi câu hỏi</option>
+                      <option value="Gửi góp ý">Gửi góp ý</option>
+                      <option value="Gửi câu hỏi">Gửi câu hỏi</option>
                     </select>
                   </div>
+                  <ErrorMessage
+                    errors={errors}
+                    name="topic"
+                    render={({ messages }) => {
+                      //console.log("messages", messages);
+                      return messages
+                        ? Object.entries(messages).map(([type, message]) => (
+                            <p
+                              className="ml-10 text-[14px] text-red-500"
+                              key={type}
+                            >
+                              {message}
+                            </p>
+                          ))
+                        : null;
+                    }}
+                  />
                 </div>
                 <div className="mb-4">
                   <div className="flex items-center rounded overflow-hidden">
@@ -170,20 +210,35 @@ function ContactPage() {
                         className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
                           currentUser ? "bg-gray-200 cursor-not-allowed" : ""
                         } ${
-                          errors.fullname ? "border-red-500 border-[1px]" : ""
+                          errors.username ? "border-red-500 border-[1px]" : ""
                         }`}
-                        {...register("fullname", {
-                          required: "Không được bỏ trống trường này",
+                        {...register("username", {
+                          required: currentUser
+                            ? false
+                            : "Không được bỏ trống trường này",
                           minLength: {
-                            value: 10,
-                            message: `Vui lòng nhập ít nhất 10 ký tự`,
+                            value: currentUser ? 0 : 10,
+                            message: currentUser
+                              ? ""
+                              : "Vui lòng nhập ít nhất 10 ký tự",
                           },
                         })}
+                        // , {
+                        //   required: currentUser
+                        //     ? false
+                        //     : "Không được bỏ trống trường này",
+                        //   minLength: {
+                        //     value: currentUser ? 0 : 10,
+                        //     message: currentUser
+                        //       ? ""
+                        //       : "Vui lòng nhập ít nhất 10 ký tự",
+                        //   },
+                        // })}
                         placeholder="Họ và tên"
                         defaultValue={
                           currentUser ? currentUser.displayName : ""
                         }
-                        disabled={currentUser ? true : false}
+                        //disabled={currentUser ? true : false}
                       />
                       <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
                         *
@@ -212,7 +267,7 @@ function ContactPage() {
                   </div>
                   <ErrorMessage
                     errors={errors}
-                    name="fullname"
+                    name="username"
                     render={({ messages }) => {
                       //console.log("messages", messages);
                       return messages
@@ -240,16 +295,20 @@ function ContactPage() {
                           errors.email ? "border-red-500 border-[1px]" : ""
                         }`}
                         {...register("email", {
-                          required: "Không được bỏ trống trường này",
+                          required: currentUser
+                            ? false
+                            : "Không được bỏ trống trường này",
                           pattern: {
                             value:
                               /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                            message: `Vui lòng nhập đúng email VD: 'ten123@gmail.com'`,
+                            message: currentUser
+                              ? false
+                              : `Vui lòng nhập đúng email VD: 'ten123@gmail.com'`,
                           },
                         })}
                         placeholder="Email"
                         defaultValue={currentUser ? currentUser.email : ""}
-                        disabled={currentUser ? true : false}
+                        //disabled={currentUser ? true : false}
                       />
                       <span className=" text-red-600 text-[18px] absolute top-[50%] right-[10px] translate-y-[-30%]">
                         *
@@ -281,9 +340,9 @@ function ContactPage() {
                     <input
                       type="text"
                       className={`block focus:outline-none w-full h-[32px] text-[13px] leading-[15px] border-[#cccccc] ${
-                        errors.phone ? "border-red-500 border-[1px]" : ""
+                        errors.phone_number ? "border-red-500 border-[1px]" : ""
                       }`}
-                      {...register("phone", {
+                      {...register("phone_number", {
                         pattern: {
                           value: /^\d{10,}$/,
                           message: "Vui lòng chỉ nhập bằng số VD: '0912...'",
@@ -298,7 +357,7 @@ function ContactPage() {
                   </div>
                   <ErrorMessage
                     errors={errors}
-                    name="phone"
+                    name="phone_number"
                     render={({ messages }) => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
@@ -446,7 +505,7 @@ function ContactPage() {
           </div>
         </div>
 
-        {open && (
+        {/* {open && (
           <div className="fixed z-50 w-full p-4 md:inset-0 h-[calc(100%-1rem)] top-0 max-h-full">
             <div className="relative w-full max-w-md max-h-full m-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 drop-shadow-new">
@@ -552,12 +611,24 @@ function ContactPage() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         <Modal open={open} setOpen={setOpen}>
           <LoginPage className={"w-[80%]"} />
         </Modal>
       </div>
+      {/* <ToastContainer
+      // position="top-right"
+      // autoClose={5000}
+      // hideProgressBar={false}
+      // newestOnTop={false}
+      // closeOnClick
+      // rtl={false}
+      // pauseOnFocusLoss
+      // draggable
+      // pauseOnHover
+      // theme="light"
+      /> */}
     </>
   );
 }

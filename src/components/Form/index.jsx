@@ -10,8 +10,10 @@ const Form = ({ formFields, onSubmit }) => {
     firstImage: null,
     secondImage: null,
   });
-
+  const { register, handleSubmit, setValue, watch, getValues } = useForm();
+  const contentQuill = formFields.find((item) => item.type === "react-quill");
   useEffect(() => {
+    //console.log(contentQuill);
     const imageField = formFields.find((item) => item.name === "image");
     const imageFieldDeputy = formFields.find(
       (item) => item.name === "image_deputy"
@@ -22,7 +24,7 @@ const Form = ({ formFields, onSubmit }) => {
         ...prevState,
         firstImage: imageField.value,
       }));
-      setValue("image", imageField.value);
+      setValue("image", imageField.value[0]);
     }
 
     if (imageFieldDeputy) {
@@ -32,13 +34,17 @@ const Form = ({ formFields, onSubmit }) => {
       }));
       setValue("image_deputy", imageFieldDeputy.value);
     }
+
+    formFields.forEach((field) => {
+      setValue(field.name, field.value);
+    });
   }, [formFields]);
 
-  const [content, setContent] = useState();
-  const { register, handleSubmit, setValue, watch, getValues } = useForm();
+  const [content, setContent] = useState(contentQuill.value);
+
   //const values = watch();
   const handleFormSubmit = (data) => {
-    console.log(data);
+    console.log("day", data);
     // const formData = {
     //   ...data,
     //   file: imageURL || (imageURL && imageDeputy),
@@ -53,6 +59,7 @@ const Form = ({ formFields, onSubmit }) => {
 
   const handleImageChange = (e, inputName) => {
     const file = e.target.files[0];
+    console.log(file);
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -67,14 +74,13 @@ const Form = ({ formFields, onSubmit }) => {
   //console.log(imageURL);
 
   const renderField = (field) => {
-    const defaultValue = field.value;
     //console.log(defaultValue);
     if (field.type === "react-quill") {
       return (
         <>
           <span className=" font-semibold text-sm ">{field.label}</span>
           <ReactQuillEditor
-            {...register(field.name, { required: true })}
+            {...register(field.name)}
             defaultValue={field.value}
             content={content}
             setContent={(value) => {
@@ -96,7 +102,7 @@ const Form = ({ formFields, onSubmit }) => {
           <Select
             options={field.options}
             onChange={(selectedOption) =>
-              handleSelectChange(selectedOption, field.name)
+              handleSelectChange(selectedOption.value, field.name)
             }
             value={field.value}
             placeholder={`${field.label}`}
@@ -193,7 +199,7 @@ const Form = ({ formFields, onSubmit }) => {
         <input
           type={field.type}
           {...register(field.name)}
-          defaultValue={defaultValue}
+          defaultValue={field.value}
           className="w-full rounded h-[36px] border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
         />
       </label>

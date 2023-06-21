@@ -499,29 +499,7 @@ const Card = () => {
             </div>
           </div> */}
         </div>
-        <div className="p-3 laptop:block desktop:block phone:hidden">
-          <div className="pb-6">
-            <div className=" rounded-t overflow-hidden">
-              <a href="">
-                <img
-                  src="https://doanhnhanthanhhoahanoi.com/assets/news/about.png"
-                  alt=""
-                  className="w-full"
-                />
-              </a>
-            </div>
-            <h3 className="p-[20px] pb-[4px] text-[#494949] text-[13px] font-normal">
-              <a href="" className="block">
-                ĐẠI HỘI DOANH NHÂN THANH HÓA TẠI HÀ NỘI | NHIỆM KỲ V| 2022-2027
-              </a>
-            </h3>
-            <div className=" block mt-1 text-[12px] font-semibold text-[#1f9cf8]">
-              <a href="" className="flex items-center float-right">
-                <span>Xem tiếp</span>
-                <IoMdArrowDropright />
-              </a>
-            </div>
-          </div>
+        <div className="p-3 pt-6 laptop:block desktop:block phone:hidden">
           {/* <div className=" border-[1px] bobder-solid border-gray-400 rounded">
             <h2 className=" uppercase font-semibold text-[16px] px-[20px] py-[6px] bg-[#1f9cf8] text-white rounded">
               <a href="">lãnh đạo, chỉ đạo</a>

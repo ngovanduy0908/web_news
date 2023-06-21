@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useState, useEffect, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -71,7 +72,7 @@ const ReactQuillEditor = ({ content, setContent }) => {
       onChange={handleChange}
       modules={modules}
       formats={formats}
-      className="border border-slate-400"
+      className="border border-slate-400 overflow-y-auto"
     />
   );
 };

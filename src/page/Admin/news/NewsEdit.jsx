@@ -1,38 +1,67 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Form from "../../../components/Form";
 import Card from "../../../components/Card/Card";
+import axios from "axios";
+import slugify from "slugify";
 
-const NewsEdit = () => {
-  const handleFormSubmit = (data) => {
-    // Xử lý logic khi submit form
-    console.log(data);
+const NewsEdit = ({ idItem, fetchDataWithFilter, setOpen }) => {
+  const [item, setItem] = useState(idItem);
+
+  const handleFormSubmit = async (data) => {
+    // console.log(data);
+    try {
+      const slug = slugify(data.title, {
+        replacement: "-", // replace spaces with replacement character, defaults to `-`
+        remove: undefined, // remove characters that match regex, defaults to `undefined`
+        lower: false, // convert to lower case, defaults to `false`
+        strict: false, // strip special characters except replacement, defaults to `false`
+        locale: "vi", // language code of the locale to use
+        trim: true, // trim leading and trailing replacement chars, defaults to `true`
+      });
+      const value = { ...data, slug };
+      const responre = await axios.put(
+        `http://localhost:3001/api/posts/update/${item.id}`,
+        value
+      );
+      console.log(responre);
+      setOpen(false);
+      fetchDataWithFilter();
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
+  useEffect(() => {
+    fetchDataWithFilter();
+  }, [item]);
+
   const newsFormFields = [
     {
       name: "title",
       label: "Tiêu đề",
       type: "text",
-      value: "tao có khiên",
+      value: item?.title,
       col_span: true,
     },
     {
-      name: "sub_title",
+      name: "subcontent",
       label: "Giới thiệu ngắn",
       type: "text",
+      value: item ? item.subcontent : "",
       col_span: true,
     },
     {
       name: "image",
       label: "Hình ảnh chính",
       type: "file",
-      value:
-        "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/348319700_1703288040100667_8391237883964741134_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=jine-yQVABoAX8O7Wep&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCBGT3jyzogsn1FRPeL0_S9JLyLaP6JZoelZmpVxHPYfA&oe=64793494",
+      value: "",
+      // "https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/354611404_552136603802009_5411184715209704818_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=IlnTWCz5BlQAX_Mp-Oe&_nc_ht=scontent.fhan17-1.fna&oh=00_AfDJ1DdOAzufc1Ui3MBVJ2aRygRiyDLbYsQoJKnC_HwriQ&oe=64961C34",
     },
     {
-      name: "description",
+      name: "content",
       label: "Mô tả",
       type: "react-quill",
-      value: "bố mày có khiên",
+      value: "có khiên",
       col_span: true,
     },
   ];
